@@ -1,74 +1,45 @@
 /* ================================================
-   VARIABLES & GLOBAL CONFIG (ULTRA MODERNO)
+   VARIABLES & GLOBAL CONFIG (CORREGIDO)
 ================================================ */
 :root {
-  --primary: #2c3e50;        /* Azul corporativo */
-  --secondary: #debfb0;      /* Beige acento */
-  --tertiary: #7f8c8d;       /* Gris complementario */
-  --background: #f5f2ea;     /* Fondo claro */
-  --text: #020202;           /* Texto principal */
+  --primary: #2c3e50;
+  --secondary: #debfb0;
+  --tertiary: #7f8c8d;
+  --background: #f5f2ea;
+  --text: #020202;
   --white: #ffffff;
   
   --border-radius: 2rem;
-  --box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  --transition: all 0.4s cubic-bezier(0.16, 0.85, 0.45, 1);
-  --glass-effect: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  --box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --header-height: 100px;
 }
 
 /* ================================================
-   BASE & TYPOGRAPHY (NUEVA ESCALA)
-================================================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 120px;
-}
-
-body {
-  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
-  background: var(--background);
-  color: var(--text);
-  line-height: 1.8;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1 { font-size: 4rem; line-height: 1; }
-h2 { font-size: 3rem; }
-h3 { font-size: 2rem; }
-
-/* ================================================
-   HEADER GALÁCTICO (LOGO + NAV)
+   HEADER CORREGIDO (LOGO REDONDO + TEXTO GRANDE)
 ================================================ */
 header {
   position: sticky;
   top: 0;
   background: var(--primary);
-  backdrop-filter: blur(12px);
-  z-index: 10000;
-  border-bottom: 3px solid var(--secondary);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: var(--box-shadow);
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
+/* Logo perfectamente redondo */
 .logo {
-  width: 80px;
-  height: 80px;
+  width: var(--header-height);
+  height: var(--header-height);
   border-radius: 50%;
   background: var(--secondary);
   display: flex;
@@ -78,32 +49,39 @@ header {
   transition: var(--transition);
 }
 
-.logo:hover {
-  transform: rotate(15deg) scale(1.1);
-  box-shadow: 0 0 25px var(--secondary);
+.logo img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.05em;
 }
 
 nav ul {
   display: flex;
-  gap: 2.5rem;
+  gap: 3rem;
   list-style: none;
 }
 
 nav a {
   color: var(--white);
   text-decoration: none;
+  font-size: 1.3rem;
   font-weight: 600;
-  font-size: 1.2rem;
-  padding: 0.5rem 1.5rem;
-  border-radius: var(--border-radius);
-  transition: var(--transition);
+  padding: 0.5rem;
   position: relative;
+  transition: var(--transition);
 }
 
-nav a::before {
+nav a::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   left: 0;
   width: 0;
   height: 3px;
@@ -111,261 +89,154 @@ nav a::before {
   transition: width 0.3s ease;
 }
 
-nav a:hover::before {
+nav a:hover::after {
   width: 100%;
 }
 
 /* ================================================
-   HERO CÓSMICO (TEXTO EN 1 LÍNEA)
+   HERO SECTION PERFECTA (TEXTO CLARO Y ALINEADO)
 ================================================ */
 .hero {
   position: relative;
-  height: 90vh;
-  display: grid;
-  place-items: center;
-  background: radial-gradient(circle at 75% 30%, 
-    rgba(44, 62, 80, 0.95) 40%, 
-    rgba(44, 62, 80, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1451187580459-43490279c0fa') center/cover;
-  clip-path: ellipse(100% 100% at 50% 0%);
-  margin-bottom: 8rem;
+  height: calc(100vh - var(--header-height));
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)),
+              url('https://images.unsplash.com/photo-1451187580459-43490279c0fa') center/cover;
+  padding: 2rem;
+  margin-top: var(--header-height);
 }
 
 .hero-content {
   text-align: center;
   max-width: 1200px;
   padding: 4rem;
-  backdrop-filter: blur(16px);
-  border-radius: var(--border-radius);
-  border: 2px solid rgba(222, 191, 176, 0.3);
-  background: var(--glass-effect);
-  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
-  font-size: 5rem;
-  letter-spacing: -0.03em;
+  font-size: 4.5rem;
+  color: var(--white);
   line-height: 1;
-  background: linear-gradient(45deg, #fff 45%, var(--secondary) 55%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
   margin-bottom: 2rem;
+  letter-spacing: -0.03em;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 span {
   display: inline-block;
-  padding: 0 2rem;
+  padding: 0 1rem;
   position: relative;
 }
 
-.hero h1::after {
+.hero h1 span::after {
   content: '';
   position: absolute;
   bottom: -1rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 60%;
+  width: 80%;
   height: 4px;
   background: var(--secondary);
-  border-radius: 2px;
 }
 
 .hero h2 {
   font-size: 2.5rem;
-  color: var(--white);
+  color: var(--secondary);
   font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin: 2rem 0;
+  margin: 3rem 0;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
 }
 
 /* ================================================
-   BOTÓN ESTELAR
+   BOTÓN MEJORADO
 ================================================ */
-.btn-galaxy {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
+.cta-button {
+  display: inline-block;
   padding: 1.5rem 4rem;
   font-size: 1.4rem;
-  font-weight: 700;
-  border-radius: var(--border-radius);
   background: var(--secondary);
   color: var(--primary);
-  position: relative;
-  overflow: hidden;
-  transition: var(--transition);
-  border: none;
-  cursor: pointer;
-}
-
-.btn-galaxy::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, 
-    transparent 25%,
-    rgba(255,255,255,0.3) 50%,
-    transparent 75%
-  );
-  animation: super-shine 3s infinite;
-}
-
-@keyframes super-shine {
-  0% { transform: translateX(-150%) rotate(25deg); }
-  100% { transform: translateX(150%) rotate(25deg); }
-}
-
-.btn-galaxy:hover {
-  transform: scale(1.05) translateY(-5px);
-  box-shadow: 0 16px 40px rgba(222, 191, 176, 0.4);
-}
-
-/* ================================================
-   PORTAFOLIO HOLOGRÁFICO
-================================================ */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 3rem;
-  padding: 4rem 0;
-}
-
-.portfolio-card {
-  background: var(--white);
   border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: var(--box-shadow);
+  text-decoration: none;
   transition: var(--transition);
-  position: relative;
   border: 2px solid transparent;
+  box-shadow: 0 8px 24px rgba(222, 191, 176, 0.3);
 }
 
-.portfolio-card:hover {
-  transform: translateY(-15px);
-  border-color: var(--secondary);
-}
-
-.card-image {
-  height: 280px;
-  background: var(--primary);
-  position: relative;
-  overflow: hidden;
-}
-
-.card-image::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(45deg, 
-    rgba(255,255,255,0.1) 0%,
-    transparent 50%,
-    rgba(255,255,255,0.1) 100%
-  );
-  animation: hologram 6s infinite linear;
-}
-
-@keyframes hologram {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(222, 191, 176, 0.4);
 }
 
 /* ================================================
-   SKILLS NEON
-================================================ */
-.skills-matrix {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  padding: 4rem 0;
-}
-
-.skill-item {
-  padding: 2rem;
-  text-align: center;
-  background: var(--white);
-  border-radius: var(--border-radius);
-  transition: var(--transition);
-  border: 2px solid var(--background);
-  position: relative;
-}
-
-.skill-item:hover {
-  transform: scale(1.05);
-  border-color: var(--secondary);
-  box-shadow: 0 8px 32px rgba(222, 191, 176, 0.2);
-}
-
-/* ================================================
-   CONTACTO FUTURISTA
-================================================ */
-.contact-section {
-  background: var(--primary);
-  color: var(--white);
-  padding: 8rem 0;
-  clip-path: ellipse(120% 100% at 50% 100%);
-}
-
-.contact-form {
-  max-width: 800px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(12px);
-  padding: 4rem;
-  border-radius: var(--border-radius);
-  border: 2px solid var(--secondary);
-}
-
-/* ================================================
-   FOOTER GALÁCTICO
-================================================ */
-footer {
-  background: var(--primary);
-  color: var(--white);
-  text-align: center;
-  padding: 4rem 0;
-  position: relative;
-  margin-top: 8rem;
-}
-
-footer::before {
-  content: '';
-  position: absolute;
-  top: -50px;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: var(--background);
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-}
-
-/* ================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN PERFECTO
 ================================================ */
 @media (max-width: 1200px) {
-  .hero h1 { font-size: 4rem; }
+  .hero h1 { font-size: 3.5rem; }
   .hero h2 { font-size: 2rem; }
 }
 
 @media (max-width: 768px) {
-  .nav-container { flex-direction: column; gap: 2rem; }
-  .logo { width: 70px; height: 70px; }
-  nav ul { gap: 1.5rem; }
-  nav a { font-size: 1rem; }
+  .nav-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+  }
   
-  .hero { height: 80vh; }
-  .hero h1 { font-size: 3rem; padding: 0 1rem; }
-  .hero h2 { font-size: 1.5rem; }
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  nav a {
+    font-size: 1.1rem;
+  }
+  
+  .hero {
+    height: auto;
+    min-height: 80vh;
+    padding: 4rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+    line-height: 1.1;
+  }
+  
+  .hero h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .cta-button {
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero { height: 90vh; clip-path: ellipse(150% 100% at 50% 0%); }
-  .hero h1 { font-size: 2.5rem; }
-  .portfolio-grid { grid-template-columns: 1fr; }
-}
-
-:focus-visible {
-  outline: 3px solid var(--secondary);
-  outline-offset: 3px;
+  .hero h1 {
+    font-size: 2.2rem;
+    padding: 0 0.5rem;
+  }
+  
+  .hero h1 span::after {
+    width: 100%;
+    bottom: -0.5rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.3rem;
+  }
 }
