@@ -379,19 +379,115 @@
         </div>
     </section>
 
-    <section id="skills">
-        <div class="container">
-            <h2>Habilidades Técnicas</h2>
-            <div class="skills-container">
-                <div class="skill">Python</div>
-                <div class="skill">Machine Learning</div>
-                <div class="skill">SQL</div>
-                <div class="skill">Pandas</div>
-                <div class="skill">TensorFlow</div>
-                <div class="skill">Big Data</div>
+<!-- Sección Habilidades Técnicas -->
+<section id="skills">
+    <div class="container">
+        <h2>Habilidades Técnicas</h2>
+        <div class="skills-container">
+            <!-- Ciencia de Datos -->
+            <div class="skill-category">
+                <h3>Ciencia & Análisis de Datos</h3>
+                <div class="skills-grid">
+                    <div class="skill">Python (Pandas, NumPy, Scikit-learn)</div>
+                    <div class="skill">Análisis Estadístico</div>
+                    <div class="skill">Machine Learning (TensorFlow, Keras)</div>
+                    <div class="skill">Deep Learning (PyTorch)</div>
+                    <div class="skill">Procesamiento NLP (spaCy, Transformers)</div>
+                    <div class="skill">Visualización (Tableau, Power BI)</div>
+                </div>
+            </div>
+
+            <!-- Ingeniería de Datos -->
+            <div class="skill-category">
+                <h3>Ingeniería de Datos</h3>
+                <div class="skills-grid">
+                    <div class="skill">ETL/ELT</div>
+                    <div class="skill">SQL (MySQL, PostgreSQL)</div>
+                    <div class="skill">NoSQL (MongoDB, Cassandra)</div>
+                    <div class="skill">Big Data (Spark, Hadoop)</div>
+                    <div class="skill">Cloud (AWS, GCP, Azure)</div>
+                    <div class="skill">MLOps (Docker, Kubernetes)</div>
+                </div>
+            </div>
+
+            <!-- Desarrollo & DevOps -->
+            <div class="skill-category">
+                <h3>Desarrollo & DevOps</h3>
+                <div class="skills-grid">
+                    <div class="skill">Backend (Flask, Django)</div>
+                    <div class="skill">Contenerización</div>
+                    <div class="skill">AutoML (H2O.ai)</div>
+                    <div class="skill">CI/CD Pipelines</div>
+                    <div class="skill">Git/GitHub</div>
+                    <div class="skill">APIs REST</div>
+                </div>
+            </div>
+
+            <!-- Cybersecurity & IT -->
+            <div class="skill-category">
+                <h3>Infraestructura IT</h3>
+                <div class="skills-grid">
+                    <div class="skill">Ciberseguridad (GDPR, SIEM)</div>
+                    <div class="skill">Redes & SysAdmin</div>
+                    <div class="skill">Automatización (Ansible, Bash)</div>
+                    <div class="skill">Soporte TI Avanzado</div>
+                    <div class="skill">Monitorización</div>
+                    <div class="skill">DevSecOps</div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+.skill-category {
+    margin-bottom: 3rem;
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.skill-category h3 {
+    color: var(--secondary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.5rem;
+}
+
+.skill {
+    background: var(--tertiary);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.skill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .skill {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+</style>
 
     <section id="contact">
         <div class="container">
