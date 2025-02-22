@@ -60,7 +60,11 @@ p {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 4rem 0;
+}
+
+section {
+  padding: 6rem 0;
 }
 
 /* ================================================
@@ -104,7 +108,7 @@ nav a:hover {
 }
 
 /* ================================================
-   HERO SECTION (IMPACT VISUAL)
+   HERO SECTION - ULTIMATE VERSION
 ================================================ */
 .hero {
   position: relative;
@@ -113,30 +117,68 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.7)),
+  background: linear-gradient(45deg, rgba(44, 62, 80, 0.95), rgba(44, 62, 80, 0.85)),
               url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80');
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
   margin-bottom: 4rem;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  overflow: hidden;
 }
 
 .hero-content {
   text-align: center;
-  max-width: 800px;
-  padding: 2rem;
+  max-width: 700px;
+  padding: 2.5rem;
+  background: rgba(245, 242, 234, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: var(--border-radius);
+  border: 2px solid rgba(222, 191, 176, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  margin: 0 1rem;
+  z-index: 2;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
-  color: var(--white);
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-size: 3.2rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.hero h1 span {
+  background: linear-gradient(45deg, var(--white) 60%, var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .hero h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--secondary);
   margin-bottom: 2.5rem;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding: 0.5rem 1rem;
 }
+
+.hero h2::before,
+.hero h2::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 40px;
+  background: var(--secondary);
+  top: 50%;
+  opacity: 0.6;
+}
+
+.hero h2::before { left: -50px; }
+.hero h2::after { right: -50px; }
 
 /* ================================================
    CTA BUTTONS
@@ -151,6 +193,8 @@ nav a:hover {
   transition: var(--transition);
   text-decoration: none;
   border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary {
@@ -164,8 +208,28 @@ nav a:hover {
   box-shadow: 0 8px 24px rgba(222, 191, 176, 0.4);
 }
 
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+    transparent 25%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 75%
+  );
+  animation: shine 4s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
 /* ================================================
-   PORTFOLIO SECTION (CARD GRID)
+   PORTFOLIO SECTION
 ================================================ */
 .portfolio-grid {
   display: grid;
@@ -180,10 +244,32 @@ nav a:hover {
   overflow: hidden;
   box-shadow: var(--box-shadow);
   transition: var(--transition);
+  position: relative;
 }
 
 .portfolio-card:hover {
   transform: translateY(-10px);
+}
+
+.portfolio-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s;
+}
+
+.portfolio-card:hover::before {
+  left: 150%;
 }
 
 .card-image {
@@ -213,7 +299,7 @@ nav a:hover {
 }
 
 /* ================================================
-   SKILLS SECTION (CLOUD EFFECT)
+   SKILLS SECTION
 ================================================ */
 .skills-cloud {
   display: flex;
@@ -222,6 +308,8 @@ nav a:hover {
   gap: 1.5rem;
   max-width: 1000px;
   margin: 2rem auto;
+  position: relative;
+  padding: 3rem 0;
 }
 
 .skill-item {
@@ -231,16 +319,18 @@ nav a:hover {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   transition: var(--transition);
+  border: 2px solid var(--background);
 }
 
 .skill-item:hover {
   background: var(--primary);
   color: var(--white);
-  transform: scale(1.05);
+  border-color: var(--secondary);
+  box-shadow: 0 8px 24px rgba(222, 191, 176, 0.2);
 }
 
 /* ================================================
-   CONTACT FORM (MODERN)
+   CONTACT FORM
 ================================================ */
 .contact-form {
   max-width: 700px;
@@ -270,6 +360,63 @@ nav a:hover {
 }
 
 /* ================================================
+   FOOTER
+================================================ */
+footer {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 3rem 0;
+  margin-top: 4rem;
+}
+
+/* ================================================
+   DECORATIVE ELEMENTS
+================================================ */
+section h2 {
+  position: relative;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(222, 191, 176, 0.08);
+  border-radius: 50%;
+  filter: blur(80px);
+  bottom: -200px;
+  right: -200px;
+  z-index: 1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(127, 140, 141, 0.08);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  filter: blur(60px);
+  top: -150px;
+  left: -150px;
+}
+
+/* ================================================
    RESPONSIVE DESIGN
 ================================================ */
 @media (max-width: 1024px) {
@@ -280,6 +427,10 @@ nav a:hover {
   
   .hero h1 {
     font-size: 2.8rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.6rem;
   }
 }
 
@@ -298,24 +449,36 @@ nav a:hover {
     font-size: 2.2rem;
   }
   
-  .portfolio-grid {
-    grid-template-columns: 1fr;
+  .hero h2 {
+    font-size: 1.3rem;
+    padding: 0;
   }
   
-  .contact-form {
-    padding: 2rem;
+  .hero h2::before,
+  .hero h2::after {
+    display: none;
+  }
+  
+  .btn-primary::after {
+    animation: none;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  nav ul {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-  
   .hero {
     height: 70vh;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.1rem;
   }
   
   .btn {
@@ -325,7 +488,7 @@ nav a:hover {
 }
 
 /* ================================================
-   MICROINTERACTIONS & ACCESSIBILITY
+   ANIMATIONS & MICROINTERACTIONS
 ================================================ */
 @media (prefers-reduced-motion: no-preference) {
   [data-animate] {
