@@ -1,116 +1,281 @@
-/* Estilos Generales */
-body {
-  font-family: 'Poppins', Arial, sans-serif;
+/* ================================================
+   RESET & CONFIGURACIÓN GLOBAL
+================================================ */
+* {
   margin: 0;
   padding: 0;
-  background: #f5f2ea;
-  color: #020202;
-  line-height: 1.6;
+  box-sizing: border-box;
 }
 
-/* Encabezado */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #f5f2ea; /* Fondo */
+  color: #020202;      /* Texto */
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Contenedor central para alinear el contenido */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* ================================================
+   HEADER & NAVEGACIÓN
+================================================ */
 header {
-  background: #2c3e50;
+  background: #2c3e50; /* Primer Color corporativo */
   color: #fff;
   text-align: center;
   padding: 20px 0;
-  font-size: 1.5rem;
-  font-weight: bold;
+  border-bottom: 5px solid #debfb0; /* Segundo Color para detalle */
 }
 
-/* Sección Hero */
-.hero {
-  height: 50vh;
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  background: #2c3e50;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
   color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #debfb0;
+}
+
+/* ================================================
+   SECCIÓN HERO
+================================================ */
+.hero {
+  position: relative;
+  height: 50vh; /* Reducido a la mitad */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 62, 80, 0.6); /* Overlay oscuro para contraste */
 }
 
 .hero .container {
-  max-width: 600px;
-  padding: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
   font-size: 2.5rem;
-  font-weight: bold;
+  color: #f5f2ea;
+  margin-bottom: 10px;
 }
 
 .hero h2 {
   font-size: 1.8rem;
-  margin-bottom: 15px;
+  color: #debfb0;
+  margin-bottom: 20px;
 }
 
 .hero .btn {
   background: #debfb0;
   color: #2c3e50;
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-size: 1rem;
   border: none;
+  border-radius: 30px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .hero .btn:hover {
-  background: #7f8c8d;
-  color: #fff;
+  background: #7f8c8d; /* Tercer Color corporativo */
+  transform: translateY(-3px);
 }
 
-/* Secciones Generales */
+/* ================================================
+   SECCIONES GENERALES (ABOUT, CONTACT, ETC.)
+================================================ */
 section {
-  padding: 40px;
+  padding: 60px 20px;
   max-width: 900px;
-  margin: auto;
+  margin: 0 auto;
 }
 
-h2 {
-  color: #2c3e50;
-  font-size: 2rem;
+section h2 {
   text-align: center;
+  color: #2c3e50;
   margin-bottom: 20px;
+  font-size: 2rem;
 }
 
-p {
+section p {
   text-align: justify;
   font-size: 1.1rem;
+  margin-bottom: 15px;
 }
 
-/* Portafolio */
-#portfolio {
+/* ================================================
+   PORTAFOLIO
+================================================ */
+.portfolio-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  justify-content: center;
-  padding: 40px;
+  margin-top: 30px;
 }
 
-.project-card {
+.portfolio-item {
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portfolio-item .item-content {
   padding: 20px;
-  transition: transform 0.3s;
 }
 
-.project-card:hover {
-  transform: scale(1.05);
-}
-
-.project-card h3 {
-  color: #2c3e50;
+.portfolio-item h3 {
   font-size: 1.5rem;
+  color: #2c3e50;
   margin-bottom: 10px;
 }
 
-/* Footer */
+/* ================================================
+   SECCIÓN DE HABILIDADES (SKILLS)
+================================================ */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.skill {
+  background: #7f8c8d; /* Tercer Color corporativo */
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* ================================================
+   FORMULARIO DE CONTACTO
+================================================ */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background: #2c3e50;
+  color: #f5f2ea;
+  padding: 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+.contact-form button:hover {
+  background: #7f8c8d;
+}
+
+/* ================================================
+   FOOTER
+================================================ */
 footer {
   background: #2c3e50;
   color: #fff;
   text-align: center;
   padding: 20px 0;
   font-size: 1rem;
+}
+
+/* ================================================
+   RESPONSIVE DESIGN
+================================================ */
+@media (max-width: 768px) {
+  header h1 { font-size: 2rem; }
+  
+  .hero {
+    height: 40vh;
+  }
+  
+  .hero h1 { font-size: 2rem; }
+  
+  .hero h2 { font-size: 1.4rem; }
+  
+  section {
+    padding: 40px 10px;
+  }
+  
+  .portfolio-items {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================================
+   SCROLLBAR PERSONALIZADA (OPCIONAL)
+================================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f2ea;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7f8c8d;
+  border-radius: 4px;
 }
