@@ -1,406 +1,369 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Portafolio Profesional</title>
-  <!-- Fuente personalizada -->
-  <link href="styles.css" rel="stylesheet">
-  <style>
-    /* Reset y configuración base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: 'Roboto', sans-serif; 
-      line-height: 1.6; 
-      color: #020202; 
-      background: #f5f2ea; 
-    }
-    a { color: inherit; text-decoration: none; }
-    
-    /* Navegación fija y responsive */
-    header {
-      background: #2c3e50; /* Primer Color corporativo */
-      color: #f5f2ea;
-      padding: 20px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 100;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-logo {
-      font-size: 1.5em;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-    }
-    /* Integrar tu logo: Coloca tu imagen (por ejemplo, logo.png) antes del texto del logo.
-       Asegúrate de subir el archivo logo.png en tu repositorio o carpeta de imágenes. */
-    .nav-logo img {
-      max-height: 50px;
-      margin-right: 10px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-    }
-    nav ul li {
-      margin-left: 20px;
-    }
-    nav ul li a {
-      font-weight: 700;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover {
-      color: #debfb0; /* Segundo color corporativo */
-    }
-    
-    /* Sección Hero */
-    .hero {
-      background: url('https://source.unsplash.com/1600x900/?technology') center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #f5f2ea;
-      padding: 0 20px;
-      margin-top: 80px; /* espacio para la navegación fija */
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(44, 62, 80, 0.7); /* superponer un tono oscuro que combina con el primer color corporativo */
-    }
-    .hero > .container {
-      position: relative;
-      z-index: 1;
-    }
-    .hero h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-    .btn {
-      padding: 10px 30px;
-      background: #debfb0; /* Segundo color corporativo */
-      color: #2c3e50; /* Contraste con el fondo oscuro */
-      border: none;
-      cursor: pointer;
-      font-size: 1em;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-    .btn:hover {
-      background: #7f8c8d; /* Tercer color corporativo */
-    }
-    
-    /* Sección Sobre Mí */
-    #about {
-      padding: 100px 0;
-      background: #fff;
-    }
-    #about .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-    }
-    #about img {
-      width: 300px;
-      border-radius: 50%;
-      margin: 20px;
-    }
-    #about .bio {
-      flex: 1;
-      max-width: 600px;
-      margin: 20px;
-    }
-    #about h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-    #about p {
-      margin-bottom: 10px;
-    }
-    
-    /* Sección Portafolio */
-    #portfolio {
-      padding: 100px 0;
-      background: #f5f2ea;
-    }
-    #portfolio h2 {
-      text-align: center;
-      margin-bottom: 50px;
-      font-size: 2.5em;
-    }
-    .portfolio-items {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .portfolio-item {
-      background: #fff;
-      border-radius: 5px;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-    }
-    .portfolio-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .portfolio-item .item-content {
-      padding: 20px;
-    }
-    .portfolio-item h3 {
-      margin-bottom: 10px;
-    }
-    .portfolio-item p {
-      font-size: 0.9em;
-    }
-    
-    /* Sección Habilidades */
-    #skills {
-      padding: 100px 0;
-      background: #fff;
-    }
-    #skills h2 {
-      text-align: center;
-      margin-bottom: 50px;
-      font-size: 2.5em;
-    }
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .skill {
-      background: #7f8c8d; /* Tercer color corporativo */
-      padding: 20px;
-      border-radius: 5px;
-      width: 150px;
-      text-align: center;
-      font-weight: bold;
-      color: #fff;
-    }
-    
-    /* Sección Contacto */
-    #contact {
-      padding: 100px 0;
-      background: #f5f2ea;
-    }
-    #contact h2 {
-      text-align: center;
-      margin-bottom: 50px;
-      font-size: 2.5em;
-    }
-    .contact-form {
-      max-width: 600px;
-      margin: auto;
-    }
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 15px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .contact-form button {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      background: #2c3e50; /* Primer Color corporativo */
-      color: #f5f2ea;
-      font-size: 1em;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .contact-form button:hover {
-      background: #7f8c8d; /* Tercer Color corporativo */
-    }
-    
-    /* Footer */
-    footer {
-      background: #2c3e50;
-      color: #f5f2ea;
-      text-align: center;
-      padding: 20px 0;
-    }
-    
-    /* Ajustes Responsive */
-    @media (max-width: 768px) {
-      header, .container { flex-direction: column; text-align: center; }
-      nav ul { flex-direction: column; }
-      nav ul li { margin: 10px 0; }
-      #about .about-content { flex-direction: column; }
-      #about img { margin: 0 auto 20px auto; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio J. Fernández - Científico de Datos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* === VARIABLES GLOBALES === */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #debfb0;
+            --tertiary: #7f8c8d;
+            --background: #f5f2ea;
+            --text: #020202;
+            --white: #ffffff;
+            --border-radius: 2rem;
+            --box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --header-height: 100px;
+        }
+
+        /* === ESTILOS BASE === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--background);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 0;
+        }
+
+        h1 { font-size: 4.5rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.8rem; }
+
+        /* === HEADER PROFESIONAL === */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--primary);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: var(--box-shadow);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            transition: var(--transition);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 0.5rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* === SECCIÓN HERO IMPACTANTE === */
+        .hero {
+            position: relative;
+            height: calc(100vh - var(--header-height));
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(45deg, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)),
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa') center/cover;
+            margin-top: var(--header-height);
+        }
+
+        .hero .container {
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h2 {
+            color: var(--secondary);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            margin: 2rem 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.5rem 4rem;
+            font-size: 1.2rem;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            box-shadow: var(--box-shadow);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(222, 191, 176, 0.4);
+        }
+
+        /* === SECCIÓN SOBRE MÍ === */
+        #about .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        #about img {
+            width: 300px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        #about .bio {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        #about h2 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        #about p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* === PORTAFOLIO PROFESIONAL === */
+        .portfolio-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .item-content {
+            padding: 2rem;
+        }
+
+        /* === HABILIDADES TÉCNICAS === */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .skill {
+            background: var(--tertiary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+        }
+
+        /* === FORMULARIO DE CONTACTO === */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--background);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(222, 191, 176, 0.3);
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 1200px) {
+            .hero h1 { font-size: 3.5rem; }
+            .hero h2 { font-size: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 1.5rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+            .hero { height: auto; padding: 4rem 0; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero h2 { font-size: 1.8rem; }
+            #about .about-content { flex-direction: column; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero h2 { font-size: 1.5rem; }
+            .cta-button { width: 100%; padding: 1.2rem; }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Navegación -->
-  <header>
-    <div class="container">
-      <!-- Integración del logo: Reemplaza 'logo.png' con la ruta de tu logo -->
-      <div class="nav-logo">
-        <img src="Logo Data Viva actual.png" alt="Logo de Data Viva">
-        Data Viva
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#hero">Inicio</a></li>
-          <li><a href="#about">Sobre Mí</a></li>
-          <li><a href="#portfolio">Portafolio</a></li>
-          <li><a href="#skills">Habilidades</a></li>
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Sección Hero -->
-  <section class="hero" id="hero">
-    <div class="container">
-      <h1>Antonio J. Fernández</h1>
-      <h2>Científico de datos</h2>
-      <h2>Analista de datos</h2>
-      <button class="btn" onclick="window.location.href='#portfolio'">Ver Portafolio</button>
-    </div>
-  </section>
-
-  <!-- Sección Sobre Mí -->
-  <section id="about">
-    <div class="container about-content">
-      <img src="Logo Data Viva actual.png" alt="Foto de perfil">
-      <div class="bio">
-        <h2>Sobre Mí</h2>
-  <p style="text-align: justify; font-weight: bold;">
-    Transformando datos en estrategias de alto impacto comercial.
-  </p>
-  
-  <p style="text-align: justify;">
-    Soy un <strong>profesional apasionado por la Ciencia de Datos y Análisis de Datos</strong>, respaldado por una <strong>amplia y completa formación</strong> y un <strong>portafolio de proyectos</strong> que demuestran mi capacidad para <strong>convertir datos en soluciones estratégicas y accionables</strong>.
-  </p>
-<div>
-  <p style="text-align: justify;"><strong>Experiencia Técnica y Herramientas de Vanguardia:</strong></p>
-  <p style="text-align: justify;">
-    He desarrollado competencias avanzadas en <strong>Machine Learning, Deep Learning, Big Data</strong> y <strong>Exploratory Data Analysis (EDA)</strong>, implementando procesos de <strong>ETL, Data Wrangling, Data Cleaning, Feature Engineering</strong> y <strong>Model Evaluation</strong>. Domino herramientas y librerías líderes como <strong>Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, TensorFlow, Keras</strong> y utilizo <strong>Python</strong> para la <strong>Automatización IT</strong>, optimizando procesos y generando <strong>insights de alto valor</strong>.
-  </p>
-  
-  <p style="text-align: justify;"><strong>Gestión de Proyectos y Liderazgo Digital:</strong></p>
-  <p style="text-align: justify;">
-    Complemento mis habilidades técnicas con una sólida formación en <strong>gestión y liderazgo integral de proyectos de transformación digital</strong>. Gracias a la formación avanzada de <strong>Google</strong>, he profundizado en metodologías ágiles como <strong>SCRUM</strong> y <strong>Kanban</strong>, lo que me permite coordinar equipos multidisciplinares y conducir iniciativas de cambio en entornos dinámicos.
-  </p>
-  
-  <p style="text-align: justify;"><strong>Bases de Datos, Automatización y Ciberseguridad:</strong></p>
-  <p style="text-align: justify;">
-    Cuento con experiencia en la administración de bases de datos <strong>SQL</strong> y <strong>NoSQL</strong> (<strong>MySQL, PostgreSQL, MongoDB, Cassandra</strong>) y en la implementación de soluciones de <strong>Automatización IT con Python</strong>. Además, poseo sólidos conocimientos en <strong>Ciberseguridad</strong> y <strong>Soporte TI</strong>, asegurando la integridad y el rendimiento óptimo de los sistemas.
-  </p>
-  
-  <p style="text-align: justify;"><strong>Enfoque en Oportunidades 100% Remotas en España:</strong></p>
-  <p style="text-align: justify;">
-    Estoy comprometido con oportunidades <strong>100% remotas en España</strong>, colaborando con equipos locales para impulsar la <strong>transformación digital</strong> y potenciar el <strong>crecimiento empresarial</strong> mediante el uso estratégico de los datos.
-  </p>
-  
-  <p style="text-align: justify; font-weight: bold;">
-    ¿Buscas potenciar tu equipo con un profesional innovador?
-  </p>
-
-  <p style="text-align: justify;">
-    Estoy preparado para <strong>sumar y aportar valor</strong> a tu equipo, combinando mi <strong>experiencia técnica</strong> y <strong>liderazgo en transformación digital</strong> para alcanzar <strong>objetivos ambiciosos</strong>. <strong>¡Conectemos y exploremos juntos</strong> cómo puedo contribuir al <strong>éxito de tu empresa!</strong>
-  </p>
-</div>
-
-    </div>
-  </section>
-
-  <!-- Sección Portafolio -->
-  <section id="portfolio">
-    <div class="container">
-      <h2>Portafolio</h2>
-      <div class="portfolio-items">
-        <div class="portfolio-item">
-          <img src="https://source.unsplash.com/400x300/?website" alt="Proyecto 1">
-          <div class="item-content">
-            <h3>Proyecto 1</h3>
-            <p>Descripción breve del proyecto, las tecnologías empleadas y un enlace para ver más detalles.</p>
-          </div>
+    <!-- Encabezado -->
+    <header>
+        <div class="nav-container container">
+            <div class="nav-logo">
+                <img src="Logo Data Viva actual.png" alt="Logo Data Viva">
+                <span>Data Viva</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#about">Sobre Mí</a></li>
+                    <li><a href="#portfolio">Portafolio</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="portfolio-item">
-          <img src="https://source.unsplash.com/400x300/?app" alt="Proyecto 2">
-          <div class="item-content">
-            <h3>Proyecto 2</h3>
-            <p>Descripción breve del proyecto, las herramientas utilizadas y enlace a la demo.</p>
-          </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1>Antonio J. Fernández</h1>
+            <h2>Científico de Datos | Analista de Datos</h2>
+            <a href="#portfolio" class="cta-button">Ver Portafolio</a>
         </div>
-        <div class="portfolio-item">
-          <img src="https://source.unsplash.com/400x300/?design" alt="Proyecto 3">
-          <div class="item-content">
-            <h3>Proyecto 3</h3>
-            <p>Descripción breve del proyecto, metodologías y tecnologías que lo hicieron posible.</p>
-          </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <img src="Logo Data Viva actual.png" alt="Antonio J. Fernández">
+                <div class="bio">
+                    <h2>Sobre Mí</h2>
+                    <p><strong>Transformando datos en estrategias de alto impacto comercial.</strong></p>
+                    <p>Soy un profesional apasionado por la Ciencia de Datos y Análisis de Datos, respaldado por una amplia y completa formación y un portafolio de proyectos que demuestran mi capacidad para convertir datos en soluciones estratégicas y accionables.</p>
+                    <!-- Resto del contenido... -->
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Sección Habilidades -->
-  <section id="skills">
-    <div class="container">
-      <h2>Habilidades</h2>
-      <div class="skills-container">
-        <div class="skill">HTML5</div>
-        <div class="skill">CSS3</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">Python</div>
-        <div class="skill">Django</div>
-        <div class="skill">React</div>
-      </div>
-    </div>
-  </section>
+    <!-- Sección Portafolio -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portafolio</h2>
+            <div class="portfolio-items">
+                <!-- Proyectos aquí -->
+            </div>
+        </div>
+    </section>
 
-  <!-- Sección Contacto -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contacto</h2>
-      <div class="contact-form">
-        <input type="text" placeholder="Nombre" required>
-        <input type="email" placeholder="Correo electrónico" required>
-        <textarea rows="5" placeholder="Mensaje" required></textarea>
-        <button type="submit">Enviar Mensaje</button>
-      </div>
-    </div>
-  </section>
+    <!-- Sección Habilidades -->
+    <section id="skills">
+        <div class="container">
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills-container">
+                <!-- Habilidades aquí -->
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Data Viva. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+    <!-- Sección Contacto -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <form class="contact-form">
+                <!-- Campos del formulario -->
+            </form>
+        </div>
+    </section>
 
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Data Viva. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
