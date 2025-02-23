@@ -1,0 +1,54 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Generar un dataset sintético con valores faltantes
+np.random.seed(42)
+df = pd.DataFrame({
+    'edad': np.random.randint(18, 70, 200),
+    'ingresos': np.random.normal(50000, 15000, 200),
+    'monto_compra': np.random.exponential(scale=100, size=200),
+    'categoría': np.random.choice(['A', 'B', 'C'], 200)
+})
+
+# Introducir valores faltantes en 'ingresos'
+df.loc[np.random.choice(df.index, 20, replace=False), 'ingresos'] = np.nan
+
+# --- Paso 1: Limpieza de datos ---
+# Rellenar valores faltantes con la mediana
+df['ingresos'].fillna(df['ingresos'].median(), inplace=True)
+
+# --- Paso 2: Transformación de datos ---
+# Crear una nueva variable transformada (logaritmo del monto de compra)
+df['log_monto_compra'] = np.log1p(df['monto_compra'])
+
+# --- Paso 3: Estadísticas descriptivas ---
+print("Resumen estadístico:")
+print(df.describe())
+
+# --- Paso 4: Visualizaciones ---
+plt.figure(figsize=(12,8))
+
+# Histograma de edades
+plt.subplot(2,2,1)
+sns.histplot(df['edad'], kde=True)
+plt.title('Distribución de Edades')
+
+# Boxplot de ingresos por categoría
+plt.subplot(2,2,2)
+sns.boxplot(x='categoría', y='ingresos', data=df)
+plt.title('Ingresos por Categoría')
+
+# Gráfico de dispersión: ingresos vs monto de compra
+plt.subplot(2,2,3)
+sns.scatterplot(x='ingresos', y='monto_compra', hue='categoría', data=df)
+plt.title('Ingresos vs Monto de Compra')
+
+# Mapa de calor de la matriz de correlación
+plt.subplot(2,2,4)
+sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
+plt.title('Matriz de Correlación')
+
+plt.tight_layout()
+plt.show()
