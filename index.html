@@ -356,62 +356,102 @@
 <!-- Sección Portafolio -->
 <section id="portfolio">
     <div class="container">
-        <h2>Portafolio</h2>
+        <h2>Proyectos Destacados</h2>
         <div class="portfolio-items">
-            
+
             <!-- Proyecto 1: Modelo Predictivo -->
             <div class="portfolio-item">
                 <div class="item-content">
-                    <h3>Modelo Predictivo de Ventas</h3>
+                    <h3>Sistema Predictivo de Ventas</h3>
                     <div class="tech-stack">
                         <span class="tech-item">Python</span>
                         <span class="tech-item">Random Forest</span>
                         <span class="tech-item">Prophet</span>
-                        <span class="tech-item">Pandas</span>
+                        <span class="tech-item">Scikit-learn</span>
                     </div>
-                    <p>Sistema predictivo que integra modelos de ML y series temporales para optimizar la logística entre bodegas y distribuidores.</p>
+                    <p class="project-description">Modelo integrado de machine learning y series temporales que predice ventas con 92% de precisión, optimizando la logística entre bodegas y distribuidores mediante análisis predictivo avanzado.</p>
                     <div class="project-links">
-                        <a href="#!" class="cta-button">Ver Análisis</a>
-                        <a href="https://github.com/AntonioJFdez/dataviva" class="cta-button" target="_blank">Código en GitHub</a>
+                        <a href="#modelo-predictivo-detalles" class="cta-button btn-details">Análisis Técnico</a>
+                        <a href="https://github.com/AntonioJFdez/dataviva/blob/main/sales_predictor.py" 
+                           class="cta-button btn-code"
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                           Ver Código
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Proyecto 2: Clustering -->
+            <!-- Proyecto 2: Pronóstico Temporal -->
             <div class="portfolio-item">
                 <div class="item-content">
-                    <h3>Segmentación de Clientes</h3>
+                    <h3>Pronóstico de Series Temporales</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">Prophet</span>
+                        <span class="tech-item">Pandas</span>
+                        <span class="tech-item">Matplotlib</span>
+                    </div>
+                    <p class="project-description">Modelo de forecasting para predecir tendencias de ventas estacionales con integración de factores externos, utilizando técnicas avanzadas de series temporales.</p>
+                    <div class="project-links">
+                        <a href="#forecasting-detalles" class="cta-button btn-details">Ver Pronósticos</a>
+                        <a href="https://github.com/AntonioJFdez/dataviva/time-series/blob/main/forecast_model.ipynb" 
+                           class="cta-button btn-code"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                           Notebook Completo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 3: Segmentación Clientes -->
+            <div class="portfolio-item">
+                <div class="item-content">
+                    <h3>Clustering de Clientes</h3>
                     <div class="tech-stack">
                         <span class="tech-item">K-Means</span>
                         <span class="tech-item">DBSCAN</span>
                         <span class="tech-item">Seaborn</span>
+                        <span class="tech-item">Scikit-learn</span>
                     </div>
-                    <p>Solución de clustering para segmentación de clientes usando algoritmos no supervisados con visualizaciones interactivas.</p>
+                    <p class="project-description">Solución de segmentación de clientes mediante algoritmos no supervisados, identificando 5 grupos estratégicos con diferentes patrones de consumo.</p>
                     <div class="project-links">
-                        <a href="#!" class="cta-button">Ver Dashboard</a>
-                        <a href="https://github.com/AntonioJFdez/dataviva/clustering" class="cta-button" target="_blank">Repositorio</a>
+                        <a href="#clustering-detalles" class="cta-button btn-details">Ver Segmentos</a>
+                        <a href="https://github.com/AntonioJFdez/dataviva/clustering/blob/main/customer_segmentation.py" 
+                           class="cta-button btn-code"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                           Código Completo
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Proyecto 3: Automatización de Reportes -->
+            <!-- Proyecto 4: Dashboard Automatizado -->
             <div class="portfolio-item">
                 <div class="item-content">
-                    <h3>Dashboard Automatizado</h3>
+                    <h3>Reportes Automatizados</h3>
                     <div class="tech-stack">
                         <span class="tech-item">Dash</span>
                         <span class="tech-item">Plotly</span>
-                        <span class="tech-item">Tiempo Real</span>
+                        <span class="tech-item">Pandas</span>
+                        <span class="tech-item">AWS</span>
                     </div>
-                    <p>Sistema de reporting automático con actualización en tiempo real para monitorización de KPIs comerciales.</p>
+                    <p class="project-description">Dashboard interactivo con actualización en tiempo real para seguimiento de KPIs comerciales, desplegado en infraestructura cloud.</p>
                     <div class="project-links">
-                        <a href="#!" class="cta-button">Demo en Vivo</a>
-                        <a href="https://github.com/AntonioJFdez/dataviva/dash-reports" class="cta-button" target="_blank">Código Fuente</a>
+                        <a href="#dashboard-live" class="cta-button btn-details">Ver Demo</a>
+                        <a href="https://github.com/AntonioJFdez/dataviva/auto-reports/blob/main/dashboard_app.py" 
+                           class="cta-button btn-code"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                           Código Fuente
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Proyecto 4: Análisis Exploratorio -->
+            <!-- Proyecto 5: Análisis Exploratorio -->
             <div class="portfolio-item">
                 <div class="item-content">
                     <h3>EDA Avanzado</h3>
@@ -419,11 +459,17 @@
                         <span class="tech-item">Pandas</span>
                         <span class="tech-item">Seaborn</span>
                         <span class="tech-item">Matplotlib</span>
+                        <span class="tech-item">NumPy</span>
                     </div>
-                    <p>Análisis exploratorio completo con limpieza de datos, transformaciones y visualizaciones profesionales.</p>
+                    <p class="project-description">Análisis exploratorio completo con limpieza de datos, transformaciones y visualizaciones interactivas para dataset de e-commerce.</p>
                     <div class="project-links">
-                        <a href="#!" class="cta-button">Ver Reporte</a>
-                        <a href="https://github.com/AntonioJFdez/dataviva/eda-avanzado" class="cta-button" target="_blank">Análisis Completo</a>
+                        <a href="#eda-detalles" class="cta-button btn-details">Ver Insights</a>
+                        <a href="https://github.com/AntonioJFdez/dataviva/eda-project/blob/main/advanced_analysis.ipynb" 
+                           class="cta-button btn-code"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                           Análisis Completo
+                        </a>
                     </div>
                 </div>
             </div>
