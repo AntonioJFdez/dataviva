@@ -711,28 +711,28 @@
 
     <!-- EmailJS Integration -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        (function(){
-            emailjs.init({
-                publicKey: "TU_PUBLIC_KEY",
-                blockHeadless: true,
-                limitRate: {
-                    throttle: 5000,
-                },
-            });
-        })();
-
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            emailjs.sendForm('TU_SERVICE_ID', 'TU_TEMPLATE_ID', this)
-                .then(() => {
-                    alert('Mensaje enviado con éxito!');
-                    this.reset();
-                }, (error) => {
-                    alert('Error al enviar: ' + JSON.stringify(error));
-                });
+<script>
+    (function(){
+        emailjs.init({
+            publicKey: "tNki6t06LglpgLHI_",  // Reemplaza con tu Public Key
+            blockHeadless: true,
+            limitRate: {
+                throttle: 5000,
+            },
         });
-    </script>
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        emailjs.sendForm('service_9mfv7nl', 'template_swkylir', this)
+            .then(() => {
+                alert('Mensaje enviado con éxito!');
+                this.reset();
+            }, (error) => {
+                alert('Error al enviar: ' + JSON.stringify(error));
+            });
+    });
+</script>
 </body>
 </html>
