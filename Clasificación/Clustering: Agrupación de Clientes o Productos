@@ -1,0 +1,41 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.cluster import KMeans, DBSCAN
+from sklearn.preprocessing import StandardScaler
+
+# Generar datos sintéticos
+np.random.seed(42)
+data = pd.DataFrame({
+    'feature1': np.random.rand(100) * 100,  # Por ejemplo, "gasto mensual"
+    'feature2': np.random.rand(100) * 50    # Por ejemplo, "número de transacciones"
+})
+
+# Estandarizar los datos
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(data)
+
+# --- Clustering con K-Means ---
+kmeans = KMeans(n_clusters=3, random_state=42)
+data['kmeans_cluster'] = kmeans.fit_predict(X_scaled)
+
+# --- Clustering con DBSCAN ---
+dbscan = DBSCAN(eps=0.8, min_samples=5)
+data['dbscan_cluster'] = dbscan.fit_predict(X_scaled)
+
+# --- Visualización de los clusters ---
+plt.figure(figsize=(12,5))
+
+# K-Means
+plt.subplot(1,2,1)
+sns.scatterplot(x=data['feature1'], y=data['feature2'], hue=data['kmeans_cluster'], palette='viridis')
+plt.title('Clusters con K-Means')
+
+# DBSCAN
+plt.subplot(1,2,2)
+sns.scatterplot(x=data['feature1'], y=data['feature2'], hue=data['dbscan_cluster'], palette='viridis')
+plt.title('Clusters con DBSCAN')
+
+plt.tight_layout()
+plt.show()
