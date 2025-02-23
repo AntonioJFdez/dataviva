@@ -268,111 +268,82 @@ nav a:hover::after {
 }
 <style>
 /* =========================
-   Estilos de Portafolio
+   Estilos Optimizados
 ========================= */
-#portfolio {
-    padding: 3rem 0;
-    background: var(--background);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    text-align: center;
-}
-
-#portfolio h2 {
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-    color: var(--primary);
-}
-
-.portfolio-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-}
-
 .portfolio-item {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    padding: 1.5rem;
-    width: 100%;
-    max-width: 380px;
-    margin: 0 auto;
-    text-align: center;
+    padding: 2rem;
+    transition: transform 0.3s ease;
 }
 
-.item-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2rem;
+.portfolio-item:hover {
+    transform: translateY(-5px);
 }
 
 .project-description {
     text-align: justify;
-    line-height: 1.7;
-    margin: 1rem 0;
+    line-height: 1.8;
+    margin: 1.5rem 0;
+    hyphens: auto;
+    text-justify: inter-word;
 }
 
 .project-links {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    width: 100%;
-    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-top: 1.5rem;
 }
 
 .cta-button {
-    padding: 0.8rem 1.8rem;
-    font-size: 0.9rem;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
     border-radius: 0.8rem;
-    min-width: 160px;
+    width: 100%;
+    text-align: center;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    text-decoration: none;
-    margin: 0 0.3rem;
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-details {
     background: var(--primary);
-    border: 2px solid var(--primary);
-    color: var(--white);
+    color: var(--white) !important;
+    box-shadow: 0 4px 6px rgba(44, 62, 80, 0.1);
 }
 
 .btn-details:hover {
-    background: var(--secondary);
-    color: var(--primary);
+    background: #1a2a3a;
+    box-shadow: 0 6px 12px rgba(44, 62, 80, 0.2);
 }
 
 .btn-code {
     background: var(--tertiary);
-    border: 2px solid var(--tertiary);
-    color: var(--white);
+    color: var(--white) !important;
+    box-shadow: 0 4px 6px rgba(127, 140, 141, 0.1);
 }
 
 .btn-code:hover {
-    background: var(--primary);
-    color: var(--white);
+    background: #6a7879;
+    box-shadow: 0 6px 12px rgba(127, 140, 141, 0.2);
 }
 
 @media (max-width: 768px) {
-    .portfolio-items {
-        flex-direction: column;
-        align-items: center;
-    }
     .project-links {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
+    
     .cta-button {
-        width: 100%;
-        min-width: auto;
-        padding: 0.8rem;
-        margin: 0.3rem 0;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .portfolio-item {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 }
 </style>
