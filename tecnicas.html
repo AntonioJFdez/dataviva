@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -13,6 +13,7 @@
       --text: #020202;
       --white: #ffffff;
       --border-radius: 1rem;
+      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     body {
       font-family: Arial, sans-serif;
@@ -21,6 +22,7 @@
       margin: 0;
       padding: 2rem;
       line-height: 1.6;
+      scroll-behavior: smooth; /* Scroll suave */
     }
     header, footer {
       text-align: center;
@@ -36,6 +38,12 @@
     }
     section {
       margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      position: relative; /* Para alinear el botón */
+      min-height: 300px; /* Altura mínima para uniformidad */
     }
     pre {
       background: #eee;
@@ -52,6 +60,24 @@
     }
     a:hover {
       text-decoration: underline;
+    }
+    .btn-details {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: var(--secondary);
+      color: var(--primary);
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: absolute; /* Posicionamiento absoluto */
+      bottom: 1.5rem; /* Alineado a la parte baja */
+      right: 1.5rem; /* Alineado a la derecha */
+      box-shadow: var(--box-shadow);
+    }
+    .btn-details:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(222, 191, 176, 0.4);
     }
   </style>
 </head>
@@ -88,9 +114,9 @@ data = pd.DataFrame({
 # Generar ventas con relación lineal y ruido
 data['sales'] = (
     2 * data['warehouse_capacity'] +
-    1.5 * data['distributor_reliability'] - 
-    0.5 * data['transport_cost'] + 
-    0.1 * data['marketing_spend'] + 
+    1.5 * data['distributor_reliability'] -
+    0.5 * data['transport_cost'] +
+    0.1 * data['marketing_spend'] +
     np.random.randn(100) * 10
 )
 
@@ -110,6 +136,7 @@ y_pred = model.predict(X_test)
 print("MSE:", mean_squared_error(y_test, y_pred))
 print("R2 Score:", r2_score(y_test, y_pred))
     </pre>
+    <a href="#modelo-predictivo" class="btn-details">Detalles del Proyecto</a>
   </section>
 
   <!-- Sección: Pronóstico de Series Temporales -->
@@ -144,6 +171,7 @@ model_prophet.plot(forecast)
 plt.title("Pronóstico de Ventas")
 plt.show()
     </pre>
+    <a href="#pronostico-temporal" class="btn-details">Detalles del Proyecto</a>
   </section>
 
   <!-- Sección: Segmentación de Clientes -->
@@ -196,78 +224,12 @@ plt.title('DBSCAN Clustering')
 plt.tight_layout()
 plt.show()
     </pre>
-  </section>
-
-  <!-- Sección: Clasificación/Automatización de Informes con Dash y Plotly -->
-  <section id="dash-plotly">
-    <h2>Clasificación/Automatización de Informes con Dash y Plotly</h2>
-    <p>
-      Este proyecto automatiza la generación de informes interactivos, utilizando Dash y Plotly para presentar visualizaciones y clasificaciones dinámicas de los datos, con el fin de simplificar la toma de decisiones.
-    </p>
-    <h3>Código Python:</h3>
-    <pre>
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
-import plotly.express as px
-import pandas as pd
-
-# Crear la aplicación Dash
-app = dash.Dash(__name__)
-
-# Datos de ejemplo
-df = pd.DataFrame({
-    'Categoría': ['A', 'B', 'C', 'D', 'E'],
-    'Valor': [10, 20, 30, 40, 50]
-})
-
-# Crear gráfico con Plotly
-fig = px.bar(df, x='Categoría', y='Valor', title="Clasificación de Datos")
-
-# Definir layout de la aplicación
-app.layout = html.Div([
-    html.H1("Automatización de Informes con Dash y Plotly"),
-    dcc.Graph(figure=fig)
-])
-
-# Ejecutar servidor
-if __name__ == '__main__':
-    app.run_server(debug=True)
-    </pre>
-  </section>
-
-  <!-- Sección: Clasificación/Análisis Exploratorio Avanzado con Pandas, Seaborn y Matplotlib -->
-  <section id="analisis-exploratorio">
-    <h2>Clasificación/Análisis Exploratorio Avanzado con Pandas, Seaborn y Matplotlib</h2>
-    <p>
-      Este proyecto realiza un análisis exploratorio avanzado de datos, utilizando Pandas, Seaborn y Matplotlib para obtener insights detallados sobre las distribuciones y correlaciones de las variables.
-    </p>
-    <h3>Código Python:</h3>
-    <pre>
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-# Cargar dataset de ejemplo
-df = sns.load_dataset('iris')
-
-# Análisis exploratorio
-sns.pairplot(df, hue='species')
-plt.title('Análisis Exploratorio de Datos con Seaborn')
-plt.show()
-
-# Correlación entre variables
-corr_matrix = df.corr()
-sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
-plt.title('Matriz de Correlación')
-plt.show()
-    </pre>
+    <a href="#clustering" class="btn-details">Detalles del Proyecto</a>
   </section>
 
   <footer>
-    <p><a href="index.html">Volver al Portafolio</a></p>
+    <p><a href="index.html" class="btn-details">Volver al Portafolio</a></p>
   </footer>
 
 </body>
 </html>
-
