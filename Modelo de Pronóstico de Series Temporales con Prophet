@@ -1,0 +1,22 @@
+import pandas as pd
+from prophet import Prophet
+import matplotlib.pyplot as plt
+
+# Generar datos sintéticos diarios para un año
+date_rng = pd.date_range(start='2022-01-01', end='2022-12-31', freq='D')
+df = pd.DataFrame(date_rng, columns=['ds'])
+np.random.seed(42)
+df['y'] = 100 + np.sin(np.linspace(0, 2 * np.pi, len(df))) * 20 + np.random.randn(len(df)) * 5
+
+# Inicializar y ajustar el modelo Prophet
+model_prophet = Prophet()
+model_prophet.fit(df)
+
+# Crear un dataframe para predecir 30 días adicionales
+future = model_prophet.make_future_dataframe(periods=30)
+forecast = model_prophet.predict(future)
+
+# Visualizar el pronóstico
+fig = model_prophet.plot(forecast)
+plt.title("Pronóstico de Ventas")
+plt.show()
