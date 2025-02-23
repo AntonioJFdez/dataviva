@@ -270,26 +270,8 @@ nav a:hover::after {
 /* =========================
    Estilos Optimizados
 ========================= */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.portfolio-items {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-    max-width: 900px;
-}
-
 .portfolio-item {
     padding: 2rem;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -300,30 +282,33 @@ nav a:hover::after {
 .project-description {
     text-align: justify;
     line-height: 1.8;
-    margin: 1.5rem 0;
+    margin: 0.75rem 0;
     hyphens: auto;
     text-justify: inter-word;
 }
 
 .project-links {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 1.5rem;
     margin-top: 1.5rem;
 }
 
 .cta-button {
-    padding: 1rem 1.5rem;
+    padding: 1rem;
     font-size: 1rem;
     border-radius: 0.8rem;
-    width: 200px;
+    width: 100%;
     text-align: center;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.3s ease-in-out;
     border: none;
     font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
 }
 
 .btn-details {
@@ -348,17 +333,21 @@ nav a:hover::after {
     box-shadow: 0 6px 12px rgba(127, 140, 141, 0.2);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .project-links {
         flex-direction: column;
-        align-items: center;
         gap: 1rem;
     }
-
+    
     .cta-button {
-        width: 100%;
-        max-width: 300px;
+        padding: 1rem;
+        font-size: 1rem;
+        max-width: none;
+    }
+    
+    .portfolio-item {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 }
 </style>
