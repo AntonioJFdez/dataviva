@@ -2,17 +2,22 @@
    VARIABLES & GLOBAL CONFIG (CORREGIDO)
 ================================================ */
 :root {
-  --primary: #2c3e50;
-  --secondary: #debfb0;
-  --tertiary: #7f8c8d;
-  --background: #f5f2ea;
-  --text: #020202;
-  --white: #ffffff;
+  --primary: #2c3e50;        /* Color principal (azul oscuro) */
+  --secondary: #debfb0;      /* Color secundario (beige) */
+  --tertiary: #5a6a7b;       /* Nuevo gris más contrastante (mejor que 7f8c8d) */
+  --background: #f5f2ea;     /* Fondo claro */
+  --text: #020202;           /* Texto principal */
+  --white: #ffffff;          /* Blanco puro */
   
-  --border-radius: 2rem;
-  --box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  --border-radius: 1.5rem;   /* Reducido de 2rem para mejor proporción */
+  --box-shadow: 0 8px 24px rgba(44, 62, 80, 0.15); /* Sombra más definida */
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --header-height: 100px;
+
+  /* Nuevas variables específicas para botones */
+  --btn-padding: 0.9rem 2rem;
+  --btn-font-size: 0.95rem;
+  --btn-gap: 1.5rem;
 }
 
 /* ================================================
@@ -152,25 +157,65 @@ nav a:hover::after {
   letter-spacing: 0.05em;
 }
 
-/* ================================================
-   BOTÓN MEJORADO
-================================================ */
+/* ======================
+   ESTILOS DE BOTONES
+====================== */
 .cta-button {
-  display: inline-block;
-  padding: 1.5rem 4rem;
-  font-size: 1.4rem;
-  background: var(--secondary);
-  color: var(--primary);
+  padding: var(--btn-padding);
+  font-size: var(--btn-font-size);
   border-radius: var(--border-radius);
-  text-decoration: none;
   transition: var(--transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
   border: 2px solid transparent;
-  box-shadow: 0 8px 24px rgba(222, 191, 176, 0.3);
+  font-weight: 600;
+  text-align: center;
 }
 
-.cta-button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(222, 191, 176, 0.4);
+.btn-details {
+  background: var(--primary);
+  color: var(--white) !important;
+  box-shadow: var(--box-shadow);
+}
+
+.btn-details:hover {
+  background: var(--secondary);
+  color: var(--primary) !important;
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+.btn-code {
+  background: var(--tertiary);
+  color: var(--white) !important;
+  box-shadow: var(--box-shadow);
+}
+
+.btn-code:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
+  border-color: var(--tertiary);
+}
+
+.project-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--btn-gap);
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .project-links {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-button {
+    padding: 0.75rem 1.5rem;
+  }
 }
 
 /* ================================================
