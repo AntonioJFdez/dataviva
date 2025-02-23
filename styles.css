@@ -161,10 +161,13 @@ nav a:hover::after {
    ESTILOS DE BOTONES
 ====================== */
 .cta-button {
-  min-width: 180px; /* Ajusta según sea necesario */
-  width: 100%; /* Mantiene el diseño responsivo */
-  max-width: 250px; /* Limita el crecimiento excesivo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 50px; /* Ajusta según el diseño */
 }
+
 
 
 .btn-details {
