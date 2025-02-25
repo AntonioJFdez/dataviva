@@ -698,17 +698,17 @@
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contacto</h2>
-            <form class="contact-form" id="contact-form">
-                <input type="text" name="from_name" placeholder="Nombre Completo" required>
-                <input type="email" name="reply_to" placeholder="Tu Email" required>
-                <textarea name="message" rows="6" placeholder="Tu Mensaje" required></textarea>
-                <button type="submit" class="cta-button">Enviar Mensaje</button>
-            </form>
-        </div>
-    </section>
+   <section id="contact">
+  <div class="container">
+    <h2>Contacto</h2>
+    <form class="contact-form" action="https://formsubmit.co/datavivalab@gmail.com" method="POST">
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="email" name="email" placeholder="Tu Email" required>
+      <textarea name="mensaje" rows="6" placeholder="Tu Mensaje" required></textarea>
+      <button type="submit" class="cta-button">Enviar Mensaje</button>
+    </form>
+  </div>
+</section>
 
     <footer>
         <div class="container">
@@ -716,30 +716,5 @@
         </div>
     </footer>
 
-    <!-- EmailJS Integration -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-    (function(){
-        emailjs.init({
-            publicKey: "tNki6t06LglpgLHI_",  // Reemplaza con tu Public Key
-            blockHeadless: true,
-            limitRate: {
-                throttle: 5000,
-            },
-        });
-    })();
-
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        emailjs.sendForm('service_9mfv7nl', 'template_swkylir', this)
-            .then(() => {
-                alert('Mensaje enviado con éxito!');
-                this.reset();
-            }, (error) => {
-                alert('Error al enviar: ' + JSON.stringify(error));
-            });
-    });
-</script>
 </body>
 </html>
