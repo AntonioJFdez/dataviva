@@ -7,42 +7,36 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="Logo-favicon.ico">
     <!-- Versión para Apple dispositivos -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<!-- Versión para Windows -->
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Versión para Windows -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <title>Antonio J. Fernández - Data Viva</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    /* Ajuste scroll para navegadores modernos */
-:target {
-  scroll-margin-top: var(--altura-header); /* Usar CSS variable */
-}
 
-.header-fijo {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  /* Altura inicial para móvil */
-  height: 60px; 
-}
+    <!-- CSS -->
+    <style>
+        /* === ESTILOS PARA SCROLL PERFECTO === */
+        :root {
+            --altura-header: 100px; /* Altura del header (ajusta según tu diseño) */
+        }
 
-/* Define variable CSS */
-:root {
-  --altura-header: 60px; /* Valor por defecto móvil */
-}
+        :target {
+            scroll-margin-top: var(--altura-header); /* Ajuste para navegadores modernos */
+        }
 
-@media (min-width: 768px) {
-  :root {
-    --altura-header: 80px; /* Escritorio */
-  }
-}
+        section {
+            padding-top: calc(var(--altura-header) + 20px); /* Espacio para el header */
+            margin-top: calc(var(--altura-header) * -1); /* Compensación */
+        }
 
-/* Compensación para secciones */
-section {
-  padding-top: calc(var(--altura-header) + 20px);
-  margin-top: calc(var(--altura-header) * -1);
-}
+        header {
+            position: fixed; /* Header fijo */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            height: var(--altura-header); /* Altura dinámica */
+        }
     <style>
         :root {
             --primary: #2c3e50;
@@ -444,14 +438,14 @@ section {
 </head>
 <body>
 <!-- HEADER -->
-<header>
-    <nav class="nav-container">
-        <a href="#" class="nav-logo">
-            <img src="Logo Data Viva actual.png" alt="Data Viva" class="logo-img">
-            <span class="logo-text">Data Viva</span>
-        </a>
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="Logo Data Viva actual.png" alt="Data Viva" class="logo-img">
+                <span class="logo-text">Data Viva</span>
+            </a>
 
-        <ul class="nav-menu">
+            <ul class="nav-menu">
                 <li><a href="#hero">Inicio</a></li>
                 <li><a href="#about">Sobre Mí</a></li>
                 <li><a href="#portfolio">Portafolio</a></li>
@@ -461,14 +455,13 @@ section {
                 <li><a href="#contact">Contacto</a></li>
             </ul>
 
-
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </nav>
-</header>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
 
     <section class="hero" id="hero">
         <div class="container">
@@ -748,6 +741,42 @@ section {
   </div>
 </section>
 
+        <!-- JAVASCRIPT PARA SCROLL PERFECTO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const enlaces = document.querySelectorAll('a[href^="#"]');
+            const header = document.querySelector('header');
+
+            enlaces.forEach(enlace => {
+                enlace.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const objetivo = document.querySelector(enlace.hash);
+
+                    if (objetivo) {
+                        // Calcular altura ACTUAL del header (incluyendo menú desplegado)
+                        const alturaHeader = header.offsetHeight;
+
+                        // Scroll preciso
+                        window.scrollTo({
+                            top: objetivo.offsetTop - alturaHeader,
+                            behavior: 'smooth'
+                        });
+
+                        // Actualizar URL
+                        history.replaceState(null, null, enlace.hash);
+                    }
+                });
+            });
+
+            // Actualizar en redimensionamiento (para menús responsivos)
+            window.addEventListener('resize', () => {
+                document.querySelectorAll('section').forEach(seccion => {
+                    seccion.style.scrollMarginTop = header.offsetHeight + 'px';
+                });
+            });
+        });
+    </script>
+    
     <footer>
         <div class="container">
             <p>&copy; 2025 Data Viva. Todos los derechos reservados.</p>
