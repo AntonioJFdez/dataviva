@@ -64,6 +64,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
+        /* ============ ESTILOS ORIGINALES ============ */
         :root {
             --primary: #2c3e50;
             --secondary: #debfb0;
@@ -71,16 +72,9 @@
             --background: #f5f2ea;
             --text: #020202;
             --white: #ffffff;
-            --border-radius: 2rem; /* Valor original */
-            --box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); /* Valor original */
+            --border-radius: 2rem;
+            --box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --header-height: 100px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
         body {
@@ -91,73 +85,21 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        section {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin: 4rem auto;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            width: 90%;
+        }
+
         .container {
             width: 90%;
             max-width: 1400px;
             margin: 0 auto;
             padding: 4rem 0;
-        }
-
-        /* Header */
-        header {
-            position: sticky;
-            top: 0;
-            background: var(--primary);
-            z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: var(--box-shadow);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .nav-logo img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid var(--white);
-            transition: var(--transition);
-        }
-
-        nav ul {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            padding: 0.5rem;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--secondary);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
         }
 
         /* Hero Section */
