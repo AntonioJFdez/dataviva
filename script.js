@@ -14,3 +14,9 @@ document.querySelectorAll(".nav-link").forEach(link => {
         navMenu.classList.remove("active");
     });
 });
+
+// Resetear scroll al cargar la página
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    history.scrollRestoration = 'manual'; // Desactiva el scroll automático del navegador
+});
