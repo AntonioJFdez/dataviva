@@ -1016,32 +1016,12 @@ section {
     background: #128C7E !important; /* Color hover oficial */
 }
 
-        /* Estilos específicos para los iconos */
-        .social-link {
-            text-decoration: none !important;
-            display: inline-block;
-            border: none !important;
-            box-shadow: none !important;
-        }
-
-        .social-link i {
-            font-size: 1.8rem;
-            color: #25D366; /* Color oficial de WhatsApp */
-            transition: transform 0.3s ease;
-        }
-
-        .social-link:hover i {
-            transform: scale(1.1);
-            color: #128C7E; /* Color hover WhatsApp */
-        }
-
-        /* Eliminar estilos por defecto de enlace */
-        .social-link:visited, 
-        .social-link:active, 
-        .social-link:focus {
-            color: inherit;
-            outline: none;
-        }
+        /* Fuerza la visualización del icono */
+.fa-whatsapp:before {
+    content: "\f232" !important; /* Código Unicode del icono */
+    font-family: "Font Awesome 6 Brands" !important;
+    display: inline-block;
+}
         
     </style>
 </head>
