@@ -1045,65 +1045,89 @@ a.whatsapp-icon {
     -webkit-tap-highlight-color: transparent;
 }
 
- /* Estilos unificados para ambos iconos */
+        /* Sistema de diseño para iconos */
         .social-links {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
             z-index: 1000;
             display: flex;
-            gap: 1.2rem;
+            gap: 1.5rem;
         }
 
         .social-link {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none !important;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Color específico para LinkedIn */
-        .social-link.linkedin {
-            background: #0077B5;
-            color: white;
+        /* Efecto hover profesional */
+        .social-link:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
         }
 
-        /* Color específico para WhatsApp */
-        .social-link.whatsapp {
-            background: #25D366;
-            color: white;
+        .social-link:hover:after {
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
         }
 
-        /* Efecto hover unificado */
-        .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-        }
-
-        /* Tamaño de iconos idéntico */
+        /* Ajuste milimétrico de iconos */
         .social-link i {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s;
         }
 
-        /* Responsive para móviles */
+        .fa-whatsapp { transform: translateY(1px) }
+        .fa-linkedin-in { transform: translateX(0.5px) }
+
+        /* Colores oficiales con profundidad */
+        .social-link.whatsapp {
+            background: linear-gradient(145deg, #25D366, #1EBEA5);
+        }
+
+        .social-link.linkedin {
+            background: linear-gradient(145deg, #0077B5, #004471);
+        }
+
+        /* Animación al hacer hover */
+        .social-link:hover i {
+            transform: scale(1.15) rotate(8deg);
+        }
+
+        /* Versión móvil perfecta */
         @media (max-width: 768px) {
             .social-links {
-                bottom: 1.2rem;
-                right: 1.2rem;
+                bottom: 1.5rem;
+                right: 1.5rem;
+                gap: 1rem;
             }
-            
+
             .social-link {
-                width: 42px;
-                height: 42px;
+                width: 46px;
+                height: 46px;
             }
-            
+
             .social-link i {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
         }
 
