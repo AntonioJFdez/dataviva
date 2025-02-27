@@ -460,3 +460,25 @@ body {
     overflow-anchor: none;
     padding-top: 80px; /* Altura header */
 }
+
+/* Ajustes de scroll */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Altura del header */
+}
+
+/* Compensación para todas las secciones */
+section[id] {
+    padding-top: 80px;
+    margin-top: -80px;
+}
+
+/* Header fijo */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Altura exacta */
+    z-index: 1000;
+}
