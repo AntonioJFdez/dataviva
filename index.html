@@ -1045,24 +1045,67 @@ a.whatsapp-icon {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Estilo del icono */
-.fa-whatsapp {
-    font-size: 2.5rem; /* Tamaño profesional */
-    color: #25D366; /* Color oficial de WhatsApp */
-    background: white;
-    padding: 12px;
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+ /* Estilos unificados para ambos iconos */
+        .social-links {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            gap: 1.2rem;
+        }
 
-/* Efecto hover */
-.fa-whatsapp:hover {
-    color: #128C7E !important; /* Color hover oficial */
-    transform: scale(1.1) translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-        
+        .social-link {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none !important;
+        }
+
+        /* Color específico para LinkedIn */
+        .social-link.linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        /* Color específico para WhatsApp */
+        .social-link.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        /* Efecto hover unificado */
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+
+        /* Tamaño de iconos idéntico */
+        .social-link i {
+            font-size: 1.4rem;
+        }
+
+        /* Responsive para móviles */
+        @media (max-width: 768px) {
+            .social-links {
+                bottom: 1.2rem;
+                right: 1.2rem;
+            }
+            
+            .social-link {
+                width: 42px;
+                height: 42px;
+            }
+            
+            .social-link i {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1078,13 +1121,26 @@ a.whatsapp-icon {
         </a>
     </div>
 
-    <!-- Estructura CORRECTA del enlace -->
-    <a href="https://wa.me/CODIGOPAISNUMERO" 
-       class="whatsapp-icon" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       aria-label="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+   <!-- Enlaces sociales -->
+    <div class="social-links">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/CODIGOPAISNUMERO" 
+           class="social-link whatsapp"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/tuperfil" 
+           class="social-link linkedin"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Perfil de LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
     
 <!-- HEADER -->
     <header>
