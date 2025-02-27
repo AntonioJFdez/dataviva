@@ -442,3 +442,9 @@ html {
         right: 0;
     }
 }
+
+/* Eliminar márgenes no deseados */
+body {
+    overflow-anchor: none;
+    padding-top: 80px; /* Altura header */
+}
