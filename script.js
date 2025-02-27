@@ -2,6 +2,7 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
+// Toggle menú
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
@@ -13,10 +14,4 @@ document.querySelectorAll(".nav-link").forEach(link => {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
     });
-});
-
-// Resetear scroll al cargar la página
-window.addEventListener('load', () => {
-    window.scrollTo(0, 0);
-    history.scrollRestoration = 'manual'; // Desactiva el scroll automático del navegador
 });
