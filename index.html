@@ -423,7 +423,7 @@ section {
 }
 
 /* ============================================== */
-/* ESTILOS UNIFICADOS PARA TODAS LAS SECCIONES    */
+/* ESTILOS UNIFICADOS Y REFINADOS PARA SECCIONES  */
 /* ============================================== */
 
 /* Contenedor principal de secciones */
@@ -431,76 +431,145 @@ section {
   background: var(--white);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  padding: 2.5rem;
+  padding: 3rem 2.5rem;
   margin: 3rem auto;
-  position: relative;
-  overflow: hidden;
+  max-width: 1200px;
+  width: 90%;
+  text-align: center;
 }
 
-/* Títulos de sección unificados */
+/* Títulos de sección refinados */
 section h2 {
   color: var(--primary);
   font-size: 2.8rem;
+  font-weight: 700;
   margin-bottom: 2.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 3px solid var(--secondary);
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--secondary);
+  display: inline-block;
   position: relative;
+}
+
+/* Subtítulos y textos */
+section h3 {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 2rem 0 1.5rem;
+}
+
+section p {
+  color: var(--text);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+  margin: 1.5rem auto;
+  max-width: 800px;
 }
 
 /* Contenido interno consistente */
 section .container,
 .download-section,
 .skill-category {
-  padding: 1.5rem;
-  background: rgba(255,255,255,0.95);
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.98);
   border-radius: calc(var(--border-radius) - 0.5rem);
-  margin: 1rem 0;
+  margin: 1.5rem auto;
+  text-align: center;
 }
 
-/* Elementos de listas/grids unificados */
+/* Elementos de listas/grids refinados */
 .portfolio-items,
 .download-grid,
 .skills-grid {
-  gap: 1.8rem;
-  padding: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1.5rem;
+  justify-content: center;
 }
 
 /* Elementos individuales (tarjetas, habilidades, etc.) */
 .portfolio-item,
 .download-card,
 .skill {
-  padding: 1.5rem;
-  border: 2px solid var(--background);
+  padding: 2rem;
+  border: 1px solid rgba(44, 62, 80, 0.1);
+  border-radius: var(--border-radius);
   transition: var(--transition);
+  background: var(--white);
+  text-align: center;
 }
 
-/* Efecto hover consistente */
+/* Efecto hover refinado */
 .portfolio-item:hover,
 .download-card:hover,
 .skill:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 30px rgba(44, 62, 80, 0.15);
+  border-color: var(--secondary);
+}
+
+/* Botones y elementos interactivos */
+.cta-button,
+.btn-details {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  background: var(--secondary);
+  color: var(--primary);
+  border-radius: var(--border-radius);
+  border: 2px solid transparent;
+  transition: var(--transition);
+  margin: 1.5rem auto;
+  display: inline-block;
+  text-align: center;
+}
+
+.cta-button:hover,
+.btn-details:hover {
+  background: transparent;
+  border-color: var(--secondary);
+  color: var(--primary);
+  transform: translateY(-3px);
 }
 
 /* Textos y elementos interactivos */
 .tech-stack,
 .badge-list {
-  margin: 1.2rem 0;
-  padding: 0.8rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
   background: var(--background);
   border-radius: 1.5rem;
+  display: inline-block;
 }
 
-/* Responsive unificado */
+/* Responsive refinado */
 @media (max-width: 768px) {
   section {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
     margin: 2rem auto;
     width: 95%;
   }
 
   section h2 {
     font-size: 2.2rem;
+    padding-bottom: 1rem;
+  }
+
+  section h3 {
+    font-size: 1.8rem;
+  }
+
+  section p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .portfolio-items,
+  .download-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
         
