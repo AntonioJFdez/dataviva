@@ -645,6 +645,123 @@ section::before {
     justify-content: center;
   }
 }
+
+/* ============ TÍTULOS DE SECCIÓN MEJORADOS ============ */
+.section-title {
+  color: var(--primary);
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 0 3rem 0;
+  padding: 0 2rem 1.5rem;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 2px;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 2px;
+  background: var(--secondary);
+  opacity: 0.6;
+}
+
+        /* ============ SECCIÓN CV Y FORMACIÓN ============ */
+#cv,
+#formacion {
+  max-width: 1400px; /* Más ancho que las demás secciones */
+  padding: 4rem 3rem;
+  margin: 4rem auto;
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--elevation-1);
+}
+
+#cv .content-block,
+#formacion .content-block {
+  max-width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 2.5rem;
+  margin: 2rem 0;
+  background: var(--white);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--elevation-1);
+}
+
+/* Separación entre CV y Formación */
+#cv {
+  margin-bottom: 2rem;
+}
+
+#formacion {
+  margin-top: 2rem;
+}
+
+/* Grid específico para CV y Formación */
+.cv-grid,
+.formacion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 2rem 0;
+}
+
+/* Tarjetas específicas para CV y Formación */
+.cv-card,
+.formacion-card {
+  background: var(--white);
+  border: 1px solid rgba(44, 62, 80, 0.08);
+  border-radius: var(--border-radius-sm);
+  padding: 2rem;
+  text-align: left;
+  transition: transform 0.3s var(--transition-timing);
+}
+
+.cv-card:hover,
+.formacion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--elevation-2);
+}
+
+/* Estilos específicos para títulos de CV y Formación */
+.cv-card h3,
+.formacion-card h3 {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.cv-card h3::after,
+.formacion-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--secondary);
+}
         
     </style>
 </head>
