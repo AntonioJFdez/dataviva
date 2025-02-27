@@ -1106,6 +1106,23 @@ a.whatsapp-icon {
                 font-size: 1.2rem;
             }
         }
+
+                /* Eliminar texto de enlace */
+        a.social-link {
+            font-size: 0 !important; /* Oculta cualquier texto residual */
+        }
+
+        /* Asegurar solo muestra el icono */
+        .social-link i {
+            font-size: 1.4rem; /* Tamaño del icono */
+            display: block !important;
+        }
+
+        /* Ocultar tooltips no deseados */
+        .social-link:after {
+            display: none !important;
+        }
+        
     </style>
 </head>
 <body>
@@ -1123,14 +1140,14 @@ a.whatsapp-icon {
 
    <!-- Enlaces sociales -->
     <div class="social-links">
-        <!-- WhatsApp -->
-        <a href="https://wa.me/CODIGOPAISNUMERO" 
-           class="social-link whatsapp"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Contactar por WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+    <!-- Enlace Wahtsapp CORREGIDO (sin texto) -->
+    <a href="https://wa.me/34621003808" 
+       class="social-link whatsapp"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
         <!-- LinkedIn -->
         <a href="https://linkedin.com/in/tuperfil" 
