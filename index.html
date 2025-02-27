@@ -1211,6 +1211,62 @@ a.whatsapp-icon {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15),
                 0 0 0 1px rgba(255,255,255,0.1) inset;
 }
+
+<style>
+/* ============ REVERTIR CAMBIOS NO DESEADOS ============ */
+/* Restaurar esquinas redondeadas generales */
+.container, section, .portfolio-item, .download-card {
+    border-radius: var(--border-radius) !important;
+    overflow: visible !important; /* Restaurar comportamiento original */
+}
+
+/* Recuperar diseño de contenedores */
+section {
+    padding: 4rem 2rem !important;
+    box-shadow: var(--box-shadow) !important;
+    background: var(--white) !important;
+    position: relative !important;
+    z-index: auto !important;
+}
+
+/* Corregir interferencia en textos */
+p, h1, h2, h3 {
+    text-shadow: none !important;
+    transform: none !important;
+    letter-spacing: normal !important;
+}
+
+/* ============ PROTEGER ESTILOS EXISTENTES ============ */
+/* Aislar los nuevos estilos sociales */
+.social-links {
+    all: initial; /* Reset total */
+    /* Estilos específicos */
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Contener efectos hover */
+.social-link:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+}
+
+/* ============ AJUSTE FINO DE COMPATIBILIDAD ============ */
+/* Restaurar sombras originales */
+.portfolio-item:hover, .download-card:hover {
+    box-shadow: var(--box-shadow) !important;
+    transform: translateY(-5px) !important;
+}
+
+/* Garantizar posición z-index */
+header { z-index: 1001 !important; }
+.social-links { z-index: 1000 !important; }
+
+        // Estos estilos deben ser los últimos en cargar
+@import url('social-icons-fix.css');
         
     </style>
 </head>
