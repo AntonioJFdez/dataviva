@@ -409,6 +409,11 @@ html {
     scroll-padding-top: 80px; /* Altura del header */
 }
 
+.project-detail {
+    padding-top: 100px; /* Espacio superior */
+    margin-top: -100px; /* Compensación */
+}
+
 #portfolio .portfolio-item {
     padding-top: 80px; /* Espacio superior */
     margin-top: -80px; /* Compensación */
