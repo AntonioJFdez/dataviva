@@ -426,18 +426,33 @@ section {
     margin-top: -80px; /* Compensación */
 }
 
-/* Aplica a todos los elementos destino de anclas */
+/* Ajuste scroll para navegadores modernos */
 :target {
-  scroll-margin-top: 80px; /* Ajusta según altura de tu header */
+  scroll-margin-top: var(--altura-header); /* Usar CSS variable */
 }
 
-/* Opcional: Scroll suave en todo el sitio */
-html {
-  scroll-behavior: smooth;
+.header-fijo {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Altura inicial para móvil */
+  height: 60px; 
 }
 
-/* Evita saltos visuales en carga inicial */
-.seccion {
-  padding-top: 20px; /* Espacio de respiro visual */
-  margin-top: -80px; /* Compensa el scroll-margin */
+/* Define variable CSS */
+:root {
+  --altura-header: 60px; /* Valor por defecto móvil */
+}
+
+@media (min-width: 768px) {
+  :root {
+    --altura-header: 80px; /* Escritorio */
+  }
+}
+
+/* Compensación para secciones */
+section {
+  padding-top: calc(var(--altura-header) + 20px);
+  margin-top: calc(var(--altura-header) * -1);
 }
