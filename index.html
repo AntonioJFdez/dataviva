@@ -423,153 +423,226 @@ section {
 }
 
 /* ============================================== */
-/* ESTILOS UNIFICADOS Y REFINADOS PARA SECCIONES  */
+/* SISTEMA DE DISEÑO HIPERCOHERENTE               */
 /* ============================================== */
 
-/* Contenedor principal de secciones */
-section {
-  background: var(--white);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  padding: 3rem 2.5rem;
-  margin: 3rem auto;
-  max-width: 1200px;
-  width: 90%;
-  text-align: center;
+:root {
+  /* Paleta mejorada con contrastes controlados */
+  --primary: #2c3e50;         /* Azul oscuro principal */
+  --secondary: #debfb0;       /* Beige como acento */
+  --tertiary: #7f8c8d;        /* Gris suave para detalles */
+  --background: #f5f2ea;      /* Fondo principal beige claro */
+  --text: #2d3436;           /* Negro suavizado para mejor legibilidad */
+  --white: #ffffff;          /* Blanco puro para contrastes */
+  
+  /* Nuevas variables para el sistema */
+  --elevation-1: 0 4px 12px rgba(44, 62, 80, 0.08);
+  --elevation-2: 0 8px 24px rgba(44, 62, 80, 0.12);
+  --border-radius-sm: 1rem;
+  --border-radius-lg: 2.5rem;
+  --transition-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Títulos de sección refinados */
-section h2 {
+/* ============ ESTRUCTURA BASE ============ */
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============ SECCIONES MAESTRAS ============ */
+section {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--elevation-1);
+  margin: 4rem auto;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  width: 90%;
+  position: relative;
+  overflow: hidden;
+  
+  /* Sistema de alineación perfecto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+/* ============ TIPOGRAFÍA PERFECTA ============ */
+.section-title {
   color: var(--primary);
   font-size: 2.8rem;
   font-weight: 700;
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid var(--secondary);
-  display: inline-block;
+  margin: 0 0 3rem 0;
+  padding: 0 2rem 1.5rem;
   position: relative;
+  text-align: center;
+  width: fit-content;
 }
 
-/* Subtítulos y textos */
-section h3 {
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: var(--secondary);
+}
+
+.section-subtitle {
   color: var(--primary);
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  margin: 2rem 0 1.5rem;
-}
-
-section p {
-  color: var(--text);
-  font-size: 1.1rem;
-  line-height: 1.8;
-  text-align: justify;
-  margin: 1.5rem auto;
-  max-width: 800px;
-}
-
-/* Contenido interno consistente */
-section .container,
-.download-section,
-.skill-category {
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.98);
-  border-radius: calc(var(--border-radius) - 0.5rem);
-  margin: 1.5rem auto;
+  margin: 2.5rem 0 1.5rem;
   text-align: center;
+  width: 100%;
 }
 
-/* Elementos de listas/grids refinados */
-.portfolio-items,
-.download-grid,
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 1.5rem;
-  justify-content: center;
-}
-
-/* Elementos individuales (tarjetas, habilidades, etc.) */
-.portfolio-item,
-.download-card,
-.skill {
-  padding: 2rem;
-  border: 1px solid rgba(44, 62, 80, 0.1);
-  border-radius: var(--border-radius);
-  transition: var(--transition);
+/* ============ SISTEMA DE CONTENIDO ============ */
+.content-block {
   background: var(--white);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--elevation-1);
+  padding: 2.5rem;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 800px;
+  transition: transform 0.3s var(--transition-timing);
+}
+
+.content-block:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--elevation-2);
+}
+
+/* ============ COMPONENTES PRECISOS ============ */
+/* Tarjetas */
+.card {
+  background: var(--white);
+  border: 1px solid rgba(44, 62, 80, 0.08);
+  border-radius: var(--border-radius-sm);
+  padding: 2rem;
+  margin: 1.5rem 0;
   text-align: center;
 }
 
-/* Efecto hover refinado */
-.portfolio-item:hover,
-.download-card:hover,
-.skill:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(44, 62, 80, 0.15);
-  border-color: var(--secondary);
+/* Botones */
+.btn {
+  padding: 1.2rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-sm);
+  transition: all 0.3s var(--transition-timing);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1rem 0;
 }
 
-/* Botones y elementos interactivos */
-.cta-button,
-.btn-details {
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+  border: 2px solid var(--primary);
+}
+
+.btn-primary:hover {
   background: var(--secondary);
   color: var(--primary);
-  border-radius: var(--border-radius);
-  border: 2px solid transparent;
-  transition: var(--transition);
-  margin: 1.5rem auto;
-  display: inline-block;
-  text-align: center;
-}
-
-.cta-button:hover,
-.btn-details:hover {
-  background: transparent;
   border-color: var(--secondary);
+}
+
+.btn-secondary {
+  background: var(--secondary);
   color: var(--primary);
-  transform: translateY(-3px);
+  border: 2px solid var(--secondary);
 }
 
-/* Textos y elementos interactivos */
-.tech-stack,
-.badge-list {
-  margin: 1.5rem 0;
-  padding: 1rem;
-  background: var(--background);
-  border-radius: 1.5rem;
-  display: inline-block;
+.btn-secondary:hover {
+  background: var(--primary);
+  color: var(--white);
 }
 
-/* Responsive refinado */
+/* Listas y grids */
+.grid-system {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  padding: 1.5rem 0;
+}
+
+/* ============ MICROINTERACCIONES ============ */
+.tech-badge {
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s var(--transition-timing);
+}
+
+.tech-badge:hover {
+  transform: scale(1.05);
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+/* ============ SISTEMA RESPONSIVE ============ */
 @media (max-width: 768px) {
   section {
-    padding: 2rem 1.5rem;
-    margin: 2rem auto;
+    padding: 3rem 1.5rem;
+    margin: 2.5rem auto;
     width: 95%;
   }
-
-  section h2 {
+  
+  .section-title {
     font-size: 2.2rem;
-    padding-bottom: 1rem;
+    padding: 0 1rem 1rem;
   }
+  
+  .section-title::after {
+    width: 80%;
+  }
+  
+  .content-block {
+    padding: 2rem;
+  }
+  
+  .grid-system {
+    grid-template-columns: 1fr;
+  }
+}
 
-  section h3 {
+@media (max-width: 480px) {
+  section {
+    border-radius: var(--border-radius-sm);
+    padding: 2rem 1rem;
+  }
+  
+  .section-title {
     font-size: 1.8rem;
   }
-
-  section p {
-    font-size: 1rem;
-    text-align: left;
-  }
-
-  .portfolio-items,
-  .download-grid,
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
         
