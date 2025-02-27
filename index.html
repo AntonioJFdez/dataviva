@@ -13,6 +13,36 @@
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <title>Antonio J. Fernández - Data Viva</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    /* Ajuste scroll para navegadores modernos */
+:target {
+  scroll-margin-top: var(--altura-header); /* Usar CSS variable */
+}
+
+.header-fijo {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Altura inicial para móvil */
+  height: 60px; 
+}
+
+/* Define variable CSS */
+:root {
+  --altura-header: 60px; /* Valor por defecto móvil */
+}
+
+@media (min-width: 768px) {
+  :root {
+    --altura-header: 80px; /* Escritorio */
+  }
+}
+
+/* Compensación para secciones */
+section {
+  padding-top: calc(var(--altura-header) + 20px);
+  margin-top: calc(var(--altura-header) * -1);
+}
     <style>
         :root {
             --primary: #2c3e50;
