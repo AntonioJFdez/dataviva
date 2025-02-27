@@ -6,438 +6,50 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="Logo-favicon.ico">
     <!-- Versión para Apple dispositivos -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<!-- Versión para Windows -->
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Versión para Windows -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <title>Antonio J. Fernández - Data Viva</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #debfb0;
-            --tertiary: #7f8c8d;
-            --background: #f5f2ea;
-            --text: #020202;
-            --white: #ffffff;
-            --border-radius: 2rem;
-            --box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --header-height: 100px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.8;
-            color: var(--text);
-            background: var(--background);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 4rem 0;
-        }
-
-        /* Header */
-        header {
-            position: sticky;
-            top: 0;
-            background: var(--primary);
-            z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: var(--box-shadow);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .nav-logo img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid var(--white);
-            transition: var(--transition);
-        }
-
-        nav ul {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            padding: 0.5rem;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--secondary);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: calc(100vh - var(--header-height));
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(45deg, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)),
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa') center/cover;
-            margin-top: var(--header-height);
-        }
-
-        .hero .container {
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            color: var(--white);
-            line-height: 1;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            margin: 2rem 0;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1.5rem 4rem;
-            font-size: 1.2rem;
-            background: var(--secondary);
-            color: var(--primary);
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            transition: var(--transition);
-            border: 2px solid transparent;
-            box-shadow: var(--box-shadow);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 32px rgba(222, 191, 176, 0.4);
-        }
-
-        /* Botones Portafolio Modificados */
-        .btn-details {
-            padding: 0.8rem 1.5rem !important;
-            font-size: 0.9rem !important;
-            border-radius: 1rem !important;
-            margin-top: auto;
-            min-width: 160px;
-            text-align: center;
-        }
-
-        .project-links {
-            margin-top: 1.5rem;
-            display: flex;
-            min-height: 50px;
-            align-items: flex-end;
-        }
-
-        /* Sobre Mí */
-        #about .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        #about img {
-            width: 300px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-
-        #about .bio {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        #about h2 {
-            color: var(--primary);
-            margin-bottom: 2rem;
-        }
-
-        #about p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            text-align: justify;
-        }
-
-        /* Portafolio */
-        .portfolio-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .portfolio-item {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .item-content {
-            padding: 2rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-
-        .tech-item {
-            background: var(--primary);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 1rem;
-            font-size: 0.9rem;
-        }
-
-        /* Habilidades */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .skill {
-            background: var(--tertiary);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-        }
-
-        /* Sección CV */
-        .download-section {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: var(--box-shadow);
-        }
-
-        .download-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .download-card {
-            background: var(--background);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .download-card p {
-            margin: 1rem 0;
-        }
-
-        .badge-list {
-            list-style: none;
-            padding: 1rem 0;
-        }
-
-        .badge-list li {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            margin: 0.3rem;
-            font-size: 0.9rem;
-        }
-
-        /* Sección Formación */
-        .skill-category {
-            margin-bottom: 3rem;
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .skill-category h3 {
-            color: var(--secondary);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 0.5rem;
-        }
-
-        .skill {
-            background: var(--tertiary);
-            color: var(--white);
-            padding: 0.8rem 1.5rem;
-            border-radius: 1.5rem;
-            text-align: center;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .skill:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Contacto */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            border: 2px solid var(--background);
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: var(--secondary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(222, 191, 176, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: var(--white);
-            text-align: center;
-            padding: 3rem 0;
-            margin-top: 4rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .hero h1 { font-size: 3.5rem; }
-            .hero h2 { font-size: 2rem; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-container { flex-direction: column; gap: 1.5rem; }
-            nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
-            .hero { height: auto; padding: 4rem 0; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero h2 { font-size: 1.8rem; }
-            #about .about-content { flex-direction: column; text-align: center; }
-            .download-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero h2 { font-size: 1.5rem; }
-            .cta-button { width: 100%; padding: 1.2rem; }
-            .skill { padding: 0.6rem 1rem; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="nav-container container">
-            <div class="nav-logo">
-                <img src="Logo Data Viva actual.png" alt="Logo Data Viva">
+        <nav class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="logo.jpg" alt="Logo Antonio J. Fernández">
                 <span>Data Viva</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">Sobre mí</a></li>
+                <li><a href="#portfolio" class="nav-link">Portafolio</a></li>
+                <li><a href="#skills" class="nav-link">Habilidades</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#hero">Inicio</a></li>
-                    <li><a href="#about">Sobre Mí</a></li>
-                    <li><a href="#portfolio">Portafolio</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#cv">CV</a></li>
-                    <li><a href="#formacion">Formación</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
+        </nav>
     </header>
 
-    <section class="hero" id="hero">
+    <section class="hero">
         <div class="container">
-            <h1>Antonio J. Fernández</h1>
-            <h2>Científico de Datos y Analista de Datos</h2>
-            <a href="#portfolio" class="cta-button">Ver Portafolio</a>
+            <h1 class="fade-in delay-1">Antonio J. Fernández</h1>
+            <div class="typing-container fade-in delay-2">
+                <span class="typing-text">Data Science & Analytics</span>
+            </div>
+            <a href="#contact" class="cta-button fade-in delay-3">Contactar</a>
+            <a href="#about" class="hero-scroll"><i class="fas fa-chevron-down"></i></a>
         </div>
+        <div class="bg-decoration decoration-1"></div>
+        <div class="bg-decoration decoration-2"></div>
     </section>
 
     <section id="about">
