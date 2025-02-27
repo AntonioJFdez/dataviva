@@ -300,31 +300,3 @@ footer {
     text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Mejora visual del logo */
-.nav-logo img {
-    width: 70px; /* Tamaño aumentado */
-    height: 70px;
-    border: 2px solid #debfb0; /* Borde acorde al tema */
-    box-shadow: 0 0 15px rgba(222, 191, 176, 0.3); /* Sutil efecto de brillo */
-    transition: all 0.3s ease;
-}
-
-@media (max-width: 768px) {
-    .nav-logo img {
-        width: 50px;
-        height: 50px;
-    }
-    .nav-logo .logo-text {
-        font-size: 1.1rem;
-    }
-}
-
-html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
-
-body {
-    overflow-anchor: none; /* Previene scroll automático en Chrome */
-    padding-top: var(--header-height); /* Asegura espacio para header fijo */
-}
