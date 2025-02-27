@@ -289,14 +289,4 @@ footer {
     .cta-button { width: 100%; padding: 1.2rem; }
 }
 
-/* Mejoras para el texto del logo */
-.nav-logo .logo-text {
-    font-family: 'Poppins', sans-serif; /* Cambia la tipografía */
-    font-weight: 700; /* Grosor de la fuente */
-    color: #debfb0 !important; /* Color terciario del tema */
-    margin-left: 10px;
-    font-size: 1.4rem;
-    letter-spacing: 0.05em;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
 
