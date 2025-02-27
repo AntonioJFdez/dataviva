@@ -12,7 +12,55 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <title>Antonio J. Fernández - Data Viva</title>
-    <p>Transformando datos en estrategias de alto impacto comercial.</p>
+    <meta name="description" content="Transformando datos en estrategias de alto impacto comercial.">
+        <!-- Enlace a Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* ============ ESTILOS PARA ENLACES SOCIALES ============ */
+        .social-links {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-link {
+            background: var(--primary);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--elevation-2);
+            transition: all 0.3s var(--transition-timing);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .social-link i {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .social-links {
+                bottom: 1rem;
+                right: 1rem;
+            }
+            
+            .social-link {
+                width: 45px;
+                height: 45px;
+            }
+        }
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
@@ -954,6 +1002,18 @@ section {
     </style>
 </head>
 <body>
+
+        <!-- Botones flotantes -->
+    <div class="social-links">
+        <a href="+34621003808" class="social-link" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        
+        <a href="www.linkedin.com/in/antonioj-fernández-científicodedatos-analistadedatos" class="social-link" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+    
 <!-- HEADER -->
     <header>
         <nav class="nav-container">
