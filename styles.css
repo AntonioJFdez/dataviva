@@ -288,3 +288,48 @@ footer {
     .hero h2 { font-size: 1.5rem; }
     .cta-button { width: 100%; padding: 1.2rem; }
 }
+
+/* Mantener todo el CSS que ya tenías */
+/* Añadir estas reglas adicionales */
+
+/* Mejoras de accesibilidad */
+:focus {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
+}
+
+/* Optimización móvil */
+@media (max-width: 480px) {
+    .nav-logo span {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .cta-button {
+        font-size: 1rem;
+    }
+}
+
+/* Mejoras de rendimiento */
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Animaciones suaves */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
