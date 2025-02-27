@@ -1,19 +1,19 @@
-// Menú móvil
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-});
-
-// Scroll suave
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+// En tu script.js
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        // Cierra el menú móvil al hacer clic
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        
+        // Scroll suave mejorado
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - document.querySelector('header').offsetHeight,
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
