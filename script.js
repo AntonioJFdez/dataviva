@@ -1,10 +1,22 @@
-// Forzar scroll al inicio al cargar la página
-window.addEventListener('DOMContentLoaded', () => {
-    window.scrollTo(0, 0);
-    history.scrollRestoration = 'manual'; // Desactiva comportamiento por defecto
+// Cerrar menú al hacer scroll
+window.addEventListener('scroll', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
 });
 
-// Resetear scroll al recargar
-window.onbeforeunload = function() {
-    window.scrollTo(0, 0);
-};
+// Scroll suave mejorado
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
