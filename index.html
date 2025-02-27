@@ -14,29 +14,6 @@
     <title>Antonio J. Fernández - Data Viva</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <style>
-        /* === ESTILOS PARA SCROLL PERFECTO === */
-        :root {
-            --altura-header: 100px; /* Altura del header (ajusta según tu diseño) */
-        }
-
-        :target {
-            scroll-margin-top: var(--altura-header); /* Ajuste para navegadores modernos */
-        }
-
-        section {
-            padding-top: calc(var(--altura-header) + 20px); /* Espacio para el header */
-            margin-top: calc(var(--altura-header) * -1); /* Compensación */
-        }
-
-        header {
-            position: fixed; /* Header fijo */
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            height: var(--altura-header); /* Altura dinámica */
-        }
     <style>
         :root {
             --primary: #2c3e50;
@@ -434,6 +411,16 @@
             .cta-button { width: 100%; padding: 1.2rem; }
             .skill { padding: 0.6rem 1rem; }
         }
+
+        /* Ajuste para scroll perfecto */
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+section {
+    scroll-margin-top: 100px; /* Ajusta según la altura de tu header */
+}
+        
     </style>
 </head>
 <body>
@@ -740,42 +727,6 @@
     </form>
   </div>
 </section>
-
-        <!-- JAVASCRIPT PARA SCROLL PERFECTO -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const enlaces = document.querySelectorAll('a[href^="#"]');
-            const header = document.querySelector('header');
-
-            enlaces.forEach(enlace => {
-                enlace.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const objetivo = document.querySelector(enlace.hash);
-
-                    if (objetivo) {
-                        // Calcular altura ACTUAL del header (incluyendo menú desplegado)
-                        const alturaHeader = header.offsetHeight;
-
-                        // Scroll preciso
-                        window.scrollTo({
-                            top: objetivo.offsetTop - alturaHeader,
-                            behavior: 'smooth'
-                        });
-
-                        // Actualizar URL
-                        history.replaceState(null, null, enlace.hash);
-                    }
-                });
-            });
-
-            // Actualizar en redimensionamiento (para menús responsivos)
-            window.addEventListener('resize', () => {
-                document.querySelectorAll('section').forEach(seccion => {
-                    seccion.style.scrollMarginTop = header.offsetHeight + 'px';
-                });
-            });
-        });
-    </script>
     
     <footer>
         <div class="container">
@@ -783,6 +734,34 @@
         </div>
     </footer>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const enlaces = document.querySelectorAll('a[href^="#"]');
+        const header = document.querySelector('header');
+
+        enlaces.forEach(enlace => {
+            enlace.addEventListener('click', (e) => {
+                e.preventDefault();
+                const objetivo = document.querySelector(enlace.hash);
+
+                if (objetivo) {
+                    // Calcular altura del header
+                    const alturaHeader = header.offsetHeight;
+
+                    // Scroll preciso
+                    window.scrollTo({
+                        top: objetivo.offsetTop - alturaHeader,
+                        behavior: 'smooth'
+                    });
+
+                    // Actualizar URL
+                    history.replaceState(null, null, enlace.hash);
+                }
+            });
+        });
+    });
+</script>
+    
 </body>
 </html>
 
