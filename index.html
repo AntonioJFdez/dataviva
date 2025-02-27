@@ -1160,6 +1160,57 @@ a.whatsapp-icon {
     position: relative;
     z-index: 1;
 }
+
+    .social-link {
+        /* Añadir estas propiedades */
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+    }
+
+    .social-link:after {
+        /* Corregir el efecto de overflow */
+        width: 150%;
+        height: 150%;
+        top: -25%;
+        left: -25%;
+        /* Suavizar bordes */
+        filter: blur(2px);
+    }
+
+    /* Optimización para GPU */
+    .social-link, 
+    .social-link:after, 
+    .social-link i {
+        will-change: transform;
+        transform-style: preserve-3d;
+    }
+
+        .social-link {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    isolation: isolate;
+}
+
+.social-link:after {
+    /* Reducir crecimiento */
+    width: 140%;
+    height: 140%;
+    top: -20%;
+    left: -20%;
+    /* Suavizar transición */
+    transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+        .fa-whatsapp {
+    transform: translateY(1px) scale(0.98);
+}
+
+        .social-link {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15),
+                0 0 0 1px rgba(255,255,255,0.1) inset;
+}
         
     </style>
 </head>
