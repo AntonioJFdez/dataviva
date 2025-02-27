@@ -404,9 +404,16 @@ footer {
 }
 
 /* Ajuste para compensar header fijo */
+/* Asegura que el scroll tenga en cuenta el header */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px; /* Altura del header */
+}
+
+/* Compensación para secciones */
+section {
+    padding-top: 80px; /* Espacio superior */
+    margin-top: -80px; /* Compensación */
 }
 
 .project-detail {
