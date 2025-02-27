@@ -1122,6 +1122,20 @@ a.whatsapp-icon {
         .social-link:after {
             display: none !important;
         }
+
+/* Solución nuclear - Eliminar contenido textual */
+.social-link {
+    color: transparent !important;
+    text-indent: -9999px !important;
+    overflow: hidden !important;
+}
+
+.social-link i {
+    color: white !important; /* Restaurar color del icono */
+    text-indent: 0 !important;
+    position: relative;
+    z-index: 1;
+}
         
     </style>
 </head>
