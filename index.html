@@ -1016,16 +1016,24 @@ section {
     background: #128C7E !important; /* Color hover oficial */
 }
 
-        /* Fuerza la visualización del icono */
-.fa-whatsapp:before {
-    content: "\f232" !important; /* Código Unicode del icono */
+/* Fuerza la visualización si hay conflictos */
+i.fa-whatsapp:before {
+    content: "\f232" !important; /* Código Unicode WhatsApp */
     font-family: "Font Awesome 6 Brands" !important;
+    font-style: normal;
+    font-weight: 400;
     display: inline-block;
 }
 
-        a.social-link {
-    -webkit-tap-highlight-color: transparent !important;
-    -webkit-text-fill-color: inherit !important;
+        @media (max-width: 768px) {
+    .fa-whatsapp {
+        font-size: 2rem;
+        padding: 10px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
 }
 
 /* Reset de estilos para enlaces */
