@@ -405,10 +405,9 @@ footer {
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    scroll-padding-top: 80px; /* Altura del header */
 }
 
 body {
-    overflow-anchor: none; /* Previene scroll automático en Chrome */
-    padding-top: 80px; /* Asegura espacio para header fijo */
+    padding-top: 80px; /* Compensa el header fijo */
 }
