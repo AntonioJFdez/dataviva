@@ -435,3 +435,9 @@ section {
 html {
   scroll-behavior: smooth;
 }
+
+/* Evita saltos visuales en carga inicial */
+.seccion {
+  padding-top: 20px; /* Espacio de respiro visual */
+  margin-top: -80px; /* Compensa el scroll-margin */
+}
