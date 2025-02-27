@@ -403,13 +403,15 @@ footer {
     .cta-button { width: 100%; padding: 1.2rem; }
 }
 
+/* Ajuste para compensar header fijo */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px; /* Altura del header */
 }
 
-body {
-    padding-top: 80px; /* Compensa el header fijo */
+#portfolio .portfolio-item {
+    padding-top: 80px; /* Espacio superior */
+    margin-top: -80px; /* Compensación */
 }
 
 /* Desktop */
