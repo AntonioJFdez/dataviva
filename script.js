@@ -1,17 +1,10 @@
-// Menú móvil
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-
-// Toggle menú
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+// Forzar scroll al inicio al cargar la página
+window.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0);
+    history.scrollRestoration = 'manual'; // Desactiva comportamiento por defecto
 });
 
-// Cerrar menú al hacer clic en enlace
-document.querySelectorAll(".nav-link").forEach(link => {
-    link.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        navMenu.classList.remove("active");
-    });
-});
+// Resetear scroll al recargar
+window.onbeforeunload = function() {
+    window.scrollTo(0, 0);
+};
