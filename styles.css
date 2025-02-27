@@ -289,47 +289,32 @@ footer {
     .cta-button { width: 100%; padding: 1.2rem; }
 }
 
-/* Mantener todo el CSS que ya tenías */
-/* Añadir estas reglas adicionales */
-
-/* Mejoras de accesibilidad */
-:focus {
-    outline: 3px solid var(--secondary);
-    outline-offset: 3px;
+/* Mejoras para el texto del logo */
+.nav-logo .logo-text {
+    font-family: 'Poppins', sans-serif; /* Cambia la tipografía */
+    font-weight: 700; /* Grosor de la fuente */
+    color: #debfb0 !important; /* Color terciario del tema */
+    margin-left: 10px;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Optimización móvil */
-@media (max-width: 480px) {
-    .nav-logo span {
-        display: none;
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-        margin-top: 2rem;
-    }
-    
-    .cta-button {
-        font-size: 1rem;
-    }
+/* Mejora visual del logo */
+.nav-logo img {
+    width: 70px; /* Tamaño aumentado */
+    height: 70px;
+    border: 2px solid #debfb0; /* Borde acorde al tema */
+    box-shadow: 0 0 15px rgba(222, 191, 176, 0.3); /* Sutil efecto de brillo */
+    transition: all 0.3s ease;
 }
 
-/* Mejoras de rendimiento */
-img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
-    font-style: italic;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* Animaciones suaves */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+@media (max-width: 768px) {
+    .nav-logo img {
+        width: 50px;
+        height: 50px;
+    }
+    .nav-logo .logo-text {
+        font-size: 1.1rem;
     }
 }
