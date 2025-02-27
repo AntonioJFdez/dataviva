@@ -33,14 +33,17 @@ body {
     padding: 4rem 0;
 }
 
-/* Header */
+/* ========== HEADER ========== */
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    background: var(--primary);
+    left: 0;
+    width: 100%;
+    background: #2c3e50; /* Color primario */
     z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: var(--box-shadow);
+    padding: 0.5rem 0;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-container {
@@ -48,51 +51,98 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    height: 80px; /* Altura del header */
 }
 
+/* Logo */
 .nav-logo {
     display: flex;
     align-items: center;
     gap: 1rem;
+    text-decoration: none;
 }
 
-.nav-logo img {
-    width: 80px;
-    height: 80px;
+.logo-img {
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
-    border: 3px solid var(--white);
-    transition: var(--transition);
+    border: 3px solid #debfb0; /* Color secundario */
+    transition: all 0.3s ease;
+    object-fit: cover;
 }
 
-nav ul {
+.logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #debfb0 !important; /* Color secundario */
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Menú de navegación */
+.nav-menu {
     display: flex;
     gap: 2.5rem;
     list-style: none;
 }
 
-nav a {
-    color: var(--white);
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 600;
+.nav-link {
+    color: #ffffff !important;
+    font-size: 1rem;
+    font-weight: 500;
     padding: 0.5rem;
     position: relative;
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
+/* Mobile */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.bar {
+    display: block;
+    width: 25px;
     height: 3px;
-    background: var(--secondary);
-    transition: width 0.3s ease;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    border-radius: 3px;
 }
 
-nav a:hover::after {
-    width: 100%;
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: #2c3e50;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+        gap: 1.5rem;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .logo-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
 }
 
 /* Hero Section */
