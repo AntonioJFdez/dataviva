@@ -421,6 +421,88 @@ html {
 section {
     scroll-margin-top: 100px; /* Ajusta según la altura de tu header */
 }
+
+/* ============================================== */
+/* ESTILOS UNIFICADOS PARA TODAS LAS SECCIONES    */
+/* ============================================== */
+
+/* Contenedor principal de secciones */
+section {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2.5rem;
+  margin: 3rem auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Títulos de sección unificados */
+section h2 {
+  color: var(--primary);
+  font-size: 2.8rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--secondary);
+  position: relative;
+}
+
+/* Contenido interno consistente */
+section .container,
+.download-section,
+.skill-category {
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.95);
+  border-radius: calc(var(--border-radius) - 0.5rem);
+  margin: 1rem 0;
+}
+
+/* Elementos de listas/grids unificados */
+.portfolio-items,
+.download-grid,
+.skills-grid {
+  gap: 1.8rem;
+  padding: 1.2rem;
+}
+
+/* Elementos individuales (tarjetas, habilidades, etc.) */
+.portfolio-item,
+.download-card,
+.skill {
+  padding: 1.5rem;
+  border: 2px solid var(--background);
+  transition: var(--transition);
+}
+
+/* Efecto hover consistente */
+.portfolio-item:hover,
+.download-card:hover,
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Textos y elementos interactivos */
+.tech-stack,
+.badge-list {
+  margin: 1.2rem 0;
+  padding: 0.8rem;
+  background: var(--background);
+  border-radius: 1.5rem;
+}
+
+/* Responsive unificado */
+@media (max-width: 768px) {
+  section {
+    padding: 1.5rem;
+    margin: 2rem auto;
+    width: 95%;
+  }
+
+  section h2 {
+    font-size: 2.2rem;
+  }
+}
         
     </style>
 </head>
