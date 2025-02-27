@@ -403,4 +403,12 @@ footer {
     .cta-button { width: 100%; padding: 1.2rem; }
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
 
+body {
+    overflow-anchor: none; /* Previene scroll automático en Chrome */
+    padding-top: 80px; /* Asegura espacio para header fijo */
+}
