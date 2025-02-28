@@ -841,15 +841,8 @@ body {
       <button type="submit" class="cta-button">Enviar Mensaje</button>
     </form>
   </div>
-</section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Data Viva. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
@@ -861,6 +854,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+       
+</section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Data Viva. Todos los derechos reservados.</p>
+        </div>
+    </footer>
         
 </body>
 </html>
