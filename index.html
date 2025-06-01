@@ -49,7 +49,6 @@
             margin: 0 auto;
             padding: 3rem 0;
         }
-
         /* Header */
         header {
             position: sticky;
@@ -168,7 +167,7 @@
             font-weight: 700;
             letter-spacing: 0.03em;
         }
-        .download-section, .about-section, .skills-section, .video-section, .contact-section, .projects-section, .testimonials-section, .dashboard-explanation-section {
+        .download-section, .about-section, .skills-section, .video-section, .contact-section, .projects-section, .dashboard-explanation-section, .testimonials-section {
             background: var(--white);
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
@@ -215,28 +214,30 @@
         }
         /* Dashboard Explanation */
         .dashboard-explanation-section {
-            max-width: 760px;
-            margin: 0 auto 1.6rem auto;
             text-align: center;
+            max-width: 760px;
+            margin: 0 auto 2.2rem auto;
         }
         .dashboard-explanation-section h3 {
             color: var(--primary);
-            font-size: 1.13rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            margin-bottom: 1.1rem;
         }
         .dashboard-explanation-section p {
             color: #444;
             font-size: 1.08rem;
-            margin-bottom: 0.7rem;
+            margin-bottom: 1.1rem;
+            line-height: 1.7;
         }
         .dashboard-explanation-section .impact {
             color: var(--secondary);
             font-weight: 600;
             font-size: 1.05rem;
+            margin-bottom: 0.6rem;
         }
         .dashboard-explanation-section .cta {
-            font-size: 1.03rem;
             color: var(--primary);
+            font-size: 1.04rem;
             font-weight: 600;
         }
         /* About */
@@ -348,22 +349,6 @@
             transform: scale(1.06);
             background: var(--secondary);
             color: var(--primary);
-        }
-        /* Testimonials */
-        .testimonials-section {
-            padding: 2.3rem 2rem 2.3rem 2rem;
-        }
-        .testimonial {
-            text-align: center;
-            color: var(--tertiary);
-            font-style: italic;
-            font-size: 1.07rem;
-            padding: 1.2rem 0.8rem;
-            background: var(--background);
-            border-radius: 1.2rem;
-            box-shadow: 0 1px 8px rgba(44,62,80,0.06);
-            margin: 0 auto;
-            max-width: 620px;
         }
         /* Contacto */
         .contact-section h2 {
@@ -590,29 +575,26 @@
         </div>
     </section>
 
-    <!-- Explicación del Dashboard adaptada y optimizada -->
-    <section class="dashboard-explanation-section">
+    <!-- EXPLICACIÓN DEL DASHBOARD: FIEL AL PDF Y ADAPTADO AL ESTILO -->
+    <section class="dashboard-explanation-section container">
         <h3>¿Qué muestra este dashboard?</h3>
         <p>
-            Este dashboard fue diseñado para una plataforma que conecta bodegas de vino con distribuidores y clientes, permitiendo visualizar y analizar los datos clave de ventas y segmentos de clientes.
-            <br><br>
-            <b>Pestaña “Ventas por Canal”:</b> Analiza la distribución y evolución de las ventas totales y por canal de captación (<b>Instagram, Facebook, Recomendación, Flyers</b>, etc.), identifica los canales más rentables y compara el ticket medio según el origen de cada cliente.
-            <br><br>
-            <b>Pestaña “Clientes por Segmento”:</b> Examina el comportamiento de los clientes agrupados por segmentos y canal, visualiza el flujo de clientes nuevos y recurrentes, tasa de repetición y ticket medio por segmento, facilitando estrategias de fidelización y captación.
-            <br><br>
-            <b>KPIs principales:</b> Volumen de ventas total y por canal, ticket medio, clientes nuevos vs recurrentes, tasa de repetición, canal más eficaz y rentabilidad mensual.
-            <br>
-            Gracias a este dashboard, la dirección y el equipo comercial pueden tomar decisiones estratégicas sobre inversión publicitaria, campañas y priorización comercial, todo en una única vista interactiva.
+            El dashboard interactivo está enfocado en el análisis de ventas y clientes para un proyecto de distribución de vinos. Permite explorar la <b>evolución de las ventas totales</b> y la <b>distribución de clientes</b> en dos pestañas diferenciadas:<br><br>
+            <b>“Ventas por canal”:</b> Visualiza las ventas totales y la evolución mensual, con desgloses por tipo de cliente, tipo de venta y provincia. Permite analizar rápidamente tendencias, identificar los meses con mayor facturación y comparar el rendimiento por diferentes categorías.<br><br>
+            <b>“Clientes por segmento”:</b> Muestra el número de clientes, su segmentación y distribución por provincia y tipo de cliente, facilitando la identificación de patrones geográficos y comerciales.<br><br>
+            <b>KPIs clave:</b> Ventas totales, número de clientes, clientes nuevos y recurrentes, distribución por tipo y provincia.<br>
+            Este dashboard es una herramienta de reporting visual que simplifica el <b>seguimiento de la actividad comercial</b> y apoya la toma de decisiones estratégicas en proyectos de distribución y comercialización.
         </p>
-        <p class="impact">
-            🚀 Decisiones de negocio en tiempo real: optimiza tu inversión publicitaria y detecta oportunidades de crecimiento.<br>
-            🔄 Reporting automatizado, análisis y segmentación de clientes en una sola plataforma visual e interactiva.
-        </p>
-        <p class="cta">
+        <div class="impact">
+            🚀 Decisiones ágiles: detecta oportunidades de venta y optimiza tus acciones comerciales con visualización interactiva.<br>
+            🔄 Reporting automatizado para seguimiento de ventas y clientes.
+        </div>
+        <div class="cta">
             ¿Quieres ver más dashboards o soluciones personalizadas para tu empresa?<br>
-            <a href="#contact" style="color:var(--secondary);text-decoration:underline;">Contáctame y te enseño más casos de éxito</a>.
-        </p>
+            <a href="#contact" style="color:var(--secondary);text-decoration:underline;">Contáctame y te enseño más casos de éxito.</a>
+        </div>
     </section>
+    <!-- FIN EXPLICACIÓN DASHBOARD -->
 
     <!-- NUEVA SECCIÓN: PROYECTOS DE CIENCIA DE DATOS -->
     <section class="projects-section container" id="proyectos">
@@ -713,9 +695,9 @@
         </div>
     </section>
 
-    <section class="testimonials-section container">
+    <section class="testimonials-section container" style="margin-bottom:2.8rem;">
         <h2 class="section-title">Reseñas</h2>
-        <div class="testimonial">
+        <div class="testimonial" style="text-align:center; color:var(--tertiary); font-style:italic;">
             Muy pronto aquí podrás ver opiniones y valoraciones de clientes, compañeros y profesionales que han trabajado conmigo en proyectos de análisis y ciencia de datos.
         </div>
     </section>
