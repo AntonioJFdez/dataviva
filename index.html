@@ -134,21 +134,6 @@
             transform: translateY(-5px);
             box-shadow: 0 12px 32px rgba(222, 191, 176, 0.4);
         }
-        /* Botones Portafolio Modificados */
-        .btn-details {
-            padding: 0.8rem 1.5rem !important;
-            font-size: 0.9rem !important;
-            border-radius: 1rem !important;
-            margin-top: auto;
-            min-width: 160px;
-            text-align: center;
-        }
-        .project-links {
-            margin-top: 1.5rem;
-            display: flex;
-            min-height: 50px;
-            align-items: flex-end;
-        }
         /* Sobre Mí */
         #about .about-content {
             display: flex;
@@ -174,60 +159,6 @@
             line-height: 1.8;
             text-align: justify;
         }
-        /* Portafolio */
-        .portfolio-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .portfolio-item {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
-        .portfolio-item:hover { transform: translateY(-10px); }
-        .portfolio-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        .item-content {
-            padding: 2rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-        .tech-item {
-            background: var(--primary);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 1rem;
-            font-size: 0.9rem;
-        }
-        /* Habilidades */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
-        .skill {
-            background: var(--tertiary);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-        }
         /* Sección CV */
         .download-section {
             background: var(--white);
@@ -238,7 +169,7 @@
         }
         .download-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr;
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
@@ -249,21 +180,7 @@
             text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-        }
-        .download-card p { margin: 1rem 0; }
-        .badge-list {
-            list-style: none;
-            padding: 1rem 0;
-        }
-        .badge-list li {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            margin: 0.3rem;
-            font-size: 0.9rem;
+            justify-content: center;
         }
         /* Sección Formación */
         .skill-category {
@@ -359,7 +276,6 @@
                 <ul>
                     <li><a href="#hero">Inicio</a></li>
                     <li><a href="#about">Sobre Mí</a></li>
-                    <li><a href="#portfolio">Portafolio</a></li>
                     <li><a href="#skills">Habilidades</a></li>
                     <li><a href="#cv">CV</a></li>
                     <li><a href="#formacion">Formación</a></li>
@@ -373,7 +289,7 @@
         <div class="container">
             <h1>Antonio J. Fernández</h1>
             <h2>Científico de Datos y Analista de Datos</h2>
-            <a href="#portfolio" class="cta-button">Ver Portafolio</a>
+            <a href="#cv" class="cta-button">Ver CV</a>
         </div>
     </section>
 
@@ -400,137 +316,22 @@
         </div>
     </section>
 
-    <section id="portfolio">
-        <div class="container">
-            <h2>Proyectos Destacados</h2>
-            <div class="portfolio-items">
-                <!-- Proyecto 1 -->
-                <div class="portfolio-item">
-                    <div class="item-content">
-                        <h3>Modelo Predictivo de Ventas</h3>
-                        <div class="tech-stack">
-                            <span class="tech-item">Python</span>
-                            <span class="tech-item">Random Forest</span>
-                            <span class="tech-item">Scikit-learn</span>
-                        </div>
-                        <p class="project-description">
-                            <strong>Objetivo:</strong> Desarrollo de modelo predictivo con <strong>92% de precisión</strong> mediante técnicas avanzadas de machine learning y análisis de series temporales.
-                            <br><br>
-                            <strong>Logros:</strong> Optimización de la cadena logística mediante predicciones precisas, reducción de costos operativos en un 18%.
-                        </p>
-                        <div class="project-links">
-                            <a href="tecnicas.html#modelo-predictivo" class="cta-button btn-details">Detalles del Proyecto</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Proyecto 2 -->
-                <div class="portfolio-item">
-                    <div class="item-content">
-                        <h3>Pronóstico Series Temporales</h3>
-                        <div class="tech-stack">
-                            <span class="tech-item">Python</span>
-                            <span class="tech-item">Prophet</span>
-                            <span class="tech-item">Pandas</span>
-                        </div>
-                        <p class="project-description">
-                            <strong>Objetivo:</strong> Implementación de modelo de forecasting para predicción de tendencias estacionales con integración de variables externas.
-                            <br><br>
-                            <strong>Logros:</strong> Reducción del 15% en inventario inactivo y mejora del 22% en la precisión de pedidos.
-                        </p>
-                        <div class="project-links">
-                            <a href="tecnicas.html#pronostico-temporal" class="cta-button btn-details">Detalles del Proyecto</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Proyecto 3 -->
-                <div class="portfolio-item">
-                    <div class="item-content">
-                        <h3>Segmentación de Clientes</h3>
-                        <div class="tech-stack">
-                            <span class="tech-item">K-Means</span>
-                            <span class="tech-item">DBSCAN</span>
-                            <span class="tech-item">Seaborn</span>
-                        </div>
-                        <p class="project-description">
-                            <strong>Objetivo:</strong> Identificación de 5 clusters estratégicos mediante técnicas de aprendizaje no supervisado.
-                            <br><br>
-                            <strong>Logros:</strong> Personalización efectiva de campañas de marketing con incremento del 30% en conversiones.
-                        </p>
-                        <div class="project-links">
-                            <a href="tecnicas.html#clustering" class="cta-button btn-details">Detalles del Proyecto</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Proyecto 4 -->
-                <div class="portfolio-item">
-                    <div class="item-content">
-                        <h3>Análisis de Sentimientos en Redes Sociales</h3>
-                        <div class="tech-stack">
-                            <span class="tech-item">Python</span>
-                            <span class="tech-item">NLTK</span>
-                            <span class="tech-item">Transformers</span>
-                        </div>
-                        <p class="project-description">
-                            <strong>Objetivo:</strong> Análisis de sentimientos en tiempo real de publicaciones en redes sociales utilizando técnicas de Procesamiento de Lenguaje Natural (NLP).
-                            <br><br>
-                            <strong>Logros:</strong> Identificación de tendencias de opinión con un 85% de precisión, mejorando la toma de decisiones en estrategias de marketing.
-                        </p>
-                        <div class="project-links">
-                            <a href="tecnicas.html#analisis-sentimientos" class="cta-button btn-details">Detalles del Proyecto</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Proyecto 5 -->
-                <div class="portfolio-item">
-                    <div class="item-content">
-                        <h3>Automatización de Reportes con Python</h3>
-                        <div class="tech-stack">
-                            <span class="tech-item">Python</span>
-                            <span class="tech-item">Pandas</span>
-                            <span class="tech-item">Matplotlib</span>
-                        </div>
-                        <p class="project-description">
-                            <strong>Objetivo:</strong> Automatización de la generación de reportes mensuales para equipos comerciales, reduciendo el tiempo de creación de informes en un 70%.
-                            <br><br>
-                            <strong>Logros:</strong> Integración con bases de datos SQL y generación de gráficos dinámicos para análisis rápido.
-                        </p>
-                        <div class="project-links">
-                            <a href="tecnicas.html#automatizacion-reportes" class="cta-button btn-details">Detalles del Proyecto</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN CV ACTUALIZADA -->
+    <!-- SECCIÓN CV SOLO PDF -->
     <section id="cv" class="container">
         <div class="download-section">
             <h2>Currículum Vitae</h2>
             <div class="download-grid">
-                <div class="download-card" style="grid-column: span 2;">
+                <div class="download-card">
                     <h3>Visualiza y descarga mi CV en PDF</h3>
+                    <!-- Cambia la ruta del src si tu PDF está en otra carpeta o con otro nombre -->
                     <iframe 
                         src="media/cv-antonio-fernandez.pdf"
                         width="100%"
                         height="500px"
-                        style="border-radius:1rem; border:1px solid #ddd; margin-bottom:1rem;">
+                        style="border-radius:1rem; border:1px solid #ddd; margin-bottom:1rem;"
+                        title="CV Antonio J. Fernández">
                     </iframe>
-                    <br>
-                    <a href="media/cv-antonio-fernandez.pdf" download class="cta-button btn-details">Descargar CV en PDF</a>
-                </div>
-                <div class="download-card">
-                    <h3>Versión Texto</h3>
-                    <div class="bio-text">
-                        <p><strong>Antonio J. Fernández</strong></p>
-                        <ul class="badge-list">
-                            <li>Power BI</li>
-                            <li>Python</li>
-                            <li>Machine Learning</li>
-                            <li>Big Data</li>
-                        </ul>
-                        <p>Experiencia completa disponible en formato PDF</p>
-                    </div>
+                    <a href="media/cv-antonio-fernandez.pdf" download class="cta-button btn-details" style="margin-top:1.5rem;">Descargar CV en PDF</a>
                 </div>
             </div>
         </div>
@@ -591,57 +392,7 @@
                     <div class="skills-grid">
                         <div class="skill">ETL/ELT</div>
                         <div class="skill">SQL (MySQL, PostgreSQL)</div>
-                        <div class="skill">NoSQL (MongoDB, Cassandra)</div>
-                        <div class="skill">Big Data (Spark, Hadoop)</div>
-                        <div class="skill">Cloud (AWS, GCP, Azure)</div>
-                        <div class="skill">MLOps (Docker, Kubernetes)</div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Desarrollo & DevOps</h3>
-                    <div class="skills-grid">
-                        <div class="skill">Backend (Flask, Django)</div>
-                        <div class="skill">Contenerización</div>
-                        <div class="skill">AutoML (H2O.ai)</div>
-                        <div class="skill">CI/CD Pipelines</div>
-                        <div class="skill">Git/GitHub</div>
-                        <div class="skill">APIs REST</div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Infraestructura IT</h3>
-                    <div class="skills-grid">
-                        <div class="skill">Ciberseguridad (GDPR, SIEM)</div>
-                        <div class="skill">Redes & SysAdmin</div>
-                        <div class="skill">Automatización (Ansible, Bash)</div>
-                        <div class="skill">Soporte TI Avanzado</div>
-                        <div class="skill">Monitorización</div>
-                        <div class="skill">DevSecOps</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2>Contacto</h2>
-            <form class="contact-form" action="https://formsubmit.co/datavivalab@gmail.com" method="POST">
-                <input type="text" name="nombre" placeholder="Nombre" required>
-                <input type="email" name="email" placeholder="Tu Email" required>
-                <textarea name="mensaje" rows="6" placeholder="Tu Mensaje" required></textarea>
-                <button type="submit" class="cta-button">Enviar Mensaje</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Data Viva. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-</body>
-</html>
+                        <div class="skill">NoSQL (MongoDB,
 
 
 
