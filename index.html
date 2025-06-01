@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="Logo-favicon.ico">
-    <!-- Versión para Apple dispositivos -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<!-- Versión para Windows -->
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <title>Antonio J. Fernández - Data Viva</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -21,9 +18,9 @@
             --text: #020202;
             --white: #ffffff;
             --border-radius: 2rem;
-            --box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            --box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --header-height: 100px;
+            --header-height: 80px;
         }
 
         * {
@@ -37,14 +34,13 @@
             line-height: 1.8;
             color: var(--text);
             background: var(--background);
-            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            width: 90%;
-            max-width: 1400px;
+            width: 92%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 0;
+            padding: 3rem 0;
         }
 
         /* Header */
@@ -53,329 +49,274 @@
             top: 0;
             background: var(--primary);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 0.5rem 0;
             box-shadow: var(--box-shadow);
         }
-
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 2rem;
         }
-
         .nav-logo {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
-
         .nav-logo img {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            border: 3px solid var(--white);
-            transition: var(--transition);
+            border: 3px solid var(--secondary);
         }
-
+        .nav-logo span {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
         nav ul {
             display: flex;
-            gap: 2.5rem;
+            gap: 2.2rem;
             list-style: none;
         }
-
         nav a {
             color: var(--white);
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            padding: 0.5rem;
+            letter-spacing: 0.03em;
+            padding: 0.4rem 0.9rem;
+            border-radius: 1.5rem;
+            transition: background 0.2s;
             position: relative;
-            transition: var(--transition);
         }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--secondary);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: calc(100vh - var(--header-height));
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(45deg, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)),
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa') center/cover;
-            margin-top: var(--header-height);
-        }
-
-        .hero .container {
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            color: var(--white);
-            line-height: 1;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            margin: 2rem 0;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1.5rem 4rem;
-            font-size: 1.2rem;
+        nav a:hover {
             background: var(--secondary);
             color: var(--primary);
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            transition: var(--transition);
-            border: 2px solid transparent;
-            box-shadow: var(--box-shadow);
         }
 
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 32px rgba(222, 191, 176, 0.4);
-        }
-
-        /* Botones Portafolio Modificados */
-        .btn-details {
-            padding: 0.8rem 1.5rem !important;
-            font-size: 0.9rem !important;
-            border-radius: 1rem !important;
-            margin-top: auto;
-            min-width: 160px;
-            text-align: center;
-        }
-
-        .project-links {
-            margin-top: 1.5rem;
+        /* Hero */
+        .hero {
+            min-height: 400px;
             display: flex;
-            min-height: 50px;
-            align-items: flex-end;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, rgba(44,62,80,0.94), rgba(222,191,176,0.30)), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80') center/cover;
+            border-bottom-left-radius: 2.5rem;
+            border-bottom-right-radius: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .hero .container {
+            text-align: center;
+            color: var(--white);
+            padding: 5rem 2rem 3rem 2rem;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 0.7rem;
+            font-weight: 700;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.13);
+            letter-spacing: 0.02em;
+        }
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(44,62,80,0.18);
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 2.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            border: none;
+            box-shadow: 0 4px 20px rgba(44,62,80,0.13);
+        }
+        .cta-button:hover {
+            background: var(--primary);
+            color: var(--secondary);
+            transform: scale(1.04) translateY(-3px);
+            box-shadow: 0 6px 24px rgba(222,191,176,0.21);
         }
 
-        /* Sobre Mí */
+        /* Secciones */
+        section {
+            margin-bottom: 2.8rem;
+        }
+        .section-title {
+            color: var(--primary);
+            text-align: center;
+            font-size: 2.1rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+        .download-section, .about-section, .skills-section, .video-section, .contact-section {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2.5rem 2rem 2.5rem 2rem;
+            margin-bottom: 2.2rem;
+        }
+
+        /* About */
         #about .about-content {
             display: flex;
             flex-wrap: wrap;
-            gap: 3rem;
+            gap: 2.5rem;
             align-items: center;
         }
-
         #about img {
-            width: 300px;
+            width: 230px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
         }
-
         #about .bio {
             flex: 1;
-            min-width: 300px;
+            min-width: 250px;
         }
-
         #about h2 {
             color: var(--primary);
-            margin-bottom: 2rem;
+            margin-bottom: 1.3rem;
         }
-
         #about p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            line-height: 1.75;
             text-align: justify;
         }
-
-        /* Portafolio */
-        .portfolio-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        /* Video */
+        .video-section h2 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 1.6rem;
         }
-
-        .portfolio-item {
-            background: var(--white);
-            border-radius: var(--border-radius);
+        .video-responsive {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
             overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
+            border-radius: 1.5rem;
+            margin-bottom: 1.3rem;
+            box-shadow: 0 6px 32px rgba(44,62,80,0.15);
+        }
+        .video-responsive iframe,
+        .video-responsive video {
+            position: absolute;
+            top:0; left:0; width:100%; height:100%;
+            border-radius: 1.5rem;
         }
 
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .item-content {
-            padding: 2rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .tech-stack {
+        /* CV */
+        .download-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem 0;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .download-card {
+            background: var(--background);
+            padding: 2rem 1.2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 2px 16px rgba(222,191,176,0.11);
+            flex: 1 1 340px;
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .download-card h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
         }
 
-        .tech-item {
-            background: var(--primary);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 1rem;
-            font-size: 0.9rem;
+        /* Skills */
+        .skills-section {
+            padding-bottom: 2.5rem;
         }
-
-        /* Habilidades */
         .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 1.7rem;
             justify-content: center;
         }
-
-        .skill {
-            background: var(--tertiary);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-        }
-
-        /* Sección CV */
-        .download-section {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: var(--box-shadow);
-        }
-
-        .download-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .download-card {
-            background: var(--background);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .download-card p {
-            margin: 1rem 0;
-        }
-
-        .badge-list {
-            list-style: none;
-            padding: 1rem 0;
-        }
-
-        .badge-list li {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            margin: 0.3rem;
-            font-size: 0.9rem;
-        }
-
-        /* Sección Formación */
         .skill-category {
-            margin-bottom: 3rem;
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: var(--border-radius);
+            background: rgba(255,255,255,0.55);
+            padding: 1.3rem 1.2rem 1.6rem 1.2rem;
+            border-radius: 1.7rem;
+            flex: 1 1 280px;
+            min-width: 240px;
+            max-width: 350px;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.06);
         }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
         .skill-category h3 {
             color: var(--secondary);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.15rem;
+            margin-bottom: 0.7rem;
+            font-weight: 700;
             border-bottom: 2px solid var(--secondary);
-            padding-bottom: 0.5rem;
+            display: inline-block;
+            padding-bottom: 0.3rem;
         }
-
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
         .skill {
-            background: var(--tertiary);
+            background: var(--primary);
             color: var(--white);
-            padding: 0.8rem 1.5rem;
-            border-radius: 1.5rem;
-            text-align: center;
-            font-size: 0.9rem;
-            transition: var(--transition);
+            padding: 0.65rem 1.2rem;
+            border-radius: 1.3rem;
+            font-size: 0.98rem;
+            margin-bottom: 0.4rem;
+            box-shadow: 0 1px 5px rgba(44,62,80,0.06);
+            transition: transform 0.18s;
         }
-
         .skill:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: scale(1.06);
+            background: var(--secondary);
+            color: var(--primary);
         }
 
         /* Contacto */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+        .contact-section h2 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 1.8rem;
         }
-
+        .contact-form {
+            max-width: 450px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
         .contact-form input,
         .contact-form textarea {
             width: 100%;
             padding: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             border: 2px solid var(--background);
-            border-radius: var(--border-radius);
+            border-radius: 1.5rem;
             transition: var(--transition);
+            font-family: inherit;
+            font-size: 1rem;
         }
-
         .contact-form input:focus,
         .contact-form textarea:focus {
             border-color: var(--secondary);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(222, 191, 176, 0.3);
+            box-shadow: 0 0 0 3px rgba(222, 191, 176, 0.18);
         }
 
         /* Footer */
@@ -383,31 +324,28 @@
             background: var(--primary);
             color: var(--white);
             text-align: center;
-            padding: 3rem 0;
-            margin-top: 4rem;
+            padding: 2.2rem 0 1rem 0;
+            margin-top: 2rem;
+            font-size: 1rem;
+            border-top-left-radius: 1.7rem;
+            border-top-right-radius: 1.7rem;
         }
 
         /* Responsive */
-        @media (max-width: 1200px) {
-            .hero h1 { font-size: 3.5rem; }
-            .hero h2 { font-size: 2rem; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-container { flex-direction: column; gap: 1.5rem; }
+        @media (max-width: 900px) {
+            .container { padding: 2rem 0; }
+            .nav-container { flex-direction: column; gap: 1.1rem; }
             nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
-            .hero { height: auto; padding: 4rem 0; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero h2 { font-size: 1.8rem; }
-            #about .about-content { flex-direction: column; text-align: center; }
-            .download-grid { grid-template-columns: 1fr; }
+            .hero .container { padding: 3.2rem 1rem 2rem 1rem; }
+            .about-content { flex-direction: column; text-align: center; }
+            .download-grid { flex-direction: column; gap: 1.5rem; }
+            .skills-container { flex-direction: column; gap: 1.5rem; }
         }
-
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero h2 { font-size: 1.5rem; }
-            .cta-button { width: 100%; padding: 1.2rem; }
-            .skill { padding: 0.6rem 1rem; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.1rem; }
+            .hero h2 { font-size: 1.13rem; }
+            .cta-button { font-size: 1rem; padding: 1rem 2rem; }
+            .download-card { padding: 1.2rem 0.7rem; }
         }
     </style>
 </head>
@@ -422,10 +360,8 @@
                 <ul>
                     <li><a href="#hero">Inicio</a></li>
                     <li><a href="#about">Sobre Mí</a></li>
-                    <li><a href="#portfolio">Portafolio</a></li>
                     <li><a href="#skills">Habilidades</a></li>
                     <li><a href="#cv">CV</a></li>
-                    <li><a href="#formacion">Formación</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
@@ -436,92 +372,132 @@
         <div class="container">
             <h1>Antonio J. Fernández</h1>
             <h2>Científico de Datos y Analista de Datos</h2>
-            <a href="#portfolio" class="cta-button">Ver Portafolio</a>
+            <a href="#cv" class="cta-button">Ver CV</a>
         </div>
     </section>
 
-<section id="video-cv" class="container">
-    <div class="download-section">
-        <h2>Vídeo CV</h2>
-        <video controls width="100%" height="500" style="border-radius:1rem; border:1px solid #ddd;">
-            <source src="Trayectoria Antonio J. Fernández Data Viva.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento video.
-        </video>
-        <p style="text-align:center">Si no se reproduce, <a href="TU_VIDEO.mp4" download>descárgalo aquí</a>.</p>
-    </div>
-</section>
+    <!-- VIDEO CV - Usa video mp4 local (<25MB) o embebido de Google Drive/YouTube -->
+    <section class="video-section container" id="video-cv">
+        <h2 class="section-title">Vídeo CV</h2>
+        <div class="video-responsive">
+            <!-- Cambia src si usas YouTube o Google Drive (ver mensajes anteriores) -->
+            <video controls>
+                <source src="Trayectoria Antonio J. Fernández Data Viva.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento video.
+            </video>
+        </div>
+        <p style="text-align:center; color: var(--primary);">Si no se reproduce, <a href="Trayectoria Antonio J. Fernández Data Viva.mp4" download style="color:var(--secondary);text-decoration:underline;">descárgalo aquí</a>.</p>
+    </section>
 
-    
-    <section id="about">
-        <div class="container">
-            <div class="about-content">
-                <img src="Logo Data Viva actual.png" alt="Antonio J. Fernández">
-                <div class="bio">
-                    <h2>Sobre Mí</h2>
-                    <p><strong>Transformando datos en estrategias de alto impacto comercial.</strong></p>
-                    
-                    <p>Soy un <strong>profesional apasionado por la Ciencia de Datos y Análisis de Datos</strong>, respaldado por una <strong>amplia y completa formación</strong> y un <strong>portafolio de proyectos</strong> que demuestran mi capacidad para <strong>convertir datos en soluciones estratégicas y accionables</strong>.</p>
-
-                    <p><strong>Experiencia Técnica y Herramientas de Vanguardia:</strong></p>
-                    <p>He desarrollado competencias avanzadas en <strong>Machine Learning, Deep Learning, Big Data</strong> y <strong>Exploratory Data Analysis (EDA)</strong>, implementando procesos de <strong>ETL, Data Wrangling, Data Cleaning, Feature Engineering</strong> y <strong>Model Evaluation</strong>. Domino herramientas y librerías líderes como <strong>Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, TensorFlow, Keras</strong> y utilizo <strong>Python</strong> para la <strong>Automatización IT</strong>, optimizando procesos y generando <strong>insights de alto valor</strong>.</p>
-                    
-                    <p><strong>Gestión de Proyectos y Liderazgo Digital:</strong></p>
-                    <p>Complemento mis habilidades técnicas con una sólida formación en <strong>gestión y liderazgo integral de proyectos de transformación digital</strong>. Gracias a la formación avanzada de <strong>Google</strong>, he profundizado en metodologías ágiles como <strong>SCRUM</strong> y <strong>Kanban</strong>, lo que me permite coordinar equipos multidisciplinares y conducir iniciativas de cambio en entornos dinámicos.</p>
-                    
-                    <p><strong>Bases de Datos, Automatización:</strong></p>
-                    <p>Cuento con experiencia en la administración de bases de datos <strong>SQL</strong> y <strong>NoSQL</strong> (<strong>MySQL, PostgreSQL, MongoDB, Cassandra</strong>) y en la implementación de soluciones de <strong>Automatización IT con Python</strong>. Además, estoy estudiando <strong>Ciberseguridad</strong> y <strong>Soporte TI</strong>, para asegurar la integridad y el rendimiento óptimo de los sistemas.</p>
-                    
-                    <p><strong>Enfoque en Oportunidades 100% Remotas en España:</strong></p>
-                    <p>Estoy comprometido con oportunidades <strong>100% remotas en España</strong>, colaborando con equipos locales para impulsar la <strong>transformación digital</strong> y potenciar el <strong>crecimiento empresarial</strong> mediante el uso estratégico de los datos.</p>
-                    
-                    <p><strong>¿Buscas potenciar tu equipo con un profesional innovador?</strong></p>
-                    <p>Estoy preparado para <strong>sumar y aportar valor</strong> a tu equipo, combinando mi <strong>experiencia técnica</strong> y <strong>liderazgo en transformación digital</strong> para alcanzar <strong>objetivos ambiciosos</strong>. <strong>¡Conectemos y exploremos juntos</strong> cómo puedo contribuir al <strong>éxito de tu empresa!</strong></p>
-                </div>
+    <section id="about" class="about-section container">
+        <div class="about-content">
+            <img src="Logo Data Viva actual.png" alt="Antonio J. Fernández">
+            <div class="bio">
+                <h2>Sobre Mí</h2>
+                <p><strong>Transformando datos en estrategias de alto impacto comercial.</strong></p>
+                <p>Soy un <strong>profesional apasionado por la Ciencia de Datos y Análisis de Datos</strong>, respaldado por una <strong>amplia y completa formación</strong> y un <strong>portafolio de proyectos</strong> que demuestran mi capacidad para <strong>convertir datos en soluciones estratégicas y accionables</strong>.</p>
+                <p><strong>Experiencia Técnica y Herramientas de Vanguardia:</strong></p>
+                <p>He desarrollado competencias avanzadas en <strong>Machine Learning, Deep Learning, Big Data</strong> y <strong>Exploratory Data Analysis (EDA)</strong>, implementando procesos de <strong>ETL, Data Wrangling, Data Cleaning, Feature Engineering</strong> y <strong>Model Evaluation</strong>. Domino herramientas y librerías líderes como <strong>Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, TensorFlow, Keras</strong> y utilizo <strong>Python</strong> para la <strong>Automatización IT</strong>, optimizando procesos y generando <strong>insights de alto valor</strong>.</p>
+                <p><strong>Gestión de Proyectos y Liderazgo Digital:</strong></p>
+                <p>Complemento mis habilidades técnicas con una sólida formación en <strong>gestión y liderazgo integral de proyectos de transformación digital</strong>. Gracias a la formación avanzada de <strong>Google</strong>, he profundizado en metodologías ágiles como <strong>SCRUM</strong> y <strong>Kanban</strong>, lo que me permite coordinar equipos multidisciplinares y conducir iniciativas de cambio en entornos dinámicos.</p>
+                <p><strong>Bases de Datos, Automatización y Ciberseguridad:</strong></p>
+                <p>Cuento con experiencia en la administración de bases de datos <strong>SQL</strong> y <strong>NoSQL</strong> (<strong>MySQL, PostgreSQL, MongoDB, Cassandra</strong>) y en la implementación de soluciones de <strong>Automatización IT con Python</strong>. Además, poseo sólidos conocimientos en <strong>Ciberseguridad</strong> y <strong>Soporte TI</strong>, asegurando la integridad y el rendimiento óptimo de los sistemas.</p>
+                <p><strong>Enfoque en Oportunidades 100% Remotas en España:</strong></p>
+                <p>Estoy comprometido con oportunidades <strong>100% remotas en España</strong>, colaborando con equipos locales para impulsar la <strong>transformación digital</strong> y potenciar el <strong>crecimiento empresarial</strong> mediante el uso estratégico de los datos.</p>
+                <p><strong>¿Buscas potenciar tu equipo con un profesional innovador?</strong></p>
+                <p>Estoy preparado para <strong>sumar y aportar valor</strong> a tu equipo, combinando mi <strong>experiencia técnica</strong> y <strong>liderazgo en transformación digital</strong> para alcanzar <strong>objetivos ambiciosos</strong>. <strong>¡Conectemos y exploremos juntos</strong> cómo puedo contribuir al <strong>éxito de tu empresa!</strong></p>
             </div>
         </div>
     </section>
 
-    <section id="portfolio">
-        <div class="container">
-
-<section id="cv" class="container">
-    <div class="download-section">
-        <h2>Currículum Vitae</h2>
+    <section id="cv" class="download-section container">
+        <h2 class="section-title">Currículum Vitae</h2>
         <div class="download-grid">
             <div class="download-card">
                 <h3>Visualiza y descarga mi CV en PDF</h3>
                 <iframe 
                     src="CV Antonio J. Fernández Data Viva.pdf"
                     width="100%"
-                    height="500px"
+                    height="470px"
                     style="border-radius:1rem; border:1px solid #ddd; margin-bottom:1rem;"
                     title="CV Antonio J. Fernández">
                 </iframe>
-                <a href="CV Antonio J. Fernández Data Viva.pdf" download class="cta-button btn-details" style="margin-top:1.5rem;">Descargar CV en PDF</a>
+                <a href="CV Antonio J. Fernández Data Viva.pdf" download class="cta-button btn-details" style="margin-top:1.2rem;">Descargar CV en PDF</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-   <section id="contact">
-  <div class="container">
-    <h2>Contacto</h2>
-    <form class="contact-form" action="https://formsubmit.co/datavivalab@gmail.com" method="POST">
-      <input type="text" name="nombre" placeholder="Nombre" required>
-      <input type="email" name="email" placeholder="Tu Email" required>
-      <textarea name="mensaje" rows="6" placeholder="Tu Mensaje" required></textarea>
-      <button type="submit" class="cta-button">Enviar Mensaje</button>
-    </form>
-  </div>
-</section>
+    <section id="skills" class="skills-section container">
+        <h2 class="section-title">Habilidades Técnicas</h2>
+        <div class="skills-container">
+            <!-- Ciencia de Datos -->
+            <div class="skill-category">
+                <h3>Ciencia & Análisis de Datos</h3>
+                <div class="skills-grid">
+                    <div class="skill">Python (Pandas, NumPy, Scikit-learn)</div>
+                    <div class="skill">Análisis Estadístico</div>
+                    <div class="skill">Machine Learning (TensorFlow, Keras)</div>
+                    <div class="skill">Deep Learning (PyTorch)</div>
+                    <div class="skill">Procesamiento NLP (spaCy, Transformers)</div>
+                    <div class="skill">Visualización (Tableau, Power BI)</div>
+                </div>
+            </div>
+            <!-- Ingeniería de Datos -->
+            <div class="skill-category">
+                <h3>Ingeniería de Datos</h3>
+                <div class="skills-grid">
+                    <div class="skill">ETL/ELT</div>
+                    <div class="skill">SQL (MySQL, PostgreSQL)</div>
+                    <div class="skill">NoSQL (MongoDB, Cassandra)</div>
+                    <div class="skill">Big Data (Spark, Hadoop)</div>
+                    <div class="skill">Cloud (AWS, GCP, Azure)</div>
+                    <div class="skill">MLOps (Docker, Kubernetes)</div>
+                </div>
+            </div>
+            <!-- Desarrollo & DevOps -->
+            <div class="skill-category">
+                <h3>Desarrollo & DevOps</h3>
+                <div class="skills-grid">
+                    <div class="skill">Backend (Flask, Django)</div>
+                    <div class="skill">Contenerización</div>
+                    <div class="skill">AutoML (H2O.ai)</div>
+                    <div class="skill">CI/CD Pipelines</div>
+                    <div class="skill">Git/GitHub</div>
+                    <div class="skill">APIs REST</div>
+                </div>
+            </div>
+            <!-- Infraestructura IT -->
+            <div class="skill-category">
+                <h3>Infraestructura IT</h3>
+                <div class="skills-grid">
+                    <div class="skill">Ciberseguridad (GDPR, SIEM)</div>
+                    <div class="skill">Redes & SysAdmin</div>
+                    <div class="skill">Automatización (Ansible, Bash)</div>
+                    <div class="skill">Soporte TI Avanzado</div>
+                    <div class="skill">Monitorización</div>
+                    <div class="skill">DevSecOps</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section container">
+        <h2 class="section-title">Contacto</h2>
+        <form class="contact-form" action="https://formsubmit.co/datavivalab@gmail.com" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Tu Email" required>
+            <textarea name="mensaje" rows="6" placeholder="Tu Mensaje" required></textarea>
+            <button type="submit" class="cta-button">Enviar Mensaje</button>
+        </form>
+    </section>
 
     <footer>
         <div class="container">
             <p>&copy; 2025 Data Viva. Todos los derechos reservados.</p>
         </div>
     </footer>
-
 </body>
 </html>
+
 
 
