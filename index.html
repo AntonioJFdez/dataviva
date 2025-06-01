@@ -9,16 +9,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+
     <!-- Social Preview (Open Graph & Twitter) -->
     <meta property="og:title" content="Antonio J. Fernández - Data Viva">
     <meta property="og:description" content="Científico de Datos y Analista de Datos especializado en Power BI, Python, Machine Learning y Transformación Digital.">
-    <meta property="og:image" content="Logo Data Viva actual open graph.png">
+    <meta property="og:image" content="https://antoniojfdez.github.io/dataviva/Logo-Data-Viva-open-graph.png">
     <meta property="og:url" content="https://antoniojfdez.github.io/dataviva">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Antonio J. Fernández - Data Viva">
     <meta name="twitter:description" content="Científico de Datos y Analista de Datos especializado en Power BI, Python y Machine Learning.">
-    <meta name="twitter:image" content="Logo Data Viva actual open graph.png">
+    <meta name="twitter:image" content="https://antoniojfdez.github.io/dataviva/Logo-Data-Viva-open-graph.png">
+
     <!-- Fuente principal -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -166,12 +168,50 @@
             font-weight: 700;
             letter-spacing: 0.03em;
         }
-        .download-section, .about-section, .skills-section, .video-section, .contact-section {
+        .download-section, .about-section, .skills-section, .video-section, .contact-section, .projects-section {
             background: var(--white);
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             padding: 2.5rem 2rem 2.5rem 2rem;
             margin-bottom: 2.2rem;
+        }
+        /* Projects */
+        .projects-section {
+            padding: 2.3rem 2rem 2.3rem 2rem;
+        }
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.1rem;
+            justify-content: center;
+        }
+        .project-card {
+            background: var(--background);
+            border-radius: 1.7rem;
+            box-shadow: 0 2px 16px rgba(44,62,80,0.10);
+            padding: 2rem 1.3rem;
+            max-width: 470px;
+            min-width: 260px;
+            flex: 1 1 320px;
+            text-align: center;
+            margin: 0 auto;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .project-card:hover {
+            box-shadow: 0 4px 28px rgba(44,62,80,0.18);
+            transform: scale(1.025);
+        }
+        .project-title {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.18rem;
+            margin-bottom: 1rem;
+        }
+        .project-desc {
+            color: var(--primary);
+            font-size: 1rem;
+            line-height: 1.65;
+            margin-bottom: 0.2rem;
         }
         /* About */
         #about .about-content {
@@ -367,11 +407,26 @@
                 padding-left: 1rem; padding-right: 1rem;
             }
         }
+        /* Más aire para contenedores en móvil en la sección CV */
         @media (max-width: 700px) {
-            #cv .download-grid { margin-top: 0.7rem !important; margin-bottom: 0.7rem !important; }
-            #cv .download-card { margin-top: 0.8rem !important; margin-bottom: 0.8rem !important; padding-top: 1.2rem !important; padding-bottom: 1.2rem !important; }
-            .download-section { padding: 1.5rem 1.2rem 1.5rem 1.2rem !important; margin-left: 0.5rem !important; margin-right: 0.5rem !important; border-radius: 1.3rem; }
+            #cv .download-grid {
+                margin-top: 0.7rem !important;
+                margin-bottom: 0.7rem !important;
+            }
+            #cv .download-card {
+                margin-top: 0.8rem !important;
+                margin-bottom: 0.8rem !important;
+                padding-top: 1.2rem !important;
+                padding-bottom: 1.2rem !important;
+            }
+            .download-section {
+                padding: 1.5rem 1.2rem 1.5rem 1.2rem !important;
+                margin-left: 0.5rem !important;
+                margin-right: 0.5rem !important;
+                border-radius: 1.3rem;
+            }
         }
+        /* Botón estilos homogéneos */
         .cta-button.btn-details {
             background: var(--secondary);
             color: var(--primary);
@@ -387,69 +442,6 @@
             background: var(--primary);
             color: var(--secondary);
         }
-        /* --- ESTILOS TARJETAS PROYECTOS --- */
-        .projects-section { margin-top: 2.5rem; margin-bottom: 2.8rem; }
-        .projects-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2.2rem;
-            justify-content: center;
-        }
-        .project-card {
-            background: var(--white);
-            border-radius: 1.5rem;
-            box-shadow: 0 2px 14px rgba(44,62,80,0.07);
-            padding: 2rem 1.5rem 1.5rem 1.5rem;
-            flex: 1 1 320px;
-            max-width: 440px;
-            min-width: 260px;
-            margin-bottom: 0.5rem;
-            transition: box-shadow 0.18s, transform 0.16s;
-            border: 1px solid var(--secondary);
-        }
-        .project-card h3 {
-            color: var(--primary);
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.7rem;
-        }
-        .project-card p {
-            font-size: 1.05rem;
-            color: var(--text);
-            margin-bottom: 1rem;
-            text-align: left;
-        }
-        .project-card ul {
-            padding-left: 1.1rem;
-            margin-bottom: 0.2rem;
-        }
-        .project-card li {
-            color: var(--primary);
-            margin-bottom: 0.1rem;
-            font-size: 0.97rem;
-        }
-        .project-card strong {
-            color: var(--secondary);
-            font-weight: 600;
-        }
-        @media (max-width: 900px) {
-            .projects-container {
-                flex-direction: column;
-                gap: 1.5rem;
-                align-items: center;
-            }
-            .project-card {
-                max-width: 100%;
-                min-width: 0;
-                padding: 1.2rem 0.8rem 1.1rem 0.8rem;
-            }
-        }
-
-        @media (max-width: 700px) {
-          .project-card {
-            text-align: center;
-        }
-    }
     </style>
 </head>
 <body>
@@ -556,75 +548,43 @@
         </div>
     </section>
 
-    <!-- PROYECTOS DESTACADOS EN CIENCIA DE DATOS -->
-    <section id="proyectos" class="projects-section container">
-        <h2 class="section-title">Proyectos Destacados en Ciencia de Datos</h2>
-        <p style="text-align:center;margin-bottom:2rem;color:var(--primary);font-size:1.1rem;">
-    Ejemplos reales de cómo mi trabajo genera impacto directo en negocio, ventas y eficiencia.
-                </p>
-
-        <div class="projects-container">
+    <!-- NUEVA SECCIÓN: PROYECTOS DE CIENCIA DE DATOS -->
+    <section class="projects-section container" id="proyectos">
+        <h2 class="section-title">Proyectos de Ciencia de Datos</h2>
+        <div class="projects-grid">
             <div class="project-card">
-                <h3>Optimización Predictiva de Retención de Clientes</h3>
-                <p>Implementación de modelos de machine learning y segmentación avanzada para identificar causas de abandono y optimizar campañas comerciales, logrando un <strong>incremento del 15% en la retención de clientes</strong> y reducción del churn.</p>
-                <ul>
-                    <li><b>Tecnologías:</b> Python (scikit-learn, pandas), Power BI, SQL</li>
-                    <li><b>Resultados:</b> Retención +15%, reporting comercial automatizado</li>
-                </ul>
+                <div class="project-title">Análisis Predictivo de Ventas y Demanda</div>
+                <div class="project-desc">Desarrollo de modelos de regresión y series temporales para anticipar la demanda de productos, optimizando el inventario y la planificación comercial.</div>
             </div>
-
             <div class="project-card">
-                <h3>Modelos de Predicción de Demanda y Optimización Logística</h3>
-                <p>Desarrollo de modelos predictivos para mejorar la planificación de suministro y logística, optimizando inventario y reduciendo <strong>costes operativos</strong> de manera significativa.</p>
-                <ul>
-                    <li><b>Tecnologías:</b> Python, Power BI</li>
-                    <li><b>Resultados:</b> Reducción de costes logísticos, eficiencia en la cadena de suministro</li>
-                </ul>
+                <div class="project-title">Visualización Interactiva y Dashboards Ejecutivos</div>
+                <div class="project-desc">Creación de paneles avanzados en Power BI para dirección y equipos comerciales, integrando datos desde múltiples fuentes y permitiendo el seguimiento de KPIs clave en tiempo real.</div>
             </div>
-
             <div class="project-card">
-                <h3>Dashboards Ejecutivos y Automatización de Reporting</h3>
-                <p>Diseño e implantación de dashboards interactivos y automatización de informes para dirección y equipos comerciales, mejorando la <strong>toma de decisiones en tiempo real</strong> y eliminando tareas manuales.</p>
-                <ul>
-                    <li><b>Tecnologías:</b> Power BI, Python, SQL</li>
-                    <li><b>Resultados:</b> Informes automatizados, visibilidad total de KPIs de negocio</li>
-                </ul>
+                <div class="project-title">Segmentación Avanzada de Clientes y Predicción de Churn</div>
+                <div class="project-desc">Aplicación de clustering, machine learning y análisis multivariable para identificar segmentos de clientes, predecir la pérdida de clientes (churn) y definir acciones comerciales personalizadas.</div>
             </div>
-
             <div class="project-card">
-                <h3>Analítica Avanzada con Datos de Drones para Agricultura</h3>
-                <p>Procesamiento de imágenes satelitales y análisis de índices de vegetación (NDVI, GNDVI) para <strong>optimizar la productividad y salud de cultivos</strong> mediante recomendaciones de riego y fertilización.</p>
-                <ul>
-                    <li><b>Tecnologías:</b> Python (NumPy, rasterio), Power BI, QGIS</li>
-                    <li><b>Resultados:</b> Mejora directa del rendimiento agrícola y la eficiencia de recursos</li>
-                </ul>
+                <div class="project-title">Integración de Datos y Automatización de Informes</div>
+                <div class="project-desc">Automatización de procesos ETL, desarrollo de conectores personalizados y APIs, facilitando la integración y reporte de información clave para equipos directivos.</div>
             </div>
-
             <div class="project-card">
-                <h3>Segmentación de Clientes y Ventas Personalizadas</h3>
-                <p>Estrategias de segmentación de clientes mediante análisis multivariante y modelización predictiva, logrando un <strong>aumento de ventas dirigido del 20%</strong> y mayor fidelización de clientes.</p>
-                <ul>
-                    <li><b>Tecnologías:</b> Python, Power BI, scikit-learn</li>
-                    <li><b>Resultados:</b> +20% ventas, campañas personalizadas</li>
-                </ul>
+                <div class="project-title">Optimización de Procesos Agrícolas mediante Drones</div>
+                <div class="project-desc">Procesamiento de imágenes NDVI, análisis multiespectral y desarrollo de modelos predictivos de rendimiento agrícola, utilizando Python y Power BI para asesorar en decisiones técnicas y comerciales.</div>
             </div>
-
             <div class="project-card">
-                <h3>Automatización de Reporting y Control de Gestión</h3>
-                <p>Implementación de scripts y flujos automatizados para integración y generación periódica de informes, <strong>reduciendo el trabajo manual en más del 90%</strong> y mejorando la precisión de la información.</p>
-                <ul>
-                    <li><b>Tecnologías:</b> Python, Power BI, APIs</li>
-                    <li><b>Resultados:</b> +90% automatización, reducción significativa de errores manuales</li>
-                </ul>
+                <div class="project-title">Modelos de Predicción y Analítica para Seguros</div>
+                <div class="project-desc">Creación de modelos para tarificación, análisis de siniestralidad, segmentación y predicción de riesgos en carteras de seguros, con visualización interactiva y reporting automatizado.</div>
             </div>
         </div>
     </section>
+    <!-- FIN PROYECTOS -->
 
     <section id="skills" class="skills-section container">
         <h2 class="section-title">Habilidades Técnicas</h2>
         <div class="skills-container">
-            <!-- Bloques de habilidades aquí (igual que ya tienes) -->
-            <!-- ... -->
+            <!-- ... resto de bloques de habilidades ... -->
+            <!-- (Igual que ya tienes en tu versión anterior) -->
             <div class="skill-category">
                 <h3>Ciencia y Análisis de Datos</h3>
                 <div class="skills-grid">
@@ -636,6 +596,7 @@
                     <div class="skill"><strong>NLP:</strong> NLTK, spaCy, Transformers (HuggingFace)</div>
                 </div>
             </div>
+            <!-- ... (resto de categorías igual que ya tienes) ... -->
             <div class="skill-category">
                 <h3>Big Data, MLOps, Cloud y Backend</h3>
                 <div class="skills-grid">
@@ -703,6 +664,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
