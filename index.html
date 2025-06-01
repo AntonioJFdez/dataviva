@@ -49,6 +49,7 @@
             margin: 0 auto;
             padding: 3rem 0;
         }
+
         /* Header */
         header {
             position: sticky;
@@ -167,78 +168,55 @@
             font-weight: 700;
             letter-spacing: 0.03em;
         }
-        .download-section, .about-section, .skills-section, .video-section, .contact-section, .projects-section, .dashboard-explanation-section, .testimonials-section {
+        .download-section, .about-section, .skills-section, .video-section, .contact-section, .testimonials-section {
             background: var(--white);
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             padding: 2.5rem 2rem 2.5rem 2rem;
             margin-bottom: 2.2rem;
         }
-        /* Projects */
-        .projects-section {
-            padding: 2.3rem 2rem 2.3rem 2rem;
+        /* Skills-style container (para Dashboard y Proyectos) */
+        .skills-section {
+            padding-bottom: 2.5rem;
         }
-        .projects-grid {
+        .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 2.1rem;
+            gap: 1.7rem;
             justify-content: center;
         }
-        .project-card {
-            background: var(--background);
+        .skill-category {
+            background: rgba(255,255,255,0.55);
+            padding: 1.3rem 1.2rem 1.6rem 1.2rem;
             border-radius: 1.7rem;
-            box-shadow: 0 2px 16px rgba(44,62,80,0.10);
-            padding: 2rem 1.3rem;
-            max-width: 470px;
-            min-width: 260px;
-            flex: 1 1 320px;
-            text-align: center;
+            flex: 1 1 280px;
+            min-width: 240px;
+            max-width: 850px;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.06);
             margin: 0 auto;
-            transition: box-shadow 0.2s, transform 0.2s;
         }
-        .project-card:hover {
-            box-shadow: 0 4px 28px rgba(44,62,80,0.18);
-            transform: scale(1.025);
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            width: 100%;
         }
-        .project-title {
-            color: var(--secondary);
-            font-weight: bold;
-            font-size: 1.18rem;
-            margin-bottom: 1rem;
-        }
-        .project-desc {
-            color: var(--primary);
-            font-size: 1rem;
-            line-height: 1.65;
-            margin-bottom: 0.2rem;
-        }
-        /* Dashboard Explanation */
-        .dashboard-explanation-section {
+        .skill {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.65rem 1.2rem;
+            border-radius: 1.3rem;
+            font-size: 0.98rem;
+            margin-bottom: 0.4rem;
+            box-shadow: 0 1px 5px rgba(44,62,80,0.06);
+            transition: transform 0.18s;
+            width: 100%;
             text-align: center;
-            max-width: 760px;
-            margin: 0 auto 2.2rem auto;
         }
-        .dashboard-explanation-section h3 {
+        .skill:hover {
+            transform: scale(1.06);
+            background: var(--secondary);
             color: var(--primary);
-            font-size: 1.15rem;
-            margin-bottom: 1.1rem;
-        }
-        .dashboard-explanation-section p {
-            color: #444;
-            font-size: 1.08rem;
-            margin-bottom: 1.1rem;
-            line-height: 1.7;
-        }
-        .dashboard-explanation-section .impact {
-            color: var(--secondary);
-            font-weight: 600;
-            font-size: 1.05rem;
-            margin-bottom: 0.6rem;
-        }
-        .dashboard-explanation-section .cta {
-            color: var(--primary);
-            font-size: 1.04rem;
-            font-weight: 600;
         }
         /* About */
         #about .about-content {
@@ -303,52 +281,6 @@
             color: var(--primary);
             font-size: 1.2rem;
             margin-bottom: 1.2rem;
-        }
-        /* Skills */
-        .skills-section { padding-bottom: 2.5rem; }
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.7rem;
-            justify-content: center;
-        }
-        .skill-category {
-            background: rgba(255,255,255,0.55);
-            padding: 1.3rem 1.2rem 1.6rem 1.2rem;
-            border-radius: 1.7rem;
-            flex: 1 1 280px;
-            min-width: 240px;
-            max-width: 350px;
-            box-shadow: 0 2px 12px rgba(44,62,80,0.06);
-        }
-        .skill-category h3 {
-            color: var(--secondary);
-            font-size: 1.15rem;
-            margin-bottom: 0.7rem;
-            font-weight: 700;
-            border-bottom: 2px solid var(--secondary);
-            display: inline-block;
-            padding-bottom: 0.3rem;
-        }
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.7rem;
-        }
-        .skill {
-            background: var(--primary);
-            color: var(--white);
-            padding: 0.65rem 1.2rem;
-            border-radius: 1.3rem;
-            font-size: 0.98rem;
-            margin-bottom: 0.4rem;
-            box-shadow: 0 1px 5px rgba(44,62,80,0.06);
-            transition: transform 0.18s;
-        }
-        .skill:hover {
-            transform: scale(1.06);
-            background: var(--secondary);
-            color: var(--primary);
         }
         /* Contacto */
         .contact-section h2 {
@@ -453,7 +385,6 @@
                 border-radius: 1.3rem;
             }
         }
-        /* Botón estilos homogéneos */
         .cta-button.btn-details {
             background: var(--secondary);
             color: var(--primary);
@@ -575,64 +506,73 @@
         </div>
     </section>
 
-    <!-- EXPLICACIÓN DEL DASHBOARD: FIEL AL PDF Y ADAPTADO AL ESTILO -->
-    <section class="dashboard-explanation-section container">
-        <h3>¿Qué muestra este dashboard?</h3>
-        <p>
-            El dashboard interactivo está enfocado en el análisis de ventas y clientes para un proyecto de distribución de vinos. Permite explorar la <b>evolución de las ventas totales</b> y la <b>distribución de clientes</b> en dos pestañas diferenciadas:<br><br>
-            <b>“Ventas por canal”:</b> Visualiza las ventas totales y la evolución mensual, con desgloses por tipo de cliente, tipo de venta y provincia. Permite analizar rápidamente tendencias, identificar los meses con mayor facturación y comparar el rendimiento por diferentes categorías.<br><br>
-            <b>“Clientes por segmento”:</b> Muestra el número de clientes, su segmentación y distribución por provincia y tipo de cliente, facilitando la identificación de patrones geográficos y comerciales.<br><br>
-            <b>KPIs clave:</b> Ventas totales, número de clientes, clientes nuevos y recurrentes, distribución por tipo y provincia.<br>
-            Este dashboard es una herramienta de reporting visual que simplifica el <b>seguimiento de la actividad comercial</b> y apoya la toma de decisiones estratégicas en proyectos de distribución y comercialización.
-        </p>
-        <div class="impact">
-            🚀 Decisiones ágiles: detecta oportunidades de venta y optimiza tus acciones comerciales con visualización interactiva.<br>
-            🔄 Reporting automatizado para seguimiento de ventas y clientes.
-        </div>
-        <div class="cta">
-            ¿Quieres ver más dashboards o soluciones personalizadas para tu empresa?<br>
-            <a href="#contact" style="color:var(--secondary);text-decoration:underline;">Contáctame y te enseño más casos de éxito.</a>
+    <!-- ¿QUÉ MUESTRA ESTE DASHBOARD? (Skills-style) -->
+    <section class="skills-section container" id="dashboard-explicacion" style="margin-top:-1.5rem; margin-bottom:2.2rem;">
+        <h2 class="section-title" style="margin-bottom:1.7rem;">¿Qué muestra este dashboard?</h2>
+        <div class="skills-container" style="justify-content:center;">
+            <div class="skill-category" style="max-width:800px; margin:0 auto;">
+                <div class="skills-grid" style="flex-direction:column; align-items:center;">
+                    <div class="skill" style="width:100%;background:var(--background);color:var(--primary);font-size:1.04rem;text-align:center;">
+                        <b>Pestaña 1 – Ventas y Beneficio:</b> Analiza el total de ventas, ingresos netos, pedido medio, comisión media, y muestra la distribución de ventas por categoría de distribuidor y de bodega. Incluye filtros avanzados por comisión (3%, 5%, 10%), tipo de plan (Básico, Intermedio, Premium), fecha de pedido y canal de venta.<br><br>
+                        Acceso directo a los detalles de cada pedido: mes, ID de pedido, nombre de bodega, importe, nombre del distribuidor, comisión, beneficio por venta, por bodega, por distribuidor y por pedido.
+                    </div>
+                    <div class="skill" style="width:100%;background:var(--background);color:var(--primary);font-size:1.04rem;text-align:center;">
+                        <b>Pestaña 2 – Suscripciones y Publicidad:</b> Muestra ingresos netos, suscripción media y segmentación por plan (Básico, Intermedio, Premium), con filtro por fecha de suscripción. Analiza ventas por sector vinícola (servicios, exportadoras, accesorios, turismo enológico), ventas por suscripción, plan más y menos contratado.<br><br>
+                        Visualiza datos clave de campañas publicitarias: mes, ID publicidad, nombre empresa, plan publicidad, beneficio por publicidad, y métodos de pago (Paypal, Transferencia, Tarjeta), precio y nombre de empresa.
+                    </div>
+                    <div class="skill" style="width:100%;background:var(--background);color:var(--primary);font-size:1.04rem;text-align:center;">
+                        <b>KPIs destacados:</b> Ventas totales, ingresos netos, pedido medio, comisión media, suscripción media, ventas por sector, beneficio por pedido/publicidad, y top planes contratados.
+                    </div>
+                </div>
+                <div class="skills-grid" style="flex-direction:column;align-items:center;margin-top:1.1rem;">
+                    <div class="skill" style="color:var(--secondary);font-weight:600; font-size:1.07rem; background:transparent;box-shadow:none;">
+                        🚀 Decisiones más inteligentes y rápidas con reporting y análisis de ventas y suscripciones en tiempo real.<br>
+                        🔄 Reporting totalmente automatizado y segmentación visual para el sector vinícola.
+                    </div>
+                </div>
+                <div class="skills-grid" style="flex-direction:column;align-items:center;margin-top:1.1rem;">
+                    <div class="skill" style="font-size:1.03rem; color:var(--primary); font-weight:600; background:transparent;box-shadow:none;">
+                        ¿Quieres ver más dashboards o soluciones personalizadas?<br>
+                        <a href="#contact" style="color:var(--secondary);text-decoration:underline;">Contáctame y te enseño más casos de éxito.</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- FIN EXPLICACIÓN DASHBOARD -->
 
-    <!-- NUEVA SECCIÓN: PROYECTOS DE CIENCIA DE DATOS -->
-    <section class="projects-section container" id="proyectos">
+    <!-- PROYECTOS DE CIENCIA DE DATOS - ESTILO UNIFICADO -->
+    <section class="skills-section container" id="proyectos">
         <h2 class="section-title">Proyectos de Ciencia de Datos</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-title">Análisis Predictivo de Ventas y Demanda</div>
-                <div class="project-desc">Desarrollo de modelos de regresión y series temporales para anticipar la demanda de productos, optimizando el inventario y la planificación comercial.</div>
-            </div>
-            <div class="project-card">
-                <div class="project-title">Visualización Interactiva y Dashboards Ejecutivos</div>
-                <div class="project-desc">Creación de paneles avanzados en Power BI para dirección y equipos comerciales, integrando datos desde múltiples fuentes y permitiendo el seguimiento de KPIs clave en tiempo real.</div>
-            </div>
-            <div class="project-card">
-                <div class="project-title">Segmentación Avanzada de Clientes y Predicción de Churn</div>
-                <div class="project-desc">Aplicación de clustering, machine learning y análisis multivariable para identificar segmentos de clientes, predecir la pérdida de clientes (churn) y definir acciones comerciales personalizadas.</div>
-            </div>
-            <div class="project-card">
-                <div class="project-title">Integración de Datos y Automatización de Informes</div>
-                <div class="project-desc">Automatización de procesos ETL, desarrollo de conectores personalizados y APIs, facilitando la integración y reporte de información clave para equipos directivos.</div>
-            </div>
-            <div class="project-card">
-                <div class="project-title">Optimización de Procesos Agrícolas mediante Drones</div>
-                <div class="project-desc">Procesamiento de imágenes NDVI, análisis multiespectral y desarrollo de modelos predictivos de rendimiento agrícola, utilizando Python y Power BI para asesorar en decisiones técnicas y comerciales.</div>
-            </div>
-            <div class="project-card">
-                <div class="project-title">Modelos de Predicción y Analítica para Seguros</div>
-                <div class="project-desc">Creación de modelos para tarificación, análisis de siniestralidad, segmentación y predicción de riesgos en carteras de seguros, con visualización interactiva y reporting automatizado.</div>
+        <div class="skills-container">
+            <div class="skill-category" style="max-width:820px; margin:0 auto;">
+                <div class="skills-grid" style="flex-direction:column;align-items:center;">
+                    <div class="skill" style="width:100%;background:var(--background);color:var(--primary);font-size:1.04rem;text-align:center;">
+                        <b>Análisis Predictivo de Ventas y Demanda:</b> Modelos avanzados para anticipar la demanda y optimizar inventarios y planificación comercial.
+                    </div>
+                    <div class="skill" style="width:100%;background:var(--background);color:var(--primary);font-size:1.04rem;text-align:center;">
+                        <b>Dashboards Ejecutivos e Integración de Datos:</b> Creación de paneles avanzados en Power BI para la dirección, integrando datos de múltiples fuentes y KPIs clave.
+                    </div>
+                    <div class="skill" style="width:100%;background:var(--background);color:var(--primary);font-size:1.04rem;text-align:center;">
+                        <b>Segmentación de Clientes y Churn:</b> Clustering y machine learning para identificar segmentos, predecir churn y definir estrategias comerciales personalizadas.
+                    </div>
+                    <div class="skill" style="width:100%;background:var(--background);color:var(--primary);font-size:1.04rem;text-align:center;">
+                        <b>Automatización de Informes y ETL:</b> Procesos automáticos de integración, reporting y APIs para equipos directivos.
+                    </div>
+                    <div class="skill" style="width:100%;background:var(--background);color:var(--primary);font-size:1.04rem;text-align:center;">
+                        <b>Optimización Agrícola con Drones:</b> Procesamiento de imágenes NDVI y modelos predictivos para mejorar el rendimiento agrícola.
+                    </div>
+                    <div class="skill" style="width:100%;background:var(--background);color:var(--primary);font-size:1.04rem;text-align:center;">
+                        <b>Modelos para Seguros:</b> Tarificación, predicción de riesgos y visualización interactiva para la gestión de carteras aseguradoras.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- FIN PROYECTOS -->
 
     <section id="skills" class="skills-section container">
         <h2 class="section-title">Habilidades Técnicas</h2>
         <div class="skills-container">
-            <!-- ... resto de bloques de habilidades ... -->
-            <!-- (Igual que ya tienes en tu versión anterior) -->
+            <!-- (Tus bloques de habilidades habituales aquí) -->
             <div class="skill-category">
                 <h3>Ciencia y Análisis de Datos</h3>
                 <div class="skills-grid">
@@ -644,7 +584,6 @@
                     <div class="skill"><strong>NLP:</strong> NLTK, spaCy, Transformers (HuggingFace)</div>
                 </div>
             </div>
-            <!-- ... (resto de categorías igual que ya tienes) ... -->
             <div class="skill-category">
                 <h3>Big Data, MLOps, Cloud y Backend</h3>
                 <div class="skills-grid">
@@ -719,6 +658,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
