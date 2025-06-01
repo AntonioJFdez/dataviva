@@ -331,6 +331,17 @@
             border-top-right-radius: 1.7rem;
         }
 
+        /* --- INICIO: CSS Responsive para CV --- */
+        @media (max-width: 800px) {
+            .iframe-cv { display: none; }
+            .boton-cv { display: block; }
+        }
+        @media (min-width: 801px) {
+            .iframe-cv { display: block; }
+            .boton-cv { display: none; }
+        }
+        /* --- FIN: CSS Responsive para CV --- */
+
         /* Responsive */
         @media (max-width: 900px) {
             .container { padding: 2rem 0; }
@@ -404,20 +415,25 @@
     </div>
 </section>
 
-
+    <!-- SECCIÓN CV RESPONSIVA -->
     <section id="cv" class="download-section container">
         <h2 class="section-title">Currículum Vitae</h2>
         <div class="download-grid">
             <div class="download-card">
                 <h3>Visualiza y descarga mi CV en PDF</h3>
-                <iframe 
-                    src="CV Antonio J. Fernández Data Viva.pdf"
-                    width="100%"
-                    height="470px"
-                    style="border-radius:1rem; border:1px solid #ddd; margin-bottom:1rem;"
-                    title="CV Antonio J. Fernández">
-                </iframe>
-                <a href="CV Antonio J. Fernández Data Viva.pdf" download class="cta-button btn-details" style="margin-top:1.2rem;">Descargar CV en PDF</a>
+                <div class="iframe-cv">
+                    <iframe 
+                        src="CV Antonio J. Fernández Data Viva.pdf"
+                        width="100%"
+                        height="470px"
+                        style="border-radius:1rem; border:1px solid #ddd; margin-bottom:1rem;"
+                        title="CV Antonio J. Fernández">
+                    </iframe>
+                </div>
+                <div class="boton-cv" style="text-align:center;">
+                    <a href="CV Antonio J. Fernández Data Viva.pdf" target="_blank" class="cta-button btn-details">Abrir CV en una nueva pestaña</a>
+                    <p style="margin-top:0.5rem; color:var(--primary);">En móvil pulsa para ver o descargar.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -498,9 +514,6 @@
 
     </div>
 </section>
-
-
-
 
     <section id="contact" class="contact-section container">
         <h2 class="section-title">Contacto</h2>
