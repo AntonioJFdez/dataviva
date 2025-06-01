@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antonio J. Fernández - Data Viva</title>
-    <!-- Favicon y Meta -->
     <link rel="icon" type="image/x-icon" href="Logo-favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-
-    <!-- Social Preview (Open Graph & Twitter) -->
     <meta property="og:title" content="Antonio J. Fernández - Data Viva">
     <meta property="og:description" content="Científico de Datos y Analista de Datos especializado en Power BI, Python, Machine Learning y Transformación Digital.">
     <meta property="og:image" content="https://antoniojfdez.github.io/dataviva/Logo-Data-Viva-open-graph.png">
@@ -20,8 +15,6 @@
     <meta name="twitter:title" content="Antonio J. Fernández - Data Viva">
     <meta name="twitter:description" content="Científico de Datos y Analista de Datos especializado en Power BI, Python y Machine Learning.">
     <meta name="twitter:image" content="https://antoniojfdez.github.io/dataviva/Logo-Data-Viva-open-graph.png">
-
-    <!-- Fuente principal -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -49,372 +42,109 @@
             margin: 0 auto;
             padding: 3rem 0;
         }
-
-        /* Header */
         header {
-            position: sticky;
-            top: 0;
-            background: var(--primary);
-            z-index: 1000;
-            padding: 0.5rem 0;
-            box-shadow: var(--box-shadow);
+            position: sticky; top: 0; background: var(--primary); z-index: 1000; padding: 0.5rem 0; box-shadow: var(--box-shadow);
         }
         .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
+            display: flex; justify-content: space-between; align-items: center; padding: 0 2rem;
         }
         .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+            display: flex; align-items: center; gap: 1rem;
         }
-        .nav-logo a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-        .nav-logo img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: 3px solid var(--secondary);
-        }
+        .nav-logo a { display: flex; align-items: center; text-decoration: none; }
+        .nav-logo img { width: 60px; height: 60px; border-radius: 50%; border: 3px solid var(--secondary); }
         .nav-logo span {
-            color: var(--secondary);
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-left: 0.5rem;
+            color: var(--secondary); font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; margin-left: 0.5rem;
         }
-        nav ul {
-            display: flex;
-            gap: 2.2rem;
-            list-style: none;
-        }
+        nav ul { display: flex; gap: 2.2rem; list-style: none; }
         nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            padding: 0.4rem 0.9rem;
-            border-radius: 1.5rem;
-            transition: background 0.2s;
-            position: relative;
+            color: var(--white); text-decoration: none; font-size: 1.1rem; font-weight: 600; letter-spacing: 0.03em;
+            padding: 0.4rem 0.9rem; border-radius: 1.5rem; transition: background 0.2s; position: relative;
         }
-        nav a:hover {
-            background: var(--secondary);
-            color: var(--primary);
-        }
-        /* Hero */
-        .hero {
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(45deg, rgba(44,62,80,0.94), rgba(222,191,176,0.30)), 
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80') center/cover;
-            border-bottom-left-radius: 2.5rem;
-            border-bottom-right-radius: 2.5rem;
-            margin-bottom: 2rem;
-        }
-        .hero .container {
-            text-align: center;
-            color: var(--white);
-            padding: 5rem 2rem 3rem 2rem;
-        }
-        .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 0.7rem;
-            font-weight: 700;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.13);
-            letter-spacing: 0.02em;
-        }
-        .hero h2 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 10px rgba(44,62,80,0.18);
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 1.2rem 3rem;
-            font-size: 1.1rem;
-            background: var(--secondary);
-            color: var(--primary);
-            border-radius: 2.5rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-            border: none;
-            box-shadow: 0 4px 20px rgba(44,62,80,0.13);
-        }
-        .cta-button:hover {
-            background: var(--primary);
-            color: var(--secondary);
-            transform: scale(1.04) translateY(-3px);
-            box-shadow: 0 6px 24px rgba(222,191,176,0.21);
-        }
-        /* Secciones */
+        nav a:hover { background: var(--secondary); color: var(--primary); }
         section { margin-bottom: 2.8rem; }
         .section-title {
-            color: var(--primary);
-            text-align: center;
-            font-size: 2.1rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
-            letter-spacing: 0.03em;
+            color: var(--primary); text-align: center; font-size: 2.1rem; margin-bottom: 2rem;
+            font-weight: 700; letter-spacing: 0.03em;
         }
         .download-section, .about-section, .skills-section, .video-section, .contact-section, .projects-section, .dashboard-section, .testimonials-section {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            padding: 2.5rem 2rem 2.5rem 2rem;
-            margin-bottom: 2.2rem;
+            background: var(--white); border-radius: var(--border-radius); box-shadow: var(--box-shadow); padding: 2.5rem 2rem 2.5rem 2rem; margin-bottom: 2.2rem;
         }
-        /* Projects */
-        .projects-section {
-            padding: 2.3rem 2rem 2.3rem 2rem;
+        .hero {
+            min-height: 400px; display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(45deg, rgba(44,62,80,0.94), rgba(222,191,176,0.30)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80') center/cover;
+            border-bottom-left-radius: 2.5rem; border-bottom-right-radius: 2.5rem; margin-bottom: 2rem;
         }
-        .projects-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2.1rem;
-            justify-content: center;
+        .hero .container { text-align: center; color: var(--white); padding: 5rem 2rem 3rem 2rem; }
+        .hero h1 { font-size: 3.2rem; margin-bottom: 0.7rem; font-weight: 700; text-shadow: 0 4px 20px rgba(0,0,0,0.13); letter-spacing: 0.02em; }
+        .hero h2 { font-size: 1.8rem; font-weight: 400; color: var(--secondary); margin-bottom: 1.5rem; text-shadow: 0 2px 10px rgba(44,62,80,0.18);}
+        .cta-button {
+            display: inline-block; padding: 1.2rem 3rem; font-size: 1.1rem; background: var(--secondary); color: var(--primary);
+            border-radius: 2.5rem; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            border: none; box-shadow: 0 4px 20px rgba(44,62,80,0.13);
         }
-        .project-card {
-            background: var(--background);
-            border-radius: 1.7rem;
-            box-shadow: 0 2px 16px rgba(44,62,80,0.10);
-            padding: 2rem 1.3rem;
-            max-width: 470px;
-            min-width: 260px;
-            flex: 1 1 320px;
-            text-align: center;
-            margin: 0 auto;
-            transition: box-shadow 0.2s, transform 0.2s;
+        .cta-button:hover {
+            background: var(--primary); color: var(--secondary); transform: scale(1.04) translateY(-3px); box-shadow: 0 6px 24px rgba(222,191,176,0.21);
         }
-        .project-card:hover {
-            box-shadow: 0 4px 28px rgba(44,62,80,0.18);
-            transform: scale(1.025);
-        }
-        .project-title {
-            color: var(--secondary);
-            font-weight: bold;
-            font-size: 1.18rem;
-            margin-bottom: 1rem;
-        }
-        .project-desc {
-            color: var(--primary);
-            font-size: 1rem;
-            line-height: 1.65;
-            margin-bottom: 0.2rem;
-        }
-        /* Dashboard explicativo */
-        .dashboard-section {
-            max-width: 100%;
-            text-align: center;
-        }
-        .dashboard-section .dashboard-text {
-            color: var(--primary);
-            font-size: 1.08rem;
-            line-height: 1.7;
-            margin-bottom: 1.4rem;
-        }
-        .dashboard-section ul {
-            text-align: left;
-            display: inline-block;
-            margin: 0 auto 1.2rem auto;
-            padding-left: 0;
-            font-size: 1.07rem;
-            color: #444;
-        }
-        .dashboard-section ul li {
-            margin-bottom: 0.5rem;
-            padding-left: 0.1em;
-            line-height: 1.6;
-        }
-        .dashboard-highlights {
-            color: var(--secondary);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-top: 1.5rem;
-            margin-bottom: 1.1rem;
-        }
-        .dashboard-section .cta-dashboard {
-            margin-top: 1rem;
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
-        .dashboard-section .cta-dashboard a {
-            color: var(--secondary);
-            text-decoration: underline;
-        }
-        /* About */
-        #about .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2.5rem;
-            align-items: center;
-        }
-        #about img {
-            width: 230px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-        #about .bio {
-            flex: 1;
-            min-width: 250px;
-        }
+        /* Secciones visuales */
+        .about-content { display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: center; }
+        #about img { width: 230px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); }
+        #about .bio { flex: 1; min-width: 250px; }
         #about h2 { color: var(--primary); margin-bottom: 1.3rem; }
         #about p { margin-bottom: 1.2rem; line-height: 1.75; text-align: justify; }
-        /* Video */
-        .video-section h2 {
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 1.6rem;
-        }
-        .video-responsive {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 1.5rem;
-            margin-bottom: 1.3rem;
-            box-shadow: 0 6px 32px rgba(44,62,80,0.15);
-        }
-        .video-responsive iframe,
-        .video-responsive video {
-            position: absolute;
-            top:0; left:0; width:100%; height:100%;
-            border-radius: 1.5rem;
-        }
+        /* Video CV */
+        .video-section h2 { color: var(--primary); text-align: center; margin-bottom: 1.6rem; }
+        .video-responsive { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1.5rem; margin-bottom: 1.3rem; box-shadow: 0 6px 32px rgba(44,62,80,0.15);}
+        .video-responsive iframe, .video-responsive video { position: absolute; top:0; left:0; width:100%; height:100%; border-radius: 1.5rem; }
         /* CV */
-        .download-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
+        .download-grid { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+        .download-card { background: var(--background); padding: 2rem 1.2rem; border-radius: var(--border-radius); text-align: center; box-shadow: 0 2px 16px rgba(222,191,176,0.11); flex: 1 1 340px; max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center;}
+        .download-card h3 { color: var(--primary); font-size: 1.2rem; margin-bottom: 1.2rem; }
+        /* Dashboard Section */
+        .dashboard-section .section-title { text-align: center; }
+        .dashboard-section .dashboard-text, .dashboard-section .dashboard-highlights, .dashboard-section .cta-dashboard {
+            max-width: 780px; margin: 0 auto 1rem auto; text-align: center; font-size: 1.10rem;
         }
-        .download-card {
-            background: var(--background);
-            padding: 2rem 1.2rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            box-shadow: 0 2px 16px rgba(222,191,176,0.11);
-            flex: 1 1 340px;
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .dashboard-section .dashboard-highlights {
+            color: var(--secondary); font-weight: 600; font-size: 1.07rem; margin-bottom: 0.5rem;
         }
-        .download-card h3 {
-            color: var(--primary);
-            font-size: 1.2rem;
-            margin-bottom: 1.2rem;
+        .dashboard-section .dashboard-text strong { color: var(--primary); }
+        .dashboard-section .cta-dashboard { color: var(--primary); font-weight: 600; }
+        .dashboard-section .cta-dashboard a { color: var(--secondary); text-decoration: underline; }
+        /* Proyectos */
+        .projects-section { padding: 2.3rem 2rem 2.3rem 2rem; }
+        .projects-grid { display: flex; flex-wrap: wrap; gap: 2.1rem; justify-content: center; }
+        .project-card {
+            background: var(--background); border-radius: 1.7rem; box-shadow: 0 2px 16px rgba(44,62,80,0.10); padding: 2rem 1.3rem; max-width: 470px; min-width: 260px; flex: 1 1 320px; text-align: center; margin: 0 auto; transition: box-shadow 0.2s, transform 0.2s;
         }
+        .project-card:hover { box-shadow: 0 4px 28px rgba(44,62,80,0.18); transform: scale(1.025);}
+        .project-title { color: var(--secondary); font-weight: bold; font-size: 1.18rem; margin-bottom: 1rem; }
+        .project-desc strong { color: var(--primary);}
         /* Skills */
         .skills-section { padding-bottom: 2.5rem; }
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.7rem;
-            justify-content: center;
-        }
-        .skill-category {
-            background: rgba(255,255,255,0.55);
-            padding: 1.3rem 1.2rem 1.6rem 1.2rem;
-            border-radius: 1.7rem;
-            flex: 1 1 280px;
-            min-width: 240px;
-            max-width: 350px;
-            box-shadow: 0 2px 12px rgba(44,62,80,0.06);
-            text-align: center;
-        }
-        .skill-category h3 {
-            color: var(--secondary);
-            font-size: 1.15rem;
-            margin-bottom: 0.7rem;
-            font-weight: 700;
-            border-bottom: 2px solid var(--secondary);
-            display: inline-block;
-            padding-bottom: 0.3rem;
-        }
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.7rem;
-            justify-content: center;
-        }
-        .skill {
-            background: var(--primary);
-            color: var(--white);
-            padding: 0.65rem 1.2rem;
-            border-radius: 1.3rem;
-            font-size: 0.98rem;
-            margin-bottom: 0.4rem;
-            box-shadow: 0 1px 5px rgba(44,62,80,0.06);
-            transition: transform 0.18s;
-            text-align: center;
-        }
-        .skill:hover {
-            transform: scale(1.06);
-            background: var(--secondary);
-            color: var(--primary);
-        }
+        .skills-container { display: flex; flex-wrap: wrap; gap: 1.7rem; justify-content: center; }
+        .skill-category { background: rgba(255,255,255,0.55); padding: 1.3rem 1.2rem 1.6rem 1.2rem; border-radius: 1.7rem; flex: 1 1 280px; min-width: 240px; max-width: 350px; box-shadow: 0 2px 12px rgba(44,62,80,0.06);}
+        .skill-category h3 { color: var(--secondary); font-size: 1.15rem; margin-bottom: 0.7rem; font-weight: 700; border-bottom: 2px solid var(--secondary); display: inline-block; padding-bottom: 0.3rem;}
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 0.7rem;}
+        .skill { background: var(--primary); color: var(--white); padding: 0.65rem 1.2rem; border-radius: 1.3rem; font-size: 0.98rem; margin-bottom: 0.4rem; box-shadow: 0 1px 5px rgba(44,62,80,0.06); transition: transform 0.18s;}
+        .skill strong { color: var(--secondary);}
+        .skill:hover { transform: scale(1.06); background: var(--secondary); color: var(--primary);}
+        /* Testimonials */
+        .testimonials-section .testimonial { color:var(--tertiary); font-style:italic; text-align:center; }
         /* Contacto */
-        .contact-section h2 {
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 1.8rem;
+        .contact-section h2 { color: var(--primary); text-align: center; margin-bottom: 1.8rem; }
+        .contact-form { max-width: 450px; margin: 0 auto; display: flex; flex-direction: column;}
+        .contact-form input, .contact-form textarea {
+            width: 100%; padding: 1rem; margin-bottom: 1.2rem; border: 2px solid var(--background); border-radius: 1.5rem;
+            transition: var(--transition); font-family: inherit; font-size: 1rem;
         }
-        .contact-form {
-            max-width: 450px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-        }
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1.2rem;
-            border: 2px solid var(--background);
-            border-radius: 1.5rem;
-            transition: var(--transition);
-            font-family: inherit;
-            font-size: 1rem;
-        }
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: var(--secondary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(222, 191, 176, 0.18);
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--secondary); outline: none; box-shadow: 0 0 0 3px rgba(222, 191, 176, 0.18);
         }
         /* Footer */
         footer {
-            background: var(--primary);
-            color: var(--white);
-            text-align: center;
-            padding: 2.2rem 0 1rem 0;
-            margin-top: 2rem;
-            font-size: 1rem;
-            border-top-left-radius: 1.7rem;
-            border-top-right-radius: 1.7rem;
-        }
-        /* Mostrar/ocultar CV segun dispositivo */
-        @media (max-width: 800px) {
-            .iframe-cv { display: none; }
-            .boton-cv { display: block; }
-        }
-        @media (min-width: 801px) {
-            .iframe-cv { display: block; }
-            .boton-cv { display: none; }
+            background: var(--primary); color: var(--white); text-align: center; padding: 2.2rem 0 1rem 0;
+            margin-top: 2rem; font-size: 1rem; border-top-left-radius: 1.7rem; border-top-right-radius: 1.7rem;
         }
         /* Responsive */
         @media (max-width: 900px) {
@@ -435,57 +165,21 @@
             #about .bio { padding-left: 0.3rem; padding-right: 0.3rem; }
             .skills-section .section-title { text-align: center; }
             .skills-container { flex-direction: column; align-items: center; }
-            .skill-category {
-                text-align: center;
-                margin-left: 0; margin-right: 0;
-                max-width: 100%; min-width: 0;
-                padding-left: 0.5rem; padding-right: 0.5rem;
-            }
+            .skill-category { text-align: center; margin-left: 0; margin-right: 0; max-width: 100%; min-width: 0; padding-left: 0.5rem; padding-right: 0.5rem;}
             .skills-grid { flex-direction: column; align-items: center; }
-            .skill {
-                width: 100%; margin: 0.18rem 0;
-                text-align: center; word-break: break-word;
-            }
+            .skill { width: 100%; margin: 0.18rem 0; text-align: center; word-break: break-word;}
             .contact-section { padding-left: 1.2rem; padding-right: 1.2rem; }
-            .contact-form input, .contact-form textarea {
-                padding-left: 1rem; padding-right: 1rem;
-            }
+            .contact-form input, .contact-form textarea { padding-left: 1rem; padding-right: 1rem;}
         }
         /* Más aire para contenedores en móvil en la sección CV */
         @media (max-width: 700px) {
-            #cv .download-grid {
-                margin-top: 0.7rem !important;
-                margin-bottom: 0.7rem !important;
-            }
-            #cv .download-card {
-                margin-top: 0.8rem !important;
-                margin-bottom: 0.8rem !important;
-                padding-top: 1.2rem !important;
-                padding-bottom: 1.2rem !important;
-            }
-            .download-section {
-                padding: 1.5rem 1.2rem 1.5rem 1.2rem !important;
-                margin-left: 0.5rem !important;
-                margin-right: 0.5rem !important;
-                border-radius: 1.3rem;
-            }
+            #cv .download-grid { margin-top: 0.7rem !important; margin-bottom: 0.7rem !important;}
+            #cv .download-card { margin-top: 0.8rem !important; margin-bottom: 0.8rem !important; padding-top: 1.2rem !important; padding-bottom: 1.2rem !important;}
+            .download-section { padding: 1.5rem 1.2rem 1.5rem 1.2rem !important; margin-left: 0.5rem !important; margin-right: 0.5rem !important; border-radius: 1.3rem;}
         }
         /* Botón estilos homogéneos */
-        .cta-button.btn-details {
-            background: var(--secondary);
-            color: var(--primary);
-            border-radius: 2.5rem;
-            padding: 1rem 2rem;
-            font-weight: 600;
-            text-decoration: none;
-            border: none;
-            box-shadow: 0 4px 14px rgba(44,62,80,0.13);
-            transition: background 0.18s, color 0.18s;
-        }
-        .cta-button.btn-details:hover {
-            background: var(--primary);
-            color: var(--secondary);
-        }
+        .cta-button.btn-details { background: var(--secondary); color: var(--primary); border-radius: 2.5rem; padding: 1rem 2rem; font-weight: 600; text-decoration: none; border: none; box-shadow: 0 4px 14px rgba(44,62,80,0.13); transition: background 0.18s, color 0.18s;}
+        .cta-button.btn-details:hover { background: var(--primary); color: var(--secondary);}
     </style>
 </head>
 <body>
@@ -512,7 +206,7 @@
     <section class="hero" id="hero">
         <div class="container">
             <h1>Antonio J. Fernández</h1>
-            <h2>Científico de Datos y Analista de Datos</h2>
+            <h2><strong>Científico de Datos y Analista de Datos</strong></h2>
             <a href="#cv" class="cta-button">Ver CV</a>
         </div>
     </section>
@@ -525,7 +219,7 @@
                 Tu navegador no soporta el elemento video.
             </video>
         </div>
-        <p style="text-align:center; color: var(--primary);">Si no se reproduce, <a href="Trayectoria Antonio J. Fernández Data Viva.mp4" download style="color:var(--secondary);text-decoration:underline;">descárgalo aquí</a>.</p>
+        <p style="text-align:center; color: var(--primary);"><strong>Si no se reproduce, <a href="Trayectoria Antonio J. Fernández Data Viva.mp4" download style="color:var(--secondary);text-decoration:underline;">descárgalo aquí</a>.</strong></p>
     </section>
 
     <section id="about" class="about-section container">
@@ -543,32 +237,23 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CV RESPONSIVA Y PROFESIONAL -->
     <section id="cv" class="download-section container">
         <h2 class="section-title">Currículum Vitae</h2>
         <div class="download-grid">
             <div class="download-card">
-                <h3>Visualiza y descarga mi CV en PDF</h3>
-                <!-- Solo escritorio/tablet -->
+                <h3><strong>Visualiza y descarga mi CV en PDF</strong></h3>
                 <div class="iframe-cv">
-                    <iframe 
-                        src="CV Antonio J. Fernández Data Viva.pdf"
-                        width="100%"
-                        height="470px"
-                        style="border-radius:1rem; border:1px solid #ddd; margin-bottom:1.2rem;"
-                        title="CV Antonio J. Fernández">
-                    </iframe>
+                    <iframe src="CV Antonio J. Fernández Data Viva.pdf" width="100%" height="470px" style="border-radius:1rem; border:1px solid #ddd; margin-bottom:1.2rem;" title="CV Antonio J. Fernández"></iframe>
                     <a href="CV Antonio J. Fernández Data Viva.pdf" download class="cta-button btn-details" style="margin-top:0.2rem;">
-                        Descargar CV en PDF
+                        <strong>Descargar CV en PDF</strong>
                     </a>
                 </div>
-                <!-- Solo móvil -->
                 <div class="boton-cv" style="text-align:center;">
                     <a href="CV Antonio J. Fernández Data Viva.pdf" target="_blank" class="cta-button btn-details" style="margin-top:0.8rem;">
-                        Abrir CV en una nueva pestaña
+                        <strong>Abrir CV en una nueva pestaña</strong>
                     </a>
                     <p style="margin-top:0.3rem; color:var(--primary); font-size:0.95rem;">
-                        En móvil, pulsa para ver o descargar el CV
+                        <strong>En móvil, pulsa para ver o descargar el CV</strong>
                     </p>
                 </div>
             </div>
@@ -576,7 +261,7 @@
     </section>
 
     <!-- DASHBOARD POWER BI -->
-    <section class="download-section container" id="dashboard-powerbi" style="padding-top: 1.8rem;">
+    <section class="dashboard-section download-section container" id="dashboard-powerbi" style="padding-top: 1.8rem;">
         <h2 class="section-title">Dashboard Power BI</h2>
         <div style="margin-bottom:1.3rem;">
             <iframe title="Dashboard vino" width="100%" height="400"
@@ -586,63 +271,73 @@
             </iframe>
             <div style="text-align:center; margin-top:0.6rem;">
                 <span style="color: var(--secondary); font-size:1.08rem; letter-spacing:1px; font-weight:600;">
-                    Dashboard creado con Power BI
+                    <strong>Dashboard creado con Power BI</strong>
                 </span>
             </div>
         </div>
-    </section>
-
-    <!-- EXPLICACIÓN DASHBOARD POWER BI, FRASES IMPACTO, CTA -->
-    <section class="dashboard-section container">
-        <h2 class="section-title">¿Qué muestra este dashboard?</h2>
         <div class="dashboard-text">
-            <b>Pestaña 1:</b> Total ventas, ingresos netos, pedido medio, comisión media, ventas por categoría de distribuidor, ventas por categoría de bodega. Filtros por comisión (3%, 5%, 10%), plan (Básico, Intermedio, Premium), fecha de pedido y canal de ventas. Detalle: mes, id pedido, nombre bodega, importe, nombre distribuidor, comisión, beneficio por venta, beneficio por bodega, distribuidor y pedido.<br><br>
-            <b>Pestaña 2:</b> Ingresos netos, suscripción media. Filtros por tipo de suscripción (Básico, Intermedio, Premium) y fecha de suscripción. Ventas por sector vinícola (servicios, exportadoras, accesorios, turismo enológico), ventas por suscripción, plan más/menos contratado, canal de publicidad (mes, id publicidad, nombre empresa, plan, beneficio), método de pago (Paypal, Transferencia, Tarjeta), precio y nombre empresa.
+            <h3 class="section-title" style="font-size:1.23rem; margin-bottom:0.7rem;"><strong>¿Qué muestra este dashboard?</strong></h3>
+            <p style="margin-bottom:0.3rem;">
+                <strong>Pestaña 1:</strong> <strong>Total ventas, ingresos netos, pedido medio y comisión media.</strong>
+                Análisis por <strong>categoría de distribuidor</strong> y <strong>bodega</strong>, filtros por comisión (3%, 5%, 10%), plan (Básico, Intermedio, Premium), fechas y canal de ventas. Detalle de cada pedido, importe, comisión, beneficio por venta, bodega, distribuidor y pedido.
+            </p>
+            <p>
+                <strong>Pestaña 2:</strong> <strong>Ingresos netos y suscripción media.</strong>
+                Filtros por suscripción, fecha y ventas por sector vinícola. Segmentación por servicios, exportadoras, equipamiento y turismo enológico. Destaca plan más/menos contratado y análisis de canal y método de pago.
+            </p>
+            <p>
+                <strong>KPIs clave:</strong> Total ventas, ingresos netos, pedido medio, comisión media, beneficio por pedido/bodega/distribuidor, suscripción media y análisis de planes.
+            </p>
         </div>
         <div class="dashboard-highlights">
-            🚀 Decisiones inteligentes y rápidas con reporting y análisis de ventas y suscripciones en tiempo real.<br>
-            🔄 Reporting totalmente automatizado y segmentación visual para el sector vinícola.
+            <span style="display:block; margin-bottom:0.2rem;">
+                <strong>🚀 Decisiones más inteligentes y rápidas</strong> con reporting y análisis de ventas y suscripciones en tiempo real.
+            </span>
+            <span style="display:block; margin-bottom:0.2rem;">
+                <strong>🔄 Reporting totalmente automatizado</strong> y segmentación visual para el sector vinícola.
+            </span>
         </div>
         <div class="cta-dashboard">
-            ¿Quieres ver más dashboards o soluciones personalizadas?<br>
-            <a href="#contact">Contáctame y te enseño más casos de éxito</a>.
+            <p>
+                <strong>¿Quieres ver más dashboards o soluciones personalizadas?</strong><br>
+                <a href="#contact"><strong>Contáctame y te enseño más casos de éxito</strong></a>.
+            </p>
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN: PROYECTOS DE CIENCIA DE DATOS -->
+    <!-- PROYECTOS DE CIENCIA DE DATOS -->
     <section class="projects-section container" id="proyectos">
-        <h2 class="section-title">Proyectos de Ciencia de Datos</h2>
+        <h2 class="section-title">Proyectos de <strong>Ciencia de Datos</strong></h2>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-title">Análisis Predictivo de Ventas y Demanda</div>
-                <div class="project-desc">Modelos avanzados de regresión y series temporales para anticipar demanda, optimizar inventario y plan comercial en diferentes sectores.</div>
+                <div class="project-title"><strong>Análisis Predictivo de Ventas y Demanda</strong></div>
+                <div class="project-desc"><strong>Modelos avanzados</strong> de regresión y series temporales para anticipar demanda, optimizar inventario y plan comercial. Aporte directo al <strong>aumento de ventas</strong> y reducción de roturas de stock.</div>
             </div>
             <div class="project-card">
-                <div class="project-title">Dashboards Ejecutivos e Integración de Datos</div>
-                <div class="project-desc">Paneles en Power BI y automatización de reporting para dirección y equipos comerciales, integración de fuentes heterogéneas y seguimiento de KPIs en tiempo real.</div>
+                <div class="project-title"><strong>Dashboards Ejecutivos e Integración de Datos</strong></div>
+                <div class="project-desc">Paneles <strong>Power BI</strong> para dirección y equipos comerciales, integración de múltiples fuentes y reporting <strong>en tiempo real</strong> de KPIs críticos. <strong>Automatización de informes</strong> para toma de decisiones ágil.</div>
             </div>
             <div class="project-card">
-                <div class="project-title">Segmentación Avanzada y Predicción de Churn</div>
-                <div class="project-desc">Clustering, machine learning y análisis multivariable para identificar segmentos, predecir pérdida de clientes (churn) y diseñar acciones comerciales a medida.</div>
+                <div class="project-title"><strong>Segmentación Avanzada y Churn</strong></div>
+                <div class="project-desc">Clustering, <strong>machine learning</strong> y análisis multivariable para identificar segmentos, predecir pérdida de clientes (<strong>churn</strong>) y diseñar acciones comerciales personalizadas.</div>
             </div>
             <div class="project-card">
-                <div class="project-title">Automatización ETL y Conectores Personalizados</div>
-                <div class="project-desc">Procesos automáticos, conectores y APIs para unificar información, facilitar integración y reporting estratégico a equipos directivos.</div>
+                <div class="project-title"><strong>Automatización ETL y Conectores Personalizados</strong></div>
+                <div class="project-desc"><strong>Procesos ETL automáticos</strong>, conectores y APIs para unificar información y reportar a equipos directivos, mejorando la eficiencia y fiabilidad de los datos.</div>
             </div>
             <div class="project-card">
-                <div class="project-title">Optimización Agrícola con Drones</div>
-                <div class="project-desc">Procesado NDVI, análisis multiespectral y modelos predictivos para rendimiento agrícola, utilizando Python y Power BI para toma de decisiones técnicas y comerciales.</div>
+                <div class="project-title"><strong>Optimización Agrícola con Drones</strong></div>
+                <div class="project-desc">Procesado <strong>NDVI</strong>, análisis multiespectral y modelos predictivos para rendimiento agrícola, usando <strong>Python</strong> y Power BI para toma de decisiones técnicas y comerciales.</div>
             </div>
             <div class="project-card">
-                <div class="project-title">Analítica Avanzada para Seguros</div>
-                <div class="project-desc">Modelos de tarificación, siniestralidad, segmentación y predicción de riesgos, visualización interactiva y reporting automatizado para maximizar la rentabilidad y reducir riesgos.</div>
+                <div class="project-title"><strong>Analítica para Seguros</strong></div>
+                <div class="project-desc"><strong>Modelos de tarificación</strong>, análisis de siniestralidad, segmentación y predicción de riesgos en seguros, con <strong>reporting interactivo</strong> y automatizado.</div>
             </div>
         </div>
     </section>
-    <!-- FIN PROYECTOS -->
 
     <section id="skills" class="skills-section container">
-        <h2 class="section-title">Habilidades Técnicas</h2>
+        <h2 class="section-title">Habilidades <strong>Técnicas</strong></h2>
         <div class="skills-container">
             <div class="skill-category">
                 <h3>Ciencia y Análisis de Datos</h3>
@@ -706,29 +401,30 @@
     </section>
 
     <section class="testimonials-section container" style="margin-bottom:2.8rem;">
-        <h2 class="section-title">Reseñas</h2>
-        <div class="testimonial" style="color:var(--tertiary); font-style:italic; text-align:center;">
-            Muy pronto aquí podrás ver opiniones y valoraciones de clientes, compañeros y profesionales que han trabajado conmigo en proyectos de análisis y ciencia de datos.
+        <h2 class="section-title"><strong>Reseñas</strong></h2>
+        <div class="testimonial">
+            <strong>Muy pronto aquí podrás ver opiniones y valoraciones de clientes, compañeros y profesionales que han trabajado conmigo en proyectos de análisis y ciencia de datos.</strong>
         </div>
     </section>
 
     <section id="contact" class="contact-section container">
-        <h2 class="section-title">Contacto</h2>
+        <h2 class="section-title"><strong>Contacto</strong></h2>
         <form class="contact-form" action="https://formsubmit.co/datavivalab@gmail.com" method="POST">
             <input type="text" name="nombre" placeholder="Nombre" required>
             <input type="email" name="email" placeholder="Tu Email" required>
             <textarea name="mensaje" rows="6" placeholder="Tu Mensaje" required></textarea>
-            <button type="submit" class="cta-button">Enviar Mensaje</button>
+            <button type="submit" class="cta-button"><strong>Enviar Mensaje</strong></button>
         </form>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Data Viva. Todos los derechos reservados.</p>
+            <p>&copy; 2025 <strong>Data Viva</strong>. Todos los derechos reservados.</p>
         </div>
     </footer>
 </body>
 </html>
+
 
 
 
