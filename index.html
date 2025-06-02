@@ -195,6 +195,11 @@
             text-decoration: underline;
         }
 
+        a[href^="tel:"]:hover, a[href^="mailto:"]:hover, a[href*="linkedin.com"]:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
     </style>
 </head>
 <body>
@@ -464,22 +469,28 @@
     </section>
 
 <footer>
-    <div class="container">
+    <div class="container" style="text-align:center;">
         <p>&copy; 2025 <strong>Data Viva</strong>. Todos los derechos reservados.</p>
-        <div style="margin-top:0.7rem; display:flex; flex-wrap:wrap; gap:1.4rem; justify-content:center;">
+        <div style="margin-top:0.7rem; display: flex; justify-content: center; gap: 1.4rem; flex-wrap: wrap;">
+            <!-- Email -->
             <a href="mailto:datavivalab@gmail.com" style="color: var(--secondary); text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem;">
-                <!-- Icono Email SVG -->
-                <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;">
-                  <path d="M2 4a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4zm2 0v.01L10 9l6-4.99V4H4zm12 2.237l-6 5-6-5V16h12V6.237z"/>
-                </svg>
-                datavivalab@gmail.com
+                <span style="vertical-align:middle;">📧</span> datavivalab@gmail.com
             </a>
+            <!-- Teléfono -->
             <a href="tel:+34612345678" style="color: var(--secondary); text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem;">
-                <!-- Icono Teléfono SVG (clásico) -->
-                <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;" viewBox="0 0 20 20">
-                    <path d="M17.707 13.293l-3-3a1 1 0 00-1.414 0l-1.1 1.1a1 1 0 01-1.267.165 13.378 13.378 0 01-4.383-4.383 1 1 0 01.165-1.267l1.1-1.1a1 1 0 000-1.414l-3-3A1 1 0 003 3c-.367 3.052 1.17 7.088 5.22 11.137C9.912 16.035 13.948 17.573 17 17a1 1 0 00.707-1.707z"/>
+                <!-- Icono Teléfono SVG clásico -->
+                <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.72 11.72 0 003.64.58 1 1 0 011 1V20a1 1 0 01-1 1C10.2 21 3 13.8 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.47.58 3.63a1 1 0 01-.24 1.02l-2.22 2.14z"/>
                 </svg>
                 +34 621 00 38 08
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/antonioj-fernández-científicodedatos-analistadedatos" target="_blank" style="color: var(--secondary); text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem;">
+                <!-- Icono LinkedIn SVG -->
+                <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11.75 19h-2.5v-7.5h2.5v7.5zm-1.25-8.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm14 8.5h-2.5v-3.75c0-.9-.02-2.06-1.25-2.06-1.25 0-1.44.98-1.44 1.99v3.82h-2.5v-7.5h2.4v1.02h.03c.33-.63 1.15-1.29 2.37-1.29 2.54 0 3.01 1.67 3.01 3.84v3.93z"/>
+                </svg>
+                LinkedIn
             </a>
         </div>
     </div>
