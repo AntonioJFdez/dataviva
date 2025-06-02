@@ -202,84 +202,25 @@
             text-decoration: underline;
         }
 
-        .cert-slider {
+.cert-slider {
   display: flex;
   overflow-x: auto;
   gap: 1.2rem;
+  padding: 1.2rem 1rem 1.2rem 1rem;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding: 1.1rem 1rem 1.3rem 1.5rem;   /* El padding-left es CLAVE */
-  margin-left: -1rem; /* Ajusta para que la primera tarjeta inicie donde empieza el contenido */
-  margin-right: -1rem;
+  position: relative;
+  box-sizing: border-box;
 }
 .cert-card {
-  flex: 0 0 260px;
-  min-width: 220px;
-  max-width: 270px;
-  background: var(--white);
-  border-radius: 1.2rem;
-  box-shadow: 0 2px 14px rgba(44,62,80,0.09);
-  text-align: center;
-  padding: 1.3rem 0.9rem 1.1rem 0.9rem;
-  scroll-snap-align: start;
-  transition: box-shadow 0.2s;
-  border: 1.5px solid #eee;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.cert-card img {
-  width: 52px; height: 52px; margin-bottom: 0.7rem; border-radius: 0.8rem; object-fit: contain; background:#fff;
-}
-.cert-title {
-  color: var(--primary);
-  font-weight: bold;
-  font-size: 1.07rem;
-  margin-bottom: 0.45rem;
-}
-.cert-issuer {
-  color: var(--secondary);
-  font-size: 0.98rem;
-  margin-bottom: 0.1rem;
-}
-.cert-card:hover {
-  box-shadow: 0 4px 24px rgba(44,62,80,0.14);
-  transform: scale(1.025);
-}
-@media (max-width: 600px) {
-  .cert-slider {
-    padding-left: 0.7rem !important;
-    padding-right: 0.7rem !important;
-    margin-left: -0.7rem;
-    margin-right: -0.7rem;
-    gap: 0.6rem;
-  }
-  .cert-card {
-    min-width: 76vw;
-    max-width: 88vw;
-    padding: 1.1rem 0.5rem 1.1rem 0.5rem;
-  }
-}
-
-        .cert-slider {
-  display: flex;
-  overflow-x: auto;
-  gap: 1.2rem;
-  padding: 1.1rem 0.2rem;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  justify-content: center;
-}
-.cert-card {
-  flex: 0 0 265px;
-  min-width: 220px;
-  max-width: 265px;
-  background: var(--background);
+  flex: 0 0 245px;
+  min-width: 245px;
+  max-width: 260px;
+  background: var(--background, #f5f2ea);
   border-radius: 1.3rem;
   box-shadow: 0 2px 14px rgba(44,62,80,0.09);
   text-align: center;
-  padding: 1.2rem 0.8rem 1rem 0.8rem;
+  padding: 1.1rem 0.8rem 1.1rem 0.8rem;
   scroll-snap-align: start;
   transition: box-shadow 0.2s;
   border: 1.5px solid #eee;
@@ -288,88 +229,43 @@
 .cert-card img {
   width: 48px; height: 48px; margin-bottom: 0.7rem; border-radius: 0.8rem; object-fit:contain; background:#fff;
 }
-.cert-card .cert-title {
-  color: var(--primary);
+.cert-title {
+  color: var(--primary, #2c3e50);
   font-weight: bold;
-  font-size: 1.08rem;
-  margin-bottom: 0.45rem;
+  font-size: 1.06rem;
+  margin-bottom: 0.4rem;
 }
-.cert-card .cert-issuer {
-  color: var(--secondary);
+.cert-issuer {
+  color: var(--secondary, #debfb0);
   font-size: 0.98rem;
   margin-bottom: 0.1rem;
 }
-@media (max-width: 600px) {
-  .cert-card { min-width: 72vw; max-width: 85vw; }
-  .cert-slider { gap: 0.5rem; padding-left:0; padding-right:0;}
-}
-
-.cert-slider {
-    display: flex;
-    overflow-x: auto;
-    gap: 1.3rem;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    box-sizing: border-box;
-}
-.cert-card {
-    flex: 0 0 210px; /* Antes 220px o 240px, ahora algo más pequeño y estable */
-    max-width: 220px;
-    background: var(--background);
-    border-radius: 1.1rem;
-    box-shadow: 0 2px 14px rgba(44,62,80,0.09);
-    text-align: center;
-    padding: 1.1rem 0.8rem 1.2rem 0.8rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    scroll-snap-align: start;
-    transition: box-shadow 0.2s;
-}
-.cert-card img {
-    width: 50px; height: 50px; margin-bottom: 0.7rem; object-fit: contain;
-}
-.cert-title {
-    font-weight: 600;
-    color: var(--primary);
-    font-size: 1.08rem;
-    margin-bottom: 0.2rem;
-}
-.cert-issuer {
-    font-size: 0.99rem;
-    color: var(--secondary);
-}
 .cert-card:hover {
-    box-shadow: 0 4px 24px rgba(44,62,80,0.14);
-    transform: scale(1.025);
+  box-shadow: 0 4px 24px rgba(44,62,80,0.14);
+  transform: scale(1.025);
 }
 
-.cert-slider::before,
-.cert-slider::after {
-  content: "";
-  position: absolute;
-  top: 0; bottom: 0;
-  width: 22px;
-  z-index: 10;
-  pointer-events: none;
-  display: none;
+/* Mobile */
+@media (max-width: 700px) {
+  .cert-slider {
+    gap: 0.6rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 1.2rem;
+  }
+  .cert-card {
+    min-width: 84vw;
+    max-width: 92vw;
+    flex: 0 0 84vw;
+    font-size: 0.97rem;
+    padding: 1rem 0.6rem 1rem 0.6rem;
+  }
 }
-.cert-slider::before {
-  left: 0;
-  background: linear-gradient(to right, #f5f2ea 70%, transparent);
-}
-.cert-slider::after {
-  right: 0;
-  background: linear-gradient(to left, #f5f2ea 70%, transparent);
-}
-@media (max-width: 900px) {
-  .cert-slider { position: relative; }
-  .cert-slider::before, .cert-slider::after { display: block; }
-}        
-        
-    </style>
+
+/* Opcional: oculta el scrollbar en móvil */
+.cert-slider::-webkit-scrollbar { display: none; }
+.cert-slider { scrollbar-width: none; }
+
 </head>
 <body>
     <header>
@@ -400,7 +296,7 @@
         </div>
     </section>
 
-    <section class="download-section container" style="padding: 1.7rem 2rem 2rem 2rem; margin-bottom:1.5rem;">
+<section class="download-section container" style="padding: 1.7rem 2rem 2rem 2rem; margin-bottom:1.5rem;">
   <h2 class="section-title" style="font-size:1.3rem; margin-bottom:1.2rem;">Formación <strong>Relevante</strong></h2>
   <div class="cert-slider">
     <div class="cert-card">
